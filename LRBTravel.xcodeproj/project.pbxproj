@@ -7,10 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6D694719E6B627007C63F4 /* LRBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694519E6B627007C63F4 /* LRBLoginViewController.m */; };
+		0E6D694819E6B627007C63F4 /* LRBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D694619E6B627007C63F4 /* LRBLoginViewController.xib */; };
+		0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */; };
+		0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */; };
+		0E6D695019E6BB20007C63F4 /* LRBLeaderInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694F19E6BB20007C63F4 /* LRBLeaderInfoViewController.m */; };
+		0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */; };
+		0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */; };
+		0E6D695919E6BBDE007C63F4 /* LRBJourney ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695719E6BBDE007C63F4 /* LRBJourney ViewController.m */; };
+		0E6D695A19E6BBDE007C63F4 /* LRBJourney ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D695819E6BBDE007C63F4 /* LRBJourney ViewController.xib */; };
+		0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695C19E6BC34007C63F4 /* LRBRouteInfoViewController.m */; };
+		0E6D695F19E6BC34007C63F4 /* LRBRouteInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D695D19E6BC34007C63F4 /* LRBRouteInfoViewController.xib */; };
+		0E6D696319E6BC9A007C63F4 /* LRBPictureShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D696119E6BC9A007C63F4 /* LRBPictureShareViewController.m */; };
+		0E6D696419E6BC9A007C63F4 /* LRBPictureShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D696219E6BC9A007C63F4 /* LRBPictureShareViewController.xib */; };
+		0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D696619E6BCE2007C63F4 /* LRBIndexViewController.m */; };
+		0E6D696919E6BCE2007C63F4 /* LRBIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D696719E6BCE2007C63F4 /* LRBIndexViewController.xib */; };
+		0E6D696C19E6BD2C007C63F4 /* LRBNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D696B19E6BD2C007C63F4 /* LRBNotificationViewController.m */; };
+		0E6D697019E6BD70007C63F4 /* LRBNotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D696E19E6BD70007C63F4 /* LRBNotificationDetailViewController.m */; };
+		0E6D697119E6BD70007C63F4 /* LRBNotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D696F19E6BD70007C63F4 /* LRBNotificationDetailViewController.xib */; };
+		0E6D697419E6BDAD007C63F4 /* LRBSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D697319E6BDAD007C63F4 /* LRBSignUpViewController.m */; };
 		0E71CA6419E4CC9C003C9F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA6319E4CC9C003C9F2D /* main.m */; };
 		0E71CA6719E4CC9C003C9F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA6619E4CC9C003C9F2D /* AppDelegate.m */; };
 		0E71CA6A19E4CC9C003C9F2D /* LRBTravel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA6819E4CC9C003C9F2D /* LRBTravel.xcdatamodeld */; };
-		0E71CA6D19E4CC9C003C9F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA6C19E4CC9C003C9F2D /* ViewController.m */; };
 		0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E71CA6E19E4CC9C003C9F2D /* Main.storyboard */; };
 		0E71CA7219E4CC9C003C9F2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E71CA7119E4CC9C003C9F2D /* Images.xcassets */; };
 		0E71CA7E19E4CC9C003C9F2D /* LRBTravelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA7D19E4CC9C003C9F2D /* LRBTravelTests.m */; };
@@ -27,14 +45,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E6D694419E6B627007C63F4 /* LRBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRBLoginViewController.h; path = ../LRBLoginViewController.h; sourceTree = "<group>"; };
+		0E6D694519E6B627007C63F4 /* LRBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LRBLoginViewController.m; path = ../LRBLoginViewController.m; sourceTree = "<group>"; };
+		0E6D694619E6B627007C63F4 /* LRBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LRBLoginViewController.xib; path = ../LRBLoginViewController.xib; sourceTree = "<group>"; };
+		0E6D694919E6BAB6007C63F4 /* LRBShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBShareViewController.h; sourceTree = "<group>"; };
+		0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBShareViewController.m; sourceTree = "<group>"; };
+		0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBShareViewController.xib; sourceTree = "<group>"; };
+		0E6D694E19E6BB20007C63F4 /* LRBLeaderInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBLeaderInfoViewController.h; sourceTree = "<group>"; };
+		0E6D694F19E6BB20007C63F4 /* LRBLeaderInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBLeaderInfoViewController.m; sourceTree = "<group>"; };
+		0E6D695119E6BB66007C63F4 /* LRBPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPersonInfoViewController.h; sourceTree = "<group>"; };
+		0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPersonInfoViewController.m; sourceTree = "<group>"; };
+		0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPersonInfoViewController.xib; sourceTree = "<group>"; };
+		0E6D695619E6BBDE007C63F4 /* LRBJourney ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LRBJourney ViewController.h"; sourceTree = "<group>"; };
+		0E6D695719E6BBDE007C63F4 /* LRBJourney ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LRBJourney ViewController.m"; sourceTree = "<group>"; };
+		0E6D695819E6BBDE007C63F4 /* LRBJourney ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LRBJourney ViewController.xib"; sourceTree = "<group>"; };
+		0E6D695B19E6BC34007C63F4 /* LRBRouteInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBRouteInfoViewController.h; sourceTree = "<group>"; };
+		0E6D695C19E6BC34007C63F4 /* LRBRouteInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBRouteInfoViewController.m; sourceTree = "<group>"; };
+		0E6D695D19E6BC34007C63F4 /* LRBRouteInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBRouteInfoViewController.xib; sourceTree = "<group>"; };
+		0E6D696019E6BC9A007C63F4 /* LRBPictureShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPictureShareViewController.h; sourceTree = "<group>"; };
+		0E6D696119E6BC9A007C63F4 /* LRBPictureShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPictureShareViewController.m; sourceTree = "<group>"; };
+		0E6D696219E6BC9A007C63F4 /* LRBPictureShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPictureShareViewController.xib; sourceTree = "<group>"; };
+		0E6D696519E6BCE2007C63F4 /* LRBIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBIndexViewController.h; sourceTree = "<group>"; };
+		0E6D696619E6BCE2007C63F4 /* LRBIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBIndexViewController.m; sourceTree = "<group>"; };
+		0E6D696719E6BCE2007C63F4 /* LRBIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBIndexViewController.xib; sourceTree = "<group>"; };
+		0E6D696A19E6BD2C007C63F4 /* LRBNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBNotificationViewController.h; sourceTree = "<group>"; };
+		0E6D696B19E6BD2C007C63F4 /* LRBNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBNotificationViewController.m; sourceTree = "<group>"; };
+		0E6D696D19E6BD70007C63F4 /* LRBNotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBNotificationDetailViewController.h; sourceTree = "<group>"; };
+		0E6D696E19E6BD70007C63F4 /* LRBNotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBNotificationDetailViewController.m; sourceTree = "<group>"; };
+		0E6D696F19E6BD70007C63F4 /* LRBNotificationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBNotificationDetailViewController.xib; sourceTree = "<group>"; };
+		0E6D697219E6BDAD007C63F4 /* LRBSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBSignUpViewController.h; sourceTree = "<group>"; };
+		0E6D697319E6BDAD007C63F4 /* LRBSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBSignUpViewController.m; sourceTree = "<group>"; };
 		0E71CA5E19E4CC9C003C9F2D /* LRBTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRBTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E71CA6219E4CC9C003C9F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E71CA6319E4CC9C003C9F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E71CA6519E4CC9C003C9F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E71CA6619E4CC9C003C9F2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0E71CA6919E4CC9C003C9F2D /* LRBTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LRBTravel.xcdatamodel; sourceTree = "<group>"; };
-		0E71CA6B19E4CC9C003C9F2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0E71CA6C19E4CC9C003C9F2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0E71CA6F19E4CC9C003C9F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E71CA7119E4CC9C003C9F2D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E71CA7719E4CC9C003C9F2D /* LRBTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRBTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +106,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E6D697519E6BE0F007C63F4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0E6D694419E6B627007C63F4 /* LRBLoginViewController.h */,
+				0E6D694519E6B627007C63F4 /* LRBLoginViewController.m */,
+				0E6D694619E6B627007C63F4 /* LRBLoginViewController.xib */,
+				0E6D697219E6BDAD007C63F4 /* LRBSignUpViewController.h */,
+				0E6D697319E6BDAD007C63F4 /* LRBSignUpViewController.m */,
+				0E6D696D19E6BD70007C63F4 /* LRBNotificationDetailViewController.h */,
+				0E6D696E19E6BD70007C63F4 /* LRBNotificationDetailViewController.m */,
+				0E6D696F19E6BD70007C63F4 /* LRBNotificationDetailViewController.xib */,
+				0E6D696A19E6BD2C007C63F4 /* LRBNotificationViewController.h */,
+				0E6D696B19E6BD2C007C63F4 /* LRBNotificationViewController.m */,
+				0E6D696519E6BCE2007C63F4 /* LRBIndexViewController.h */,
+				0E6D696619E6BCE2007C63F4 /* LRBIndexViewController.m */,
+				0E6D696719E6BCE2007C63F4 /* LRBIndexViewController.xib */,
+				0E6D696019E6BC9A007C63F4 /* LRBPictureShareViewController.h */,
+				0E6D696119E6BC9A007C63F4 /* LRBPictureShareViewController.m */,
+				0E6D696219E6BC9A007C63F4 /* LRBPictureShareViewController.xib */,
+				0E6D695B19E6BC34007C63F4 /* LRBRouteInfoViewController.h */,
+				0E6D695C19E6BC34007C63F4 /* LRBRouteInfoViewController.m */,
+				0E6D695D19E6BC34007C63F4 /* LRBRouteInfoViewController.xib */,
+				0E6D695619E6BBDE007C63F4 /* LRBJourney ViewController.h */,
+				0E6D695719E6BBDE007C63F4 /* LRBJourney ViewController.m */,
+				0E6D695819E6BBDE007C63F4 /* LRBJourney ViewController.xib */,
+				0E6D695119E6BB66007C63F4 /* LRBPersonInfoViewController.h */,
+				0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */,
+				0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */,
+				0E6D694E19E6BB20007C63F4 /* LRBLeaderInfoViewController.h */,
+				0E6D694F19E6BB20007C63F4 /* LRBLeaderInfoViewController.m */,
+				0E6D694919E6BAB6007C63F4 /* LRBShareViewController.h */,
+				0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */,
+				0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		0E71CA5519E4CC9C003C9F2D = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +164,9 @@
 		0E71CA6019E4CC9C003C9F2D /* LRBTravel */ = {
 			isa = PBXGroup;
 			children = (
+				0E6D697519E6BE0F007C63F4 /* ViewController */,
 				0E71CA6519E4CC9C003C9F2D /* AppDelegate.h */,
 				0E71CA6619E4CC9C003C9F2D /* AppDelegate.m */,
-				0E71CA6B19E4CC9C003C9F2D /* ViewController.h */,
-				0E71CA6C19E4CC9C003C9F2D /* ViewController.m */,
 				0E71CA6E19E4CC9C003C9F2D /* Main.storyboard */,
 				0E71CA7119E4CC9C003C9F2D /* Images.xcassets */,
 				0E71CA6819E4CC9C003C9F2D /* LRBTravel.xcdatamodeld */,
@@ -199,7 +281,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6D696419E6BC9A007C63F4 /* LRBPictureShareViewController.xib in Resources */,
+				0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */,
+				0E6D696919E6BCE2007C63F4 /* LRBIndexViewController.xib in Resources */,
+				0E6D697119E6BD70007C63F4 /* LRBNotificationDetailViewController.xib in Resources */,
+				0E6D695A19E6BBDE007C63F4 /* LRBJourney ViewController.xib in Resources */,
+				0E6D694819E6B627007C63F4 /* LRBLoginViewController.xib in Resources */,
+				0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */,
 				0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */,
+				0E6D695F19E6BC34007C63F4 /* LRBRouteInfoViewController.xib in Resources */,
 				0E71CA7219E4CC9C003C9F2D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,10 +308,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6D697019E6BD70007C63F4 /* LRBNotificationDetailViewController.m in Sources */,
+				0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */,
+				0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */,
+				0E6D695019E6BB20007C63F4 /* LRBLeaderInfoViewController.m in Sources */,
+				0E6D695919E6BBDE007C63F4 /* LRBJourney ViewController.m in Sources */,
+				0E6D697419E6BDAD007C63F4 /* LRBSignUpViewController.m in Sources */,
 				0E71CA6A19E4CC9C003C9F2D /* LRBTravel.xcdatamodeld in Sources */,
 				0E71CA6719E4CC9C003C9F2D /* AppDelegate.m in Sources */,
-				0E71CA6D19E4CC9C003C9F2D /* ViewController.m in Sources */,
 				0E71CA6419E4CC9C003C9F2D /* main.m in Sources */,
+				0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */,
+				0E6D696C19E6BD2C007C63F4 /* LRBNotificationViewController.m in Sources */,
+				0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */,
+				0E6D696319E6BC9A007C63F4 /* LRBPictureShareViewController.m in Sources */,
+				0E6D694719E6B627007C63F4 /* LRBLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +440,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -352,6 +453,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -408,6 +510,7 @@
 				0E71CA8319E4CC9C003C9F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E71CA8419E4CC9C003C9F2D /* Build configuration list for PBXNativeTarget "LRBTravelTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +519,7 @@
 				0E71CA8619E4CC9C003C9F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
