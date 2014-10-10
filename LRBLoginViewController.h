@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreGraphics/CoreGraphics.h>
 @interface LRBLoginViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *headImage;
 
 @end

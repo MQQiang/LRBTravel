@@ -32,6 +32,7 @@
 		0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E71CA6E19E4CC9C003C9F2D /* Main.storyboard */; };
 		0E71CA7219E4CC9C003C9F2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E71CA7119E4CC9C003C9F2D /* Images.xcassets */; };
 		0E71CA7E19E4CC9C003C9F2D /* LRBTravelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA7D19E4CC9C003C9F2D /* LRBTravelTests.m */; };
+		0E943D1F19E6DB2B0085B1E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E943D1E19E6DB2B0085B1E2 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		0E71CA7719E4CC9C003C9F2D /* LRBTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRBTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E71CA7C19E4CC9C003C9F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E71CA7D19E4CC9C003C9F2D /* LRBTravelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRBTravelTests.m; sourceTree = "<group>"; };
+		0E943D1E19E6DB2B0085B1E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E943D1F19E6DB2B0085B1E2 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +149,7 @@
 		0E71CA5519E4CC9C003C9F2D = {
 			isa = PBXGroup;
 			children = (
+				0E943D1E19E6DB2B0085B1E2 /* CoreGraphics.framework */,
 				0E71CA6019E4CC9C003C9F2D /* LRBTravel */,
 				0E71CA7A19E4CC9C003C9F2D /* LRBTravelTests */,
 				0E71CA5F19E4CC9C003C9F2D /* Products */,

@@ -16,6 +16,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIGraphicsBeginImageContext(_headImage.frame.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    CGAffineTransform transform =   CGAffineTransformConcat(CGAffineTransformIdentity, CGAffineTransformMakeScale(1.0f, -1.0f));
+    
+    transform = CGAffineTransformConcat(transform, CGAffineTransformMakeTranslation(0, _headImage.frame.size.height));
+    
+    CGContextConcatCTM(ctx, transform);
+    
+    CGContextBeginPath(ctx);
+    
+    CGContextAddEllipseInRect(ctx, CGRectMake(0.0, 0.0, _headImage.frame.size.width, _headImage.frame.size.height ));
+    
+    CGContextClip(ctx);
+    
+    CGContextDrawImage(ctx, CGRectMake(0.0, 0.0, _headImage.frame.size.width, _headImage.frame.size.height), _headImage.image.CGImage);
+    
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    _headImage.image = finalImage;
     // Do any additional setup after loading the view from its nib.
 }
 

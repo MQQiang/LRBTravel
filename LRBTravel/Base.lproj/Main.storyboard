@@ -33,10 +33,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-Zq-dCs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mq" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-Zq-dCs">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="117" y="85" width="80" height="80"/>
                                 </variation>
@@ -159,6 +159,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="alT-Fq-nwz"/>
+                    <connections>
+                        <outlet property="headImage" destination="2QB-Zq-dCs" id="Oql-kv-Ntl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,6 +176,7 @@
                         <viewControllerLayoutGuide type="bottom" id="klj-Az-6Ku"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yrn-lq-67t">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,6 +194,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sdY-so-y0m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ozD-lh-NAA">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -207,6 +212,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uIa-0L-ASG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ib0-fq-5Pt">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -224,6 +230,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nhq-Xe-a6P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mXd-Wg-q0z">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -241,6 +248,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uKg-sE-VFd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OhN-Uu-pVI">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -258,6 +266,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Kzb-SQ-kda"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p1D-Ws-les">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -275,6 +284,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MXr-tu-Cxq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QGo-rh-yAB">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -292,6 +302,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HQF-EA-ExI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4I9-gv-6yk">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -309,6 +320,7 @@
                         <viewControllerLayoutGuide type="bottom" id="S7r-VB-yIo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wo5-ld-J8Z">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -336,4 +348,7 @@
             <point key="canvasLocation" x="678" y="151"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mq" width="530" height="446"/>
+    </resources>
 </document>
