@@ -39,6 +39,9 @@
     UIGraphicsEndImageContext();
     
     _headImage.image = finalImage;
+    
+    
+
     // Do any additional setup after loading the view from its nib.
 }
 
