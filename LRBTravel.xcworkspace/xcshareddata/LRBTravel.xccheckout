@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>93C15E16-88AB-4849-9D4B-88D1AD8A3EED</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LRBTravel</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B483A6E0A913965642359203BDC8C75D4CBA2217</key>
+		<string>https://github.com/mengqiangs110/LRBTravel.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LRBTravel.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B483A6E0A913965642359203BDC8C75D4CBA2217</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mengqiangs110/LRBTravel.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B483A6E0A913965642359203BDC8C75D4CBA2217</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B483A6E0A913965642359203BDC8C75D4CBA2217</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LRBTravel</string>
+		</dict>
+	</array>
+</dict>
+</plist>

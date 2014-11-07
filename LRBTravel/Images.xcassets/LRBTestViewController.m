@@ -1,22 +1,22 @@
 //
-//  LRBSignUpViewController.m
+//  LRBTestViewController.m
 //  LRBTravel
 //
-//  Created by mq on 14-10-9.
+//  Created by mq on 14/11/4.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBSignUpViewController.h"
-
-@interface LRBSignUpViewController ()
+#import "LRBTestViewController.h"
+#import "LRBFillFromViewController.h"
+@interface LRBTestViewController ()
 
 @end
 
-@implementation LRBSignUpViewController
+@implementation LRBTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +34,11 @@
 }
 */
 
+- (IBAction)testFillFrom:(id)sender {
+    
+    LRBFillFromViewController  * controller = [[LRBFillFromViewController alloc ] init];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    
+}
 @end

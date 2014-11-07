@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LRBNotificationDetailViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *notificationTitleLabel;
+@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *notificationTextView;
 
 @end

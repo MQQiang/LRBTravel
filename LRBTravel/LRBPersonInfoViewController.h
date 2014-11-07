@@ -10,4 +10,7 @@
 
 @interface LRBPersonInfoViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *selfInfoView;
+
+
 @end

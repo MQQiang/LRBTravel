@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nt7-A6-Rbd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nt7-A6-Rbd">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -14,12 +14,69 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="QIm-WE-GVw"/>
+                        <segue destination="7hs-C4-4x4" kind="relationship" relationship="rootViewController" id="MMJ-gZ-g2V"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9x-Mf-RNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-640.5" y="151"/>
+            <point key="canvasLocation" x="-729" y="104.25"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="F3X-gT-Frc">
+            <objects>
+                <viewController id="7hs-C4-4x4" customClass="LRBTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="URa-kT-yLF"/>
+                        <viewControllerLayoutGuide type="bottom" id="JZh-bA-3lO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eKu-Oo-Rdr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3Q-63-Qjd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="TestLoginVc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="149" y="130" width="84" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="BB7-Fp-3wg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPl-2n-8Iv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Test FillFromVc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="183" width="105" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="testFillFrom:" destination="7hs-C4-4x4" eventType="touchUpInside" id="eFX-qW-nmT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="I3Q-63-Qjd"/>
+                                <exclude reference="cPl-2n-8Iv"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="I3Q-63-Qjd"/>
+                                <include reference="cPl-2n-8Iv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="yt9-bX-pbm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iW-8i-sA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="100.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -30,7 +87,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="JYE">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mq" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-Zq-dCs">
@@ -41,20 +98,15 @@
                                     <rect key="frame" x="117" y="85" width="80" height="80"/>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCk-oo-Rv0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="HCk-oo-Rv0">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="186" width="208" height="30"/>
                                 </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-O8-xUB">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="102" y="224" width="208" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="96" y="186" width="206" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-GK-b6J">
@@ -106,6 +158,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="186" width="67" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="34" y="187" width="67" height="28"/>
+                                </variation>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-CV-GRZ">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -115,6 +170,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="224" width="69" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="34" y="225" width="69" height="28"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5M-WD-GbE">
@@ -127,13 +185,23 @@
                                     <rect key="frame" x="131" y="397" width="75" height="30"/>
                                 </variation>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-O8-xUB">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="102" y="224" width="208" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="97" y="224" width="208" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.22139921821017572" green="0.67061093321790266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="2QB-Zq-dCs"/>
                                 <exclude reference="HCk-oo-Rv0"/>
-                                <exclude reference="FEg-O8-xUB"/>
                                 <exclude reference="hR1-GK-b6J"/>
                                 <exclude reference="fRs-wC-pXw"/>
                                 <exclude reference="kKl-7a-2WW"/>
@@ -141,13 +209,13 @@
                                 <exclude reference="Cj4-Zi-G3m"/>
                                 <exclude reference="GcA-CV-GRZ"/>
                                 <exclude reference="k5M-WD-GbE"/>
+                                <exclude reference="FEg-O8-xUB"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="2QB-Zq-dCs"/>
                                 <include reference="HCk-oo-Rv0"/>
-                                <include reference="FEg-O8-xUB"/>
                                 <include reference="hR1-GK-b6J"/>
                                 <include reference="fRs-wC-pXw"/>
                                 <include reference="kKl-7a-2WW"/>
@@ -155,6 +223,7 @@
                                 <include reference="Cj4-Zi-G3m"/>
                                 <include reference="GcA-CV-GRZ"/>
                                 <include reference="k5M-WD-GbE"/>
+                                <include reference="FEg-O8-xUB"/>
                             </mask>
                         </variation>
                     </view>
@@ -165,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-136.5" y="151"/>
+            <point key="canvasLocation" x="901.5" y="104.25"/>
         </scene>
         <!--Leader Info View Controller-->
         <scene sceneID="e7s-Nf-AKZ">
@@ -176,14 +245,14 @@
                         <viewControllerLayoutGuide type="bottom" id="klj-Az-6Ku"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yrn-lq-67t">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMT-tV-8Mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214.5" y="733"/>
+            <point key="canvasLocation" x="-363" y="800.25"/>
         </scene>
         <!--Person Info View Controller-->
         <scene sceneID="n1S-Le-llS">
@@ -194,14 +263,14 @@
                         <viewControllerLayoutGuide type="bottom" id="sdY-so-y0m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ozD-lh-NAA">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llu-dk-GIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328.5" y="733"/>
+            <point key="canvasLocation" x="291" y="804"/>
         </scene>
         <!--Journey View Controller-->
         <scene sceneID="3mA-84-fuh">
@@ -212,14 +281,14 @@
                         <viewControllerLayoutGuide type="bottom" id="uIa-0L-ASG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ib0-fq-5Pt">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDY-cN-oee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790.5" y="733"/>
+            <point key="canvasLocation" x="780" y="826.5"/>
         </scene>
         <!--Route Info View Controller-->
         <scene sceneID="9hC-OS-ezh">
@@ -230,7 +299,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nhq-Xe-a6P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mXd-Wg-q0z">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -248,7 +317,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uKg-sE-VFd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OhN-Uu-pVI">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -266,7 +335,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Kzb-SQ-kda"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p1D-Ws-les">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -284,7 +353,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MXr-tu-Cxq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QGo-rh-yAB">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -302,7 +371,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HQF-EA-ExI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4I9-gv-6yk">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -320,7 +389,7 @@
                         <viewControllerLayoutGuide type="bottom" id="S7r-VB-yIo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wo5-ld-J8Z">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -338,14 +407,14 @@
                         <viewControllerLayoutGuide type="bottom" id="inw-24-bLA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wkd-S2-fcc">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZr-Rm-Dq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="151"/>
+            <point key="canvasLocation" x="894" y="158.25"/>
         </scene>
     </scenes>
     <resources>

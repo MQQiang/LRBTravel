@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9)
+  - REFrostedViewController (2.4.7)
 
 DEPENDENCIES:
   - AFNetworking
   - MBProgressHUD
+  - REFrostedViewController (~> 2.4.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  REFrostedViewController: 08870a24788191339608b80b2bd4fce549858f0d
 
 COCOAPODS: 0.33.1
