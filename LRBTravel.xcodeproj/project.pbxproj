@@ -42,7 +42,7 @@
 		0E92110A1A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9211081A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib */; };
 		0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E92110C1A0CB4F900D3BDFB /* LRBLoginViewController.m */; };
 		0E92110F1A0CB4F900D3BDFB /* LRBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E92110D1A0CB4F900D3BDFB /* LRBLoginViewController.xib */; };
-		0E9211121A0D10AF00D3BDFB /* EScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9211111A0D10AF00D3BDFB /* EScrollerView.m */; };
+		0E9211121A0D10AF00D3BDFB /* EScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9211111A0D10AF00D3BDFB /* EScrollerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0E943D1F19E6DB2B0085B1E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E943D1E19E6DB2B0085B1E2 /* CoreGraphics.framework */; };
 		0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */; };
 		F5FC73BBDEAE4B81AD2D80D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5767629C9B74237BE1BBAF5 /* libPods.a */; };

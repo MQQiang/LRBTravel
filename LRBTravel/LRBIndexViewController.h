@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 @class EScrollerView;
 @interface LRBIndexViewController : UIViewController
-@property (strong, nonatomic) IBOutlet EScrollerView *pagingScrollView;
 
 @property (strong, nonatomic) IBOutlet UITableView *indexTableView;
 

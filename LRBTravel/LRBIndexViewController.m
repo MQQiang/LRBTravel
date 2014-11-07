@@ -8,8 +8,9 @@
 
 #import "LRBIndexViewController.h"
 #import "REFrostedViewController.h"
+#import "EScrollerView.h"
 
-@interface LRBIndexViewController ()
+@interface LRBIndexViewController ()<EScrollerViewDelegate>
 
 @end
 
@@ -19,6 +20,13 @@
     [super viewDidLoad];
     
     [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+
+    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 66, self.view.frame.size.width, 120)
+                                                          ImageArray:[NSArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil]
+                                                          TitleArray:[NSArray arrayWithObjects:@"11",@"22",@"33", nil]];
+    scroller.delegate=self;
+    
+    [self.view addSubview:scroller];
 
 
     
@@ -35,6 +43,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)EScrollerViewDidClicked:(NSUInteger)index{
+    
+    NSLog(@"%lu",(unsigned long)index);
+}
 /*
 #pragma mark - Navigation
 
