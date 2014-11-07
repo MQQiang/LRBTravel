@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "REFrostedViewController.h"
+#import "LRBLoginViewController.h"
+#import "LRBIndexViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
     return YES;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "LRBIndexViewController.h"
+#import "REFrostedViewController.h"
 
 @interface LRBIndexViewController ()
 
@@ -16,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+
+
+    
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+        [self edgePanGesture:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +45,15 @@
 }
 */
 
+- (IBAction)edgePanGesture:(id)sender {
+    
+    [self.frostedViewController presentMenuViewController];
+//    [self.frostedViewController panGestureRecognized:sender];
+}
+
+-(void)panGestureRecognized:(id)sender{
+    
+     [self.frostedViewController panGestureRecognized:sender];
+    
+}
 @end

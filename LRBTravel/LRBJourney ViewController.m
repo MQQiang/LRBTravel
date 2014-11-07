@@ -8,11 +8,11 @@
 
 #import "LRBJourney ViewController.h"
 
-@interface LRBJourney_ViewController ()
+@interface LRBJourneyViewController ()
 
 @end
 
-@implementation LRBJourney_ViewController
+@implementation LRBJourneyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -129,6 +129,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="302" width="54" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="loginInWithQQ:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bNP-Mp-TE8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-7a-2WW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -275,7 +278,7 @@
         <!--Journey View Controller-->
         <scene sceneID="3mA-84-fuh">
             <objects>
-                <viewController id="zuN-rM-PK4" customClass="LRBJourney_ViewController" sceneMemberID="viewController">
+                <viewController id="zuN-rM-PK4" customClass="LRBJourneyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQu-9Y-SVJ"/>
                         <viewControllerLayoutGuide type="bottom" id="uIa-0L-ASG"/>
@@ -414,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZr-Rm-Dq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="158.25"/>
+            <point key="canvasLocation" x="1144.5" y="724.5"/>
         </scene>
     </scenes>
     <resources>

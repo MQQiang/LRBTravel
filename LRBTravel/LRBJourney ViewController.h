@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LRBJourney_ViewController : UIViewController
+@interface LRBJourneyViewController : UIViewController
 
 @end

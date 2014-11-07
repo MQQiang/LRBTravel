@@ -11,4 +11,6 @@
 @interface LRBLoginViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *headImage;
 
+-(IBAction)loginInWithQQ:(id)sender;
+
 @end
