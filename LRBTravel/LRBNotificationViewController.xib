@@ -18,18 +18,23 @@
                         <segment title="系统消息"/>
                     </segments>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="8" y="47" width="384" height="29"/>
+                        <rect key="frame" x="10" y="66" width="354" height="29"/>
                     </variation>
                 </segmentedControl>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MlO-Ht-OlH">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="92" width="400" height="708"/>
+                        <rect key="frame" x="0.0" y="150" width="375" height="500"/>
                     </variation>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="cNa-bW-uef"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="ZBr-Io-u5a"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="VR0-9f-fk6"/>
@@ -42,7 +47,7 @@
                     <include reference="MlO-Ht-OlH"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="230" y="357"/>
+            <point key="canvasLocation" x="229.5" y="356.5"/>
         </view>
     </objects>
 </document>

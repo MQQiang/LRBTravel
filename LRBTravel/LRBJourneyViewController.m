@@ -1,12 +1,12 @@
 //
-//  LRBJourney ViewController.m
-//  LRBTravel
+//  LRBJourneyViewController.m
+//  
 //
-//  Created by mq on 14-10-9.
-//  Copyright (c) 2014年 mqq.com. All rights reserved.
+//  Created by mq on 14/11/8.
+//
 //
 
-#import "LRBJourney ViewController.h"
+#import "LRBJourneyViewController.h"
 
 @interface LRBJourneyViewController ()
 

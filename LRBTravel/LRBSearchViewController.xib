@@ -33,14 +33,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="13" y="113" width="379" height="146"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                     </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-Tw-TCa">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="13" y="300" width="350" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                     </variation>
                 </tableView>
             </subviews>

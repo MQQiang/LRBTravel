@@ -11,7 +11,7 @@
 #import "REFrostedViewController.h"
 #import "LRBIndexViewController.h"
 #import "LRBSliderMenuViewController.h"
-
+#import "LRBNavigationController.h"
 
 @interface LRBLoginViewController ()
 
@@ -44,22 +44,27 @@
 
 -(void)userLoginSuccess
 {
+    
+    
     LRBIndexViewController *indexViewController = [[LRBIndexViewController alloc] init];
     
-     LRBSliderMenuViewController   *sliderMenuVc = [[LRBSliderMenuViewController alloc] init];
+    LRBNavigationController *navController = [[LRBNavigationController alloc] initWithRootViewController:indexViewController];
     
-    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:indexViewController menuViewController:sliderMenuVc];
+    LRBSliderMenuViewController   *sliderMenuVc = [[LRBSliderMenuViewController alloc] init];
+    
+    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navController menuViewController:sliderMenuVc];
     
     frostedViewController.direction = REFrostedViewControllerDirectionLeft;
     frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
     frostedViewController.liveBlur = YES;
 //    frostedViewController.delegate = self;
    
-    self.view.window.rootViewController = frostedViewController;
+//    self.view.window.rootViewController = frostedViewController;
     
 
     
     [self presentViewController:frostedViewController animated:YES completion:^(){}];
+//    [self.navigationController presentViewController:frostedViewController animated:YES completion:nil];
     
 }
 

@@ -9,6 +9,8 @@
 #import "LRBIndexViewController.h"
 #import "REFrostedViewController.h"
 #import "EScrollerView.h"
+#import "LRBNavigationController.h"
+#import "LRBSearchViewController.h"
 
 @interface LRBIndexViewController ()<EScrollerViewDelegate>
 
@@ -19,23 +21,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
 
+
+
+    
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:(LRBNavigationController *)self.navigationController
+                                                                            action:@selector(showMenu)];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showSearchViewController:)];
+    
+    
     EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 66, self.view.frame.size.width, 120)
                                                           ImageArray:[NSArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil]
                                                           TitleArray:[NSArray arrayWithObjects:@"11",@"22",@"33", nil]];
+    
     scroller.delegate=self;
     
     [self.view addSubview:scroller];
-
-
+    
     
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+
+  
+}
 -(void)viewDidAppear:(BOOL)animated
 {
-        [self edgePanGesture:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +67,9 @@
 -(void)EScrollerViewDidClicked:(NSUInteger)index{
     
     NSLog(@"%lu",(unsigned long)index);
+    
+    
+    
 }
 /*
 #pragma mark - Navigation
@@ -69,4 +92,14 @@
      [self.frostedViewController panGestureRecognized:sender];
     
 }
+
+-(void)showSearchViewController:(id)sender{
+    
+    LRBSearchViewController *searchVC = [[LRBSearchViewController alloc] init];
+    
+    [self.navigationController pushViewController:searchVC animated:YES];
+    
+}
+
+
 @end
