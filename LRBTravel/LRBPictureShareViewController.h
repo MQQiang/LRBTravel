@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LRBPictureShareViewController : UIViewController
+@interface LRBPictureShareViewController : LRBFirstLayerBaseViewController
 
 @end

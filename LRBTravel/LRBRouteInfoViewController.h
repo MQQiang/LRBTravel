@@ -17,5 +17,6 @@
 - (IBAction)presentNotice:(id)sender;
 - (IBAction)connectPhoneNumber:(id)sender;
 - (IBAction)enrollForJourney:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *presentLeaderInfo;
+- (IBAction)presentLeaderInfo:(id)sender;
+
 @end

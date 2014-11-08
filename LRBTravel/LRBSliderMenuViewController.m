@@ -5,13 +5,22 @@
 //  Created by mq on 14/11/7.
 //
 //
-
+#import "REFrostedViewController.h"
 #import "LRBSliderMenuViewController.h"
 #import "LRBUtil.h"
+#import "LRBPictureShareViewController.h"
+#import "LRBIndexViewController.h"
+#import "LRBNavigationController.h"
+#import "LRBShareAppViewController.h"
+#import "LRBFeedbackViewController.h"
+#import "LRBAboutUsViewController.h"
+#import "LRBSetupViewController.h"
+#import "LRBPersonInfoViewController.h"
 
 @interface LRBSliderMenuViewController ()
 {
     NSArray* _menuNameArray ;
+    NSInteger _nowViewTag;
 }
 
 
@@ -23,12 +32,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    _nowViewTag = 0;
      [LRBUtil drawCircleImage:_headImageView];
      _menuNameArray = @[@"精品路线",@"旅图分享",@"分享APP",@"意见反馈",@"关于旅人帮",@"设置"];
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
  
-    
+    [_headImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapppGestureRecognized:)]];
+   
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -83,7 +95,64 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_menuTableView deselectRowAtIndexPath:indexPath animated:YES];
+     [_menuTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    do {
+        if (_nowViewTag == indexPath.row) {
+            break;
+        }
+        
+       
+        
+        UIViewController * contentVc;
+        
+        switch (indexPath.row) {
+            case 0:
+                contentVc = [[LRBIndexViewController alloc] init];
+                
+                
+                break;
+            case 1:
+                contentVc = [[LRBPictureShareViewController alloc] init];
+                break;
+            case 2:
+                contentVc = [[LRBShareAppViewController alloc] init];
+                
+                break;
+            case 3:
+                contentVc = [[LRBFeedbackViewController alloc] init];
+                break;
+            case 4:
+                contentVc = [[LRBAboutUsViewController alloc] init];
+                break;
+            case 5:
+                contentVc = [[LRBSetupViewController alloc] init];
+                break;
+            default:
+                break;
+        }
+        
+         LRBNavigationController *navVc = [[LRBNavigationController alloc] initWithRootViewController:contentVc];
+        self.frostedViewController.contentViewController = navVc;
+        _nowViewTag = indexPath.row;
+        
+    } while (0);
+    
+    
+    
+    [self.frostedViewController hideMenuViewController];
+   
+}
+#pragma mark Gesture
+-(void)tapppGestureRecognized:(id)sender{
+    
+    LRBPersonInfoViewController *personVc = [[LRBPersonInfoViewController alloc] init];
+    
+    [self presentViewController:personVc animated:YES completion:^(){
+        
+        [self.frostedViewController hideMenuViewController];
+    }];
+    
 }
 
 @end

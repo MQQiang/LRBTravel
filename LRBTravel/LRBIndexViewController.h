@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class EScrollerView;
-@interface LRBIndexViewController : UIViewController
+@interface LRBIndexViewController : LRBFirstLayerBaseViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *indexTableView;
 

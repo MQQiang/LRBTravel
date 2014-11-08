@@ -11,6 +11,8 @@
 @interface LRBPersonInfoViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIView *selfInfoView;
+@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
 
+- (IBAction)backtoForward:(id)sender;
 
 @end

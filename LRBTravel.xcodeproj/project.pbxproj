@@ -13,7 +13,6 @@
 		0E363BFB1A0905770075A38C /* LRBTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E363BF91A0905770075A38C /* LRBTestViewController.xib */; };
 		0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */; };
 		0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */; };
-		0E6D695019E6BB20007C63F4 /* LRBLeaderInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694F19E6BB20007C63F4 /* LRBLeaderInfoViewController.m */; };
 		0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */; };
 		0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */; };
 		0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695C19E6BC34007C63F4 /* LRBRouteInfoViewController.m */; };
@@ -46,6 +45,19 @@
 		0E9211151A0D284600D3BDFB /* LRBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9211141A0D284600D3BDFB /* LRBNavigationController.m */; };
 		0E943D1F19E6DB2B0085B1E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E943D1E19E6DB2B0085B1E2 /* CoreGraphics.framework */; };
 		0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */; };
+		0EE7C5711A0E68C70064F315 /* LRBIndexViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C56F1A0E68C70064F315 /* LRBIndexViewTableViewCell.m */; };
+		0EE7C5721A0E68C70064F315 /* LRBIndexViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C5701A0E68C70064F315 /* LRBIndexViewTableViewCell.xib */; };
+		0EE7C5761A0E7A9B0064F315 /* LRBShareAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C5741A0E7A9B0064F315 /* LRBShareAppViewController.m */; };
+		0EE7C5771A0E7A9B0064F315 /* LRBShareAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C5751A0E7A9B0064F315 /* LRBShareAppViewController.xib */; };
+		0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C5791A0E7AE70064F315 /* LRBFeedbackViewController.m */; };
+		0EE7C57C1A0E7AE70064F315 /* LRBFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C57A1A0E7AE70064F315 /* LRBFeedbackViewController.xib */; };
+		0EE7C5801A0E7B220064F315 /* LRBAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C57E1A0E7B220064F315 /* LRBAboutUsViewController.m */; };
+		0EE7C5811A0E7B220064F315 /* LRBAboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C57F1A0E7B220064F315 /* LRBAboutUsViewController.xib */; };
+		0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C5831A0E7BA50064F315 /* LRBSetupViewController.m */; };
+		0EE7C5861A0E7BA50064F315 /* LRBSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C5841A0E7BA50064F315 /* LRBSetupViewController.xib */; };
+		0EE7C5891A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */; };
+		0EE7C58F1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C58D1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m */; };
+		0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */; };
 		F5FC73BBDEAE4B81AD2D80D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5767629C9B74237BE1BBAF5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +81,6 @@
 		0E6D694919E6BAB6007C63F4 /* LRBShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBShareViewController.h; sourceTree = "<group>"; };
 		0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBShareViewController.m; sourceTree = "<group>"; };
 		0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBShareViewController.xib; sourceTree = "<group>"; };
-		0E6D694E19E6BB20007C63F4 /* LRBLeaderInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBLeaderInfoViewController.h; sourceTree = "<group>"; };
-		0E6D694F19E6BB20007C63F4 /* LRBLeaderInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBLeaderInfoViewController.m; sourceTree = "<group>"; };
 		0E6D695119E6BB66007C63F4 /* LRBPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPersonInfoViewController.h; sourceTree = "<group>"; };
 		0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPersonInfoViewController.m; sourceTree = "<group>"; };
 		0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPersonInfoViewController.xib; sourceTree = "<group>"; };
@@ -122,6 +132,27 @@
 		0E943D1E19E6DB2B0085B1E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0EBD7F9D1A01CAEC00802544 /* LRBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBUtil.h; sourceTree = "<group>"; };
 		0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBUtil.m; sourceTree = "<group>"; };
+		0EE7C56E1A0E68C70064F315 /* LRBIndexViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBIndexViewTableViewCell.h; sourceTree = "<group>"; };
+		0EE7C56F1A0E68C70064F315 /* LRBIndexViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBIndexViewTableViewCell.m; sourceTree = "<group>"; };
+		0EE7C5701A0E68C70064F315 /* LRBIndexViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBIndexViewTableViewCell.xib; sourceTree = "<group>"; };
+		0EE7C5731A0E7A9B0064F315 /* LRBShareAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBShareAppViewController.h; sourceTree = "<group>"; };
+		0EE7C5741A0E7A9B0064F315 /* LRBShareAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBShareAppViewController.m; sourceTree = "<group>"; };
+		0EE7C5751A0E7A9B0064F315 /* LRBShareAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBShareAppViewController.xib; sourceTree = "<group>"; };
+		0EE7C5781A0E7AE70064F315 /* LRBFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFeedbackViewController.h; sourceTree = "<group>"; };
+		0EE7C5791A0E7AE70064F315 /* LRBFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFeedbackViewController.m; sourceTree = "<group>"; };
+		0EE7C57A1A0E7AE70064F315 /* LRBFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBFeedbackViewController.xib; sourceTree = "<group>"; };
+		0EE7C57D1A0E7B220064F315 /* LRBAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBAboutUsViewController.h; sourceTree = "<group>"; };
+		0EE7C57E1A0E7B220064F315 /* LRBAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBAboutUsViewController.m; sourceTree = "<group>"; };
+		0EE7C57F1A0E7B220064F315 /* LRBAboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBAboutUsViewController.xib; sourceTree = "<group>"; };
+		0EE7C5821A0E7BA50064F315 /* LRBSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBSetupViewController.h; sourceTree = "<group>"; };
+		0EE7C5831A0E7BA50064F315 /* LRBSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBSetupViewController.m; sourceTree = "<group>"; };
+		0EE7C5841A0E7BA50064F315 /* LRBSetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBSetupViewController.xib; sourceTree = "<group>"; };
+		0EE7C5871A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFirstLayerBaseViewController.h; sourceTree = "<group>"; };
+		0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFirstLayerBaseViewController.m; sourceTree = "<group>"; };
+		0EE7C58B1A0E7D6D0064F315 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0EE7C58C1A0E8B2C0064F315 /* LRBLeaderinfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBLeaderinfoViewController.h; sourceTree = "<group>"; };
+		0EE7C58D1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBLeaderinfoViewController.m; sourceTree = "<group>"; };
+		0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBLeaderinfoViewController.xib; sourceTree = "<group>"; };
 		5A4FF41F99C04A709DCC081B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F5767629C9B74237BE1BBAF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,21 +180,21 @@
 		0E6D697519E6BE0F007C63F4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E9211131A0D284600D3BDFB /* LRBNavigationController.h */,
+				0E9211141A0D284600D3BDFB /* LRBNavigationController.m */,
 				0E363BF71A0905770075A38C /* LRBTestViewController.h */,
 				0E363BF81A0905770075A38C /* LRBTestViewController.m */,
 				0E363BF91A0905770075A38C /* LRBTestViewController.xib */,
+				0E9211061A0CB4B200D3BDFB /* LRBSliderMenuViewController.h */,
+				0E9211071A0CB4B200D3BDFB /* LRBSliderMenuViewController.m */,
+				0E9211081A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib */,
+				0EE7C58A1A0E7D020064F315 /* FirstLayerVC */,
 				0E3625381A0D394500B53C0C /* LRBJourneyViewController.h */,
 				0E3625391A0D394500B53C0C /* LRBJourneyViewController.m */,
 				0E36253A1A0D394500B53C0C /* LRBJourneyViewController.xib */,
 				0E92110B1A0CB4F900D3BDFB /* LRBLoginViewController.h */,
 				0E92110C1A0CB4F900D3BDFB /* LRBLoginViewController.m */,
 				0E92110D1A0CB4F900D3BDFB /* LRBLoginViewController.xib */,
-				0E9211061A0CB4B200D3BDFB /* LRBSliderMenuViewController.h */,
-				0E9211071A0CB4B200D3BDFB /* LRBSliderMenuViewController.m */,
-				0E9211081A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib */,
-				0E6D696519E6BCE2007C63F4 /* LRBIndexViewController.h */,
-				0E6D696619E6BCE2007C63F4 /* LRBIndexViewController.m */,
-				0E6D696719E6BCE2007C63F4 /* LRBIndexViewController.xib */,
 				0E6D695B19E6BC34007C63F4 /* LRBRouteInfoViewController.h */,
 				0E6D695C19E6BC34007C63F4 /* LRBRouteInfoViewController.m */,
 				0E6D695D19E6BC34007C63F4 /* LRBRouteInfoViewController.xib */,
@@ -179,14 +210,6 @@
 				0E6D696A19E6BD2C007C63F4 /* LRBNotificationViewController.h */,
 				0E6D696B19E6BD2C007C63F4 /* LRBNotificationViewController.m */,
 				0E7AA2CC19FBC97200B59782 /* LRBNotificationViewController.xib */,
-				0E6D696019E6BC9A007C63F4 /* LRBPictureShareViewController.h */,
-				0E6D696119E6BC9A007C63F4 /* LRBPictureShareViewController.m */,
-				0E6D696219E6BC9A007C63F4 /* LRBPictureShareViewController.xib */,
-				0E6D695119E6BB66007C63F4 /* LRBPersonInfoViewController.h */,
-				0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */,
-				0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */,
-				0E6D694E19E6BB20007C63F4 /* LRBLeaderInfoViewController.h */,
-				0E6D694F19E6BB20007C63F4 /* LRBLeaderInfoViewController.m */,
 				0E6D694919E6BAB6007C63F4 /* LRBShareViewController.h */,
 				0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */,
 				0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */,
@@ -270,14 +293,57 @@
 		0EBD7FA01A01CAF200802544 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0EE7C58B1A0E7D6D0064F315 /* PrefixHeader.pch */,
 				0E9211101A0D10AF00D3BDFB /* EScrollerView.h */,
 				0E9211111A0D10AF00D3BDFB /* EScrollerView.m */,
 				0EBD7F9D1A01CAEC00802544 /* LRBUtil.h */,
 				0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */,
-				0E9211131A0D284600D3BDFB /* LRBNavigationController.h */,
-				0E9211141A0D284600D3BDFB /* LRBNavigationController.m */,
+				0EE7C5871A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.h */,
+				0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */,
 			);
 			name = Tool;
+			sourceTree = "<group>";
+		};
+		0EE7C56D1A0E688C0064F315 /* IndexViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0EE7C56E1A0E68C70064F315 /* LRBIndexViewTableViewCell.h */,
+				0EE7C56F1A0E68C70064F315 /* LRBIndexViewTableViewCell.m */,
+				0EE7C5701A0E68C70064F315 /* LRBIndexViewTableViewCell.xib */,
+			);
+			name = IndexViewCell;
+			sourceTree = "<group>";
+		};
+		0EE7C58A1A0E7D020064F315 /* FirstLayerVC */ = {
+			isa = PBXGroup;
+			children = (
+				0EE7C58C1A0E8B2C0064F315 /* LRBLeaderinfoViewController.h */,
+				0EE7C58D1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m */,
+				0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */,
+				0E6D695119E6BB66007C63F4 /* LRBPersonInfoViewController.h */,
+				0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */,
+				0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */,
+				0EE7C5781A0E7AE70064F315 /* LRBFeedbackViewController.h */,
+				0EE7C5791A0E7AE70064F315 /* LRBFeedbackViewController.m */,
+				0EE7C57A1A0E7AE70064F315 /* LRBFeedbackViewController.xib */,
+				0EE7C5821A0E7BA50064F315 /* LRBSetupViewController.h */,
+				0EE7C5831A0E7BA50064F315 /* LRBSetupViewController.m */,
+				0EE7C5841A0E7BA50064F315 /* LRBSetupViewController.xib */,
+				0EE7C57D1A0E7B220064F315 /* LRBAboutUsViewController.h */,
+				0EE7C57E1A0E7B220064F315 /* LRBAboutUsViewController.m */,
+				0EE7C57F1A0E7B220064F315 /* LRBAboutUsViewController.xib */,
+				0E6D696519E6BCE2007C63F4 /* LRBIndexViewController.h */,
+				0E6D696619E6BCE2007C63F4 /* LRBIndexViewController.m */,
+				0E6D696719E6BCE2007C63F4 /* LRBIndexViewController.xib */,
+				0EE7C56D1A0E688C0064F315 /* IndexViewCell */,
+				0E6D696019E6BC9A007C63F4 /* LRBPictureShareViewController.h */,
+				0E6D696119E6BC9A007C63F4 /* LRBPictureShareViewController.m */,
+				0E6D696219E6BC9A007C63F4 /* LRBPictureShareViewController.xib */,
+				0EE7C5731A0E7A9B0064F315 /* LRBShareAppViewController.h */,
+				0EE7C5741A0E7A9B0064F315 /* LRBShareAppViewController.m */,
+				0EE7C5751A0E7A9B0064F315 /* LRBShareAppViewController.xib */,
+			);
+			name = FirstLayerVC;
 			sourceTree = "<group>";
 		};
 		339158B191734CDCB53F9FB3 /* Frameworks */ = {
@@ -377,12 +443,18 @@
 				0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */,
 				0E6D696919E6BCE2007C63F4 /* LRBIndexViewController.xib in Resources */,
 				0E6D697119E6BD70007C63F4 /* LRBNotificationDetailViewController.xib in Resources */,
+				0EE7C5771A0E7A9B0064F315 /* LRBShareAppViewController.xib in Resources */,
 				0E92110A1A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib in Resources */,
 				0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */,
 				0E7AA2DF19FBD4DE00B59782 /* LRBFillFromViewController.xib in Resources */,
+				0EE7C5811A0E7B220064F315 /* LRBAboutUsViewController.xib in Resources */,
 				0E7AA2CB19FBC6BE00B59782 /* LRBSearchViewController.xib in Resources */,
+				0EE7C5861A0E7BA50064F315 /* LRBSetupViewController.xib in Resources */,
+				0EE7C57C1A0E7AE70064F315 /* LRBFeedbackViewController.xib in Resources */,
 				0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */,
+				0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */,
 				0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */,
+				0EE7C5721A0E68C70064F315 /* LRBIndexViewTableViewCell.xib in Resources */,
 				0E6D695F19E6BC34007C63F4 /* LRBRouteInfoViewController.xib in Resources */,
 				0E71CA7219E4CC9C003C9F2D /* Images.xcassets in Resources */,
 				0E7AA2D319FBCBBF00B59782 /* LRBNotificationCellTableViewCell.xib in Resources */,
@@ -438,20 +510,26 @@
 			files = (
 				0E9211121A0D10AF00D3BDFB /* EScrollerView.m in Sources */,
 				0E7AA2DE19FBD4DE00B59782 /* LRBFillFromViewController.m in Sources */,
+				0EE7C5891A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m in Sources */,
 				0E6D697019E6BD70007C63F4 /* LRBNotificationDetailViewController.m in Sources */,
 				0E9211091A0CB4B200D3BDFB /* LRBSliderMenuViewController.m in Sources */,
 				0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */,
 				0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
+				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,
 				0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */,
-				0E6D695019E6BB20007C63F4 /* LRBLeaderInfoViewController.m in Sources */,
+				0EE7C5761A0E7A9B0064F315 /* LRBShareAppViewController.m in Sources */,
+				0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */,
 				0E7AA2CA19FBC6BE00B59782 /* LRBSearchViewController.m in Sources */,
 				0E9211151A0D284600D3BDFB /* LRBNavigationController.m in Sources */,
+				0EE7C58F1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m in Sources */,
 				0E71CA6A19E4CC9C003C9F2D /* LRBTravel.xcdatamodeld in Sources */,
 				0E71CA6719E4CC9C003C9F2D /* AppDelegate.m in Sources */,
 				0E71CA6419E4CC9C003C9F2D /* main.m in Sources */,
 				0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */,
+				0EE7C5801A0E7B220064F315 /* LRBAboutUsViewController.m in Sources */,
+				0EE7C5711A0E68C70064F315 /* LRBIndexViewTableViewCell.m in Sources */,
 				0E363BFA1A0905770075A38C /* LRBTestViewController.m in Sources */,
 				0E6D696C19E6BD2C007C63F4 /* LRBNotificationViewController.m in Sources */,
 				0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */,
@@ -572,6 +650,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LRBTravel/PrefixHeader.pch;
 				INFOPLIST_FILE = LRBTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -586,6 +666,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LRBTravel/PrefixHeader.pch;
 				INFOPLIST_FILE = LRBTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

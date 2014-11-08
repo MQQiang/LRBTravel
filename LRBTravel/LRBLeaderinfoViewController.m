@@ -1,22 +1,22 @@
 //
-//  LRBLeaderInfoViewController.m
-//  LRBTravel
+//  LRBLeaderinfoViewController.m
+//  
 //
-//  Created by mq on 14-10-9.
-//  Copyright (c) 2014年 mqq.com. All rights reserved.
+//  Created by mq on 14/11/9.
+//
 //
 
-#import "LRBLeaderInfoViewController.h"
+#import "LRBLeaderinfoViewController.h"
 
-@interface LRBLeaderInfoViewController ()
+@interface LRBLeaderinfoViewController ()
 
 @end
 
-@implementation LRBLeaderInfoViewController
+@implementation LRBLeaderinfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +34,8 @@
 }
 */
 
+- (IBAction)backtoForward:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -9,7 +9,7 @@
 #import "LRBRouteInfoViewController.h"
 #import "EScrollerView.h"
 #import "LRBFillFromViewController.h"
-
+#import "LRBLeaderInfoViewController.h"
 
 @interface LRBRouteInfoViewController ()<EScrollerViewDelegate>{
     
@@ -88,6 +88,21 @@
     LRBFillFromViewController  *fillFormVC = [LRBFillFromViewController new];
     
     [self.navigationController pushViewController:fillFormVC animated:YES];
+    
+}
+
+- (IBAction)presentLeaderInfo:(id)sender {
+    
+    LRBLeaderinfoViewController * leaderInfoVC = [[LRBLeaderinfoViewController alloc] init];
+    
+    leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:leaderInfoVC animated:YES completion:^(){
+       
+        leaderInfoVC.view.superview.backgroundColor = [UIColor clearColor];
+        
+    }];
+    
     
 }
 

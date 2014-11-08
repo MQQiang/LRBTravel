@@ -1,18 +1,18 @@
 //
-//  LRBPersonInfoViewController.m
+//  LRBShareAppViewController.m
 //  LRBTravel
 //
-//  Created by mq on 14-10-9.
+//  Created by mq on 14/11/9.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBPersonInfoViewController.h"
+#import "LRBShareAppViewController.h"
 
-@interface LRBPersonInfoViewController ()
+@interface LRBShareAppViewController ()
 
 @end
 
-@implementation LRBPersonInfoViewController
+@implementation LRBShareAppViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +34,4 @@
 }
 */
 
-- (IBAction)backtoForward:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

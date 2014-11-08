@@ -1,18 +1,18 @@
 //
-//  LRBPersonInfoViewController.m
+//  LRBFeedbackViewController.m
 //  LRBTravel
 //
-//  Created by mq on 14-10-9.
+//  Created by mq on 14/11/9.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBPersonInfoViewController.h"
+#import "LRBFeedbackViewController.h"
 
-@interface LRBPersonInfoViewController ()
+@interface LRBFeedbackViewController ()
 
 @end
 
-@implementation LRBPersonInfoViewController
+@implementation LRBFeedbackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +34,4 @@
 }
 */
 
-- (IBAction)backtoForward:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

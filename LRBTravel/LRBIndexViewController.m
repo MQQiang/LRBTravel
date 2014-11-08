@@ -12,8 +12,14 @@
 #import "LRBNavigationController.h"
 #import "LRBSearchViewController.h"
 #import "LRBRouteInfoViewController.h"
+#import "LRBIndexViewTableViewCell.h"
 
-@interface LRBIndexViewController ()<EScrollerViewDelegate>
+#define kIndexTableViewCellID @"IndexTableViewCellID"
+
+
+@interface LRBIndexViewController ()<EScrollerViewDelegate,UITableViewDelegate,UITableViewDataSource>{
+    NSMutableArray *_guideImageArray;
+}
 
 @end
 
@@ -22,18 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _guideImageArray = [NSMutableArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil];
+    
+    _indexTableView.dataSource = self;
+    _indexTableView.delegate = self;
+    [_indexTableView registerNib:[UINib nibWithNibName:@"LRBIndexViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexTableViewCellID];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
-
-
-
-    
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"]
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:(LRBNavigationController *)self.navigationController
-                                                                            action:@selector(showMenu)];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showSearchViewController:)];
     
@@ -78,6 +81,30 @@
     [self.navigationController pushViewController:routeInfoVC animated:YES];
     
     
+}
+
+#pragma mark - Table
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LRBIndexViewTableViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
+    
+    [cell setupCell:[UIImage imageNamed:[_guideImageArray objectAtIndex:indexPath.row]]];
+    
+    return cell;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    
+    return [_guideImageArray count];
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self EScrollerViewDidClicked:1];
 }
 /*
 #pragma mark - Navigation
