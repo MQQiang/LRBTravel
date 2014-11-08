@@ -11,7 +11,10 @@
 #import "LRBFillFromViewController.h"
 
 
-@interface LRBRouteInfoViewController ()<EScrollerViewDelegate>
+@interface LRBRouteInfoViewController ()<EScrollerViewDelegate>{
+    
+    UIBarButtonItem *_favouriteButton;
+}
 
 @end
 
@@ -29,6 +32,12 @@
     scroller.delegate=self;
     
     [self.view addSubview:scroller];
+    
+    self.title = @"路线详情";
+    
+//    _favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite"]style:UIBarButtonItemStylePlain target:self action:@selector(addThisToMyFavourite:)];
+//    
+//    self.navigationItem.rightBarButtonItem = _favouriteButton;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -46,7 +55,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark - Button Method
 
 -(void)EScrollerViewDidClicked:(NSUInteger)index{
     
@@ -80,5 +89,11 @@
     
     [self.navigationController pushViewController:fillFormVC animated:YES];
     
+}
+
+#pragma mark - selector
+-(void)addThisToMyFavourite:(id)sender{
+    
+    _favouriteButton.image = [UIImage imageNamed:@"favorite"];
 }
 @end
