@@ -10,6 +10,7 @@
                 <outlet property="hotTagView" destination="NLX-Oa-yCj" id="kB8-qU-zlk"/>
                 <outlet property="resultTableView" destination="wfX-Tw-TCa" id="Zpi-Fl-U9u"/>
                 <outlet property="searchBar" destination="Bvv-PT-0qU" id="ADA-pj-tg4"/>
+                <outlet property="searchDisplayController" destination="Niv-Um-aZy" id="oEq-0k-tSe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <textInputTraits key="textInputTraits"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="57" width="400" height="44"/>
+                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                     </variation>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qKa-xP-0FS">
@@ -31,9 +32,102 @@
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLX-Oa-yCj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlX-42-qog">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" red="0.91180294750000002" green="0.77901237099999998" blue="0.42109172569999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="25" y="8" width="2" height="22"/>
+                            </variation>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门标签" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTa-d6-pIy">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="30" y="8" width="78" height="21"/>
+                            </variation>
+                        </label>
+                        <button opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-ef-DQL">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="0.2213992182" green="0.67061093319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="摄影">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="30" y="35" width="39" height="30"/>
+                            </variation>
+                        </button>
+                        <button opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-Ff-Ufr">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="尼泊尔">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="98" y="35" width="51" height="30"/>
+                            </variation>
+                        </button>
+                        <button opaque="NO" alpha="0.5499999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNt-4v-V4c">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="自由行">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="176" y="35" width="50" height="30"/>
+                            </variation>
+                        </button>
+                        <button opaque="NO" alpha="0.5499999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNs-LU-mbG">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.40951287284202098" blue="0.92717608360465831" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="登山">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="258" y="35" width="46" height="30"/>
+                            </variation>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgD-Ml-9RV">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="0.91180294750000002" green="0.77901237099999998" blue="0.42109172569999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="西班牙">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="30" y="70" width="53" height="30"/>
+                            </variation>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="SlX-42-qog"/>
+                            <exclude reference="UTa-d6-pIy"/>
+                            <exclude reference="x2i-ef-DQL"/>
+                            <exclude reference="nl6-Ff-Ufr"/>
+                            <exclude reference="hNt-4v-V4c"/>
+                            <exclude reference="QNs-LU-mbG"/>
+                            <exclude reference="NgD-Ml-9RV"/>
+                        </mask>
+                    </variation>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                        <rect key="frame" x="0.0" y="120" width="320" height="100"/>
+                        <mask key="subviews">
+                            <include reference="SlX-42-qog"/>
+                            <include reference="UTa-d6-pIy"/>
+                            <include reference="x2i-ef-DQL"/>
+                            <include reference="nl6-Ff-Ufr"/>
+                            <include reference="hNt-4v-V4c"/>
+                            <include reference="QNs-LU-mbG"/>
+                            <include reference="NgD-Ml-9RV"/>
+                        </mask>
                     </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-Tw-TCa">
@@ -45,6 +139,7 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="Bvv-PT-0qU"/>
@@ -63,5 +158,23 @@
             </variation>
             <point key="canvasLocation" x="229" y="343"/>
         </view>
+        <searchBar contentMode="redraw" id="anV-Kl-cTK">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <textInputTraits key="textInputTraits"/>
+            <connections>
+                <outlet property="delegate" destination="-1" id="4Ac-R5-nTa"/>
+            </connections>
+            <point key="canvasLocation" x="547" y="452"/>
+        </searchBar>
+        <searchDisplayController id="Niv-Um-aZy">
+            <connections>
+                <outlet property="delegate" destination="-1" id="o4q-Sc-D5D"/>
+                <outlet property="searchBar" destination="anV-Kl-cTK" id="cdH-9G-n01"/>
+                <outlet property="searchContentsController" destination="-1" id="gxY-Fu-yct"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="1fR-v1-Mad"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="YG3-6J-3Ms"/>
+            </connections>
+        </searchDisplayController>
     </objects>
 </document>

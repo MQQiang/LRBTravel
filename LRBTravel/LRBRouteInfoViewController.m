@@ -7,8 +7,11 @@
 //
 
 #import "LRBRouteInfoViewController.h"
+#import "EScrollerView.h"
+#import "LRBFillFromViewController.h"
 
-@interface LRBRouteInfoViewController ()
+
+@interface LRBRouteInfoViewController ()<EScrollerViewDelegate>
 
 @end
 
@@ -16,6 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 66, self.view.frame.size.width, 150)
+                                                          ImageArray:[NSArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil]
+                                                          TitleArray:[NSArray arrayWithObjects:@"11",@"22",@"33", nil]];
+    
+    scroller.delegate=self;
+    
+    [self.view addSubview:scroller];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,4 +47,38 @@
 }
 */
 
+
+-(void)EScrollerViewDidClicked:(NSUInteger)index{
+    
+    
+}
+- (IBAction)presentPathInfo:(id)sender {
+    
+}
+
+- (IBAction)presentArrangeMemt:(id)sender {
+    
+}
+
+- (IBAction)presentEquipmentRequire:(id)sender {
+    
+}
+
+- (IBAction)presentCostInfo:(id)sender {
+    
+}
+
+- (IBAction)presentNotice:(id)sender {
+    
+}
+- (IBAction)connectPhoneNumber:(id)sender {
+}
+
+- (IBAction)enrollForJourney:(id)sender {
+    
+    LRBFillFromViewController  *fillFormVC = [LRBFillFromViewController new];
+    
+    [self.navigationController pushViewController:fillFormVC animated:YES];
+    
+}
 @end

@@ -9,6 +9,7 @@
         <scene sceneID="vdD-da-bWe">
             <objects>
                 <navigationController id="nt7-A6-Rbd" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gz0-EG-4db">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,7 +30,7 @@
                         <viewControllerLayoutGuide type="top" id="URa-kT-yLF"/>
                         <viewControllerLayoutGuide type="bottom" id="JZh-bA-3lO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eKu-Oo-Rdr">
+                    <view key="view" contentMode="scaleAspectFill" id="eKu-Oo-Rdr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -73,10 +74,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="yt9-bX-pbm"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iW-8i-sA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="100.5"/>
+            <point key="canvasLocation" x="102.75" y="109.875"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -231,13 +233,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="alT-Fq-nwz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="headImage" destination="2QB-Zq-dCs" id="Oql-kv-Ntl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.5" y="104.25"/>
+            <point key="canvasLocation" x="846.75" y="103.875"/>
         </scene>
         <!--Leader Info View Controller-->
         <scene sceneID="e7s-Nf-AKZ">
@@ -414,6 +417,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZr-Rm-Dq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

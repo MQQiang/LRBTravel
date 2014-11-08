@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%f %f",self.view.frame.size.width,self.view.frame.size.height);
     // Do any additional setup after loading the view from its nib.
 }
 

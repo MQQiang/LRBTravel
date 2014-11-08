@@ -11,6 +11,7 @@
 #import "EScrollerView.h"
 #import "LRBNavigationController.h"
 #import "LRBSearchViewController.h"
+#import "LRBRouteInfoViewController.h"
 
 @interface LRBIndexViewController ()<EScrollerViewDelegate>
 
@@ -67,7 +68,9 @@
 -(void)EScrollerViewDidClicked:(NSUInteger)index{
     
     NSLog(@"%lu",(unsigned long)index);
+    LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
     
+    [self.navigationController pushViewController:routeInfoVC animated:YES];
     
     
 }
