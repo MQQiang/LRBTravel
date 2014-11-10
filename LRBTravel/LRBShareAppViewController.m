@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"分享旅人帮";
     // Do any additional setup after loading the view from its nib.
 }
 

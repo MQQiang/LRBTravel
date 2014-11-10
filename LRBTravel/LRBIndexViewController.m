@@ -78,6 +78,8 @@
     NSLog(@"%lu",(unsigned long)index);
     LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
     
+//    routeInfoVC = self.view.window.rootViewController;
+    
     [self.navigationController pushViewController:routeInfoVC animated:YES];
     
     

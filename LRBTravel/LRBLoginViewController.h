@@ -12,5 +12,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *headImage;
 
 -(IBAction)loginInWithQQ:(id)sender;
+- (IBAction)loginWithWeiChat:(id)sender;
+- (IBAction)loginWifhWeiBo:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *userName;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+- (IBAction)forgetPassword:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "LRBLeaderinfoViewController.h"
+#import "UIImage+ImageEffects.h"
 
 @interface LRBLeaderinfoViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [LRBUtil drawCircleImage: self.bgImageView ];
+//        [self.bgImageView.image applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:1 alpha:0.2] saturationDeltaFactor:1.8 maskImage:nil];
+//    self.bgImageView.alpha = 0;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +29,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.bgImageView.alpha = 1;
+}
 /*
 #pragma mark - Navigation
 

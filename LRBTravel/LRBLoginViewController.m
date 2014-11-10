@@ -40,6 +40,12 @@
     [self userLoginSuccess];
 }
 
+- (IBAction)loginWithWeiChat:(id)sender {
+}
+
+- (IBAction)loginWifhWeiBo:(id)sender {
+}
+
 
 
 -(void)userLoginSuccess
@@ -83,4 +89,6 @@
 }
 */
 
+- (IBAction)forgetPassword:(id)sender {
+}
 @end

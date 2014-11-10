@@ -7,10 +7,15 @@
 //
 
 #import "LRBFillFromViewController.h"
+#import "LRBFillFormTableViewCell.h"
+
+#define kFillFormTableViewCellID @"FillFormTableViewCellID"
+
 
 @interface LRBFillFromViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSArray * _headTitleArray;
+    NSArray *_contentTitleArray;
 }
 
 @end
@@ -19,12 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"报名";
     _formTableView.dataSource = self;
     _formTableView.delegate  = self;
-    
+    [_formTableView registerNib:[UINib nibWithNibName:@"LRBFillFormTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kFillFormTableViewCellID];
    _headTitleArray = @[@"订单信息" , @"联系人信息"];
     
+    _formTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
+    _contentTitleArray = @[@[@"出发日期：",@"报名人数：",@"价格："],@[@"姓名：",@"电话：",@"邮箱："]];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -47,19 +54,20 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [[UITableViewCell alloc] init];
+    LRBFillFormTableViewCell * cell = [_formTableView dequeueReusableCellWithIdentifier:kFillFormTableViewCellID];
+    cell.titleLabel.text = [[_contentTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 20.0f;
+    return 45.0f;
 }
 
 /*

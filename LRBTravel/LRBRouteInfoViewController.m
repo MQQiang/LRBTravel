@@ -10,6 +10,8 @@
 #import "EScrollerView.h"
 #import "LRBFillFromViewController.h"
 #import "LRBLeaderInfoViewController.h"
+#import "UIImage+ImageEffects.h"
+
 
 @interface LRBRouteInfoViewController ()<EScrollerViewDelegate>{
     
@@ -35,9 +37,11 @@
     
     self.title = @"路线详情";
     
-//    _favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite"]style:UIBarButtonItemStylePlain target:self action:@selector(addThisToMyFavourite:)];
-//    
-//    self.navigationItem.rightBarButtonItem = _favouriteButton;
+    
+    
+    _favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite"]style:UIBarButtonItemStylePlain target:self action:@selector(addThisToMyFavourite:)];
+//
+    self.navigationItem.rightBarButtonItem = _favouriteButton;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -45,7 +49,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -81,6 +88,8 @@
     
 }
 - (IBAction)connectPhoneNumber:(id)sender {
+    
+    [LRBUtil makePhoneCall:@"13656678405"];
 }
 
 - (IBAction)enrollForJourney:(id)sender {
@@ -95,13 +104,28 @@
     
     LRBLeaderinfoViewController * leaderInfoVC = [[LRBLeaderinfoViewController alloc] init];
     
+//    leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
+//    
+//    [self presentViewController:leaderInfoVC animated:YES completion:^(){
+//       
+//        leaderInfoVC.view.backgroundColor = [UIColor clearColor];
+//        
+//    }];
+    
+//    leaderInfoVC.view.backgroundColor = [UIColor clearColor];
+//    
+//    [leaderInfoVC.bgImageView setImage:[LRBUtil fullScreenShots]];
+//    
+
+
+    
     leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
     
-    [self presentViewController:leaderInfoVC animated:YES completion:^(){
-       
-        leaderInfoVC.view.superview.backgroundColor = [UIColor clearColor];
-        
-    }];
+        [self presentViewController:leaderInfoVC animated:YES completion:^(){
+    
+//            leaderInfoVC.view.superview.backgroundColor = [UIColor clearColor];
+    
+        }];
     
     
 }

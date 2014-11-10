@@ -179,7 +179,7 @@
                         <rect key="frame" x="65" y="505" width="60" height="30"/>
                     </variation>
                     <connections>
-                        <action selector="connectPhoneNumber:" destination="-1" eventType="touchDragInside" id="0iq-Wo-4RF"/>
+                        <action selector="connectPhoneNumber:" destination="-1" eventType="touchUpInside" id="OyS-3q-SXJ"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="预定须知" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-Yn-UMH">
@@ -193,6 +193,7 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="subviews">

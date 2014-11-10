@@ -11,6 +11,6 @@
 @interface LRBUtil : NSObject
 
 +(void)drawCircleImage:(UIImageView *) imageView;
-
-
++(void)makePhoneCall:(NSString *)phoneNumber;
++(UIImage*)fullScreenShots;
 @end

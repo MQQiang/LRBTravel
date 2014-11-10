@@ -10,5 +10,7 @@
 
 @interface LRBLeaderinfoViewController : UIViewController
 - (IBAction)backtoForward:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (strong, nonatomic) IBOutlet UITextView *detailTextView;
 
 @end

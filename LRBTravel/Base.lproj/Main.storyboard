@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7hs-C4-4x4" kind="relationship" relationship="rootViewController" id="MMJ-gZ-g2V"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="8sX-r3-dfh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9x-Mf-RNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,7 +31,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JZh-bA-3lO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFill" id="eKu-Oo-Rdr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3Q-63-Qjd">
@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iW-8i-sA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102.75" y="109.875"/>
+            <point key="canvasLocation" x="15.75" y="486.375"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -89,7 +89,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="JYE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mq" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-Zq-dCs">
@@ -144,6 +144,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="117" y="302" width="60" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="loginWithWeiChat:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n3t-cI-z7n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR7-f3-YJy">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -154,6 +157,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="206" y="302" width="90" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="loginWifhWeiBo:" destination="vXZ-lx-hvc" eventType="touchUpOutside" id="dAS-yw-wGK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-Zi-G3m">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -167,6 +173,30 @@
                                     <rect key="frame" x="34" y="187" width="67" height="28"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5M-WD-GbE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="忘记密码？">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="131" y="397" width="75" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="forgetPassword:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Ct-BX-XA8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-O8-xUB">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="102" y="224" width="208" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="96" y="224" width="208" height="30"/>
+                                </variation>
+                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-CV-GRZ">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,27 +210,6 @@
                                     <rect key="frame" x="34" y="225" width="69" height="28"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5M-WD-GbE">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="忘记密码？">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="131" y="397" width="75" height="30"/>
-                                </variation>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-O8-xUB">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="102" y="224" width="208" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="97" y="224" width="208" height="30"/>
-                                </variation>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.22139921821017572" green="0.67061093321790266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -212,9 +221,9 @@
                                 <exclude reference="kKl-7a-2WW"/>
                                 <exclude reference="FR7-f3-YJy"/>
                                 <exclude reference="Cj4-Zi-G3m"/>
-                                <exclude reference="GcA-CV-GRZ"/>
                                 <exclude reference="k5M-WD-GbE"/>
                                 <exclude reference="FEg-O8-xUB"/>
+                                <exclude reference="GcA-CV-GRZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -226,9 +235,9 @@
                                 <include reference="kKl-7a-2WW"/>
                                 <include reference="FR7-f3-YJy"/>
                                 <include reference="Cj4-Zi-G3m"/>
-                                <include reference="GcA-CV-GRZ"/>
                                 <include reference="k5M-WD-GbE"/>
                                 <include reference="FEg-O8-xUB"/>
+                                <include reference="GcA-CV-GRZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -236,11 +245,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="headImage" destination="2QB-Zq-dCs" id="Oql-kv-Ntl"/>
+                        <outlet property="password" destination="FEg-O8-xUB" id="0Lx-un-ZfW"/>
+                        <outlet property="userName" destination="HCk-oo-Rv0" id="AdI-FX-lf8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846.75" y="103.875"/>
+            <point key="canvasLocation" x="-2.25" y="103.875"/>
         </scene>
         <!--Leader Info View Controller-->
         <scene sceneID="e7s-Nf-AKZ">
@@ -413,7 +424,7 @@
                         <viewControllerLayoutGuide type="bottom" id="inw-24-bLA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wkd-S2-fcc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -427,4 +438,7 @@
     <resources>
         <image name="mq" width="530" height="446"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8sX-r3-dfh"/>
+    </inferredMetricsTieBreakers>
 </document>

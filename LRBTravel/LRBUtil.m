@@ -39,4 +39,32 @@
 }
 
 
++(void)makePhoneCall:(NSString *)phoneNumber{
+    
+    UIWebView *phoneCallWebView = [[UIWebView alloc] init];
+  
+    NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",phoneNumber]];
+    if ( !phoneCallWebView ) {
+        phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];// 这个webView只是一个后台的View 不需要add到页面上来  效果跟方法二一样 但是这个方法是合法的
+    }
+    [phoneCallWebView loadRequest:[NSURLRequest requestWithURL:phoneURL]];
+    
+}
++(UIImage *)fullScreenShots{
+    UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
+    CGRect size = CGRectMake(screenWindow.frame.origin.x, screenWindow.frame.origin.y+20, screenWindow.frame.size.width, screenWindow.frame.size.height-20);
+    
+    UIGraphicsBeginImageContext(screenWindow.frame.size);//全屏截图，包括window
+    
+    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+//    UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, nil);
+    
+    return viewImage;
+    
+}
 @end
