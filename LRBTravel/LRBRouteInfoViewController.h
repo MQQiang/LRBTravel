@@ -18,5 +18,6 @@
 - (IBAction)connectPhoneNumber:(id)sender;
 - (IBAction)enrollForJourney:(id)sender;
 - (IBAction)presentLeaderInfo:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *blurBlackView;
 
 @end

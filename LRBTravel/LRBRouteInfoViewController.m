@@ -11,7 +11,7 @@
 #import "LRBFillFromViewController.h"
 #import "LRBLeaderInfoViewController.h"
 #import "UIImage+ImageEffects.h"
-
+#import "UIViewController+Blur.h"
 
 @interface LRBRouteInfoViewController ()<EScrollerViewDelegate>{
     
@@ -24,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _blurBlackView.alpha = 0;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -94,9 +96,7 @@
 
 - (IBAction)enrollForJourney:(id)sender {
     
-    LRBFillFromViewController  *fillFormVC = [LRBFillFromViewController new];
-    
-    [self.navigationController pushViewController:fillFormVC animated:YES];
+ 
     
 }
 
@@ -104,29 +104,35 @@
     
     LRBLeaderinfoViewController * leaderInfoVC = [[LRBLeaderinfoViewController alloc] init];
     
+    _blurBlackView.alpha = 0.7;
+    leaderInfoVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewControllerWithBlur:leaderInfoVC blurRedius:10 tintColor:[UIColor clearColor] saturationDeltaFactor:0.5];
+    
+    _blurBlackView.alpha = 0;
+    
+////    leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
+////    
+////    [self presentViewController:leaderInfoVC animated:YES completion:^(){
+////       
+////        leaderInfoVC.view.backgroundColor = [UIColor clearColor];
+////        
+////    }];
+//    
+////    leaderInfoVC.view.backgroundColor = [UIColor clearColor];
+////    
+////    [leaderInfoVC.bgImageView setImage:[LRBUtil fullScreenShots]];
+////    
+//
+//
+//    
 //    leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
 //    
-//    [self presentViewController:leaderInfoVC animated:YES completion:^(){
-//       
-//        leaderInfoVC.view.backgroundColor = [UIColor clearColor];
-//        
-//    }];
-    
-//    leaderInfoVC.view.backgroundColor = [UIColor clearColor];
+//        [self presentViewController:leaderInfoVC animated:YES completion:^(){
 //    
-//    [leaderInfoVC.bgImageView setImage:[LRBUtil fullScreenShots]];
+////            leaderInfoVC.view.superview.backgroundColor = [UIColor clearColor];
 //    
-
-
-    
-    leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    
-        [self presentViewController:leaderInfoVC animated:YES completion:^(){
-    
-//            leaderInfoVC.view.superview.backgroundColor = [UIColor clearColor];
-    
-        }];
-    
+//        }];
+//    
     
 }
 

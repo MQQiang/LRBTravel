@@ -11,6 +11,8 @@
 		0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E36253A1A0D394500B53C0C /* LRBJourneyViewController.xib */; };
 		0E363BFA1A0905770075A38C /* LRBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E363BF81A0905770075A38C /* LRBTestViewController.m */; };
 		0E363BFB1A0905770075A38C /* LRBTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E363BF91A0905770075A38C /* LRBTestViewController.xib */; };
+		0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5836FD1A18E1B700C3035B /* LRBUserInfo.m */; };
+		0E5B6E671A1111AD00B12C59 /* UIViewController+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B6E661A1111AD00B12C59 /* UIViewController+Blur.m */; };
 		0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */; };
 		0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */; };
 		0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */; };
@@ -87,6 +89,10 @@
 		0E363BF71A0905770075A38C /* LRBTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRBTestViewController.h; path = Images.xcassets/LRBTestViewController.h; sourceTree = "<group>"; };
 		0E363BF81A0905770075A38C /* LRBTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LRBTestViewController.m; path = Images.xcassets/LRBTestViewController.m; sourceTree = "<group>"; };
 		0E363BF91A0905770075A38C /* LRBTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LRBTestViewController.xib; path = Images.xcassets/LRBTestViewController.xib; sourceTree = "<group>"; };
+		0E5836FC1A18E1B700C3035B /* LRBUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBUserInfo.h; sourceTree = "<group>"; };
+		0E5836FD1A18E1B700C3035B /* LRBUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBUserInfo.m; sourceTree = "<group>"; };
+		0E5B6E651A1111AD00B12C59 /* UIViewController+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Blur.h"; sourceTree = "<group>"; };
+		0E5B6E661A1111AD00B12C59 /* UIViewController+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Blur.m"; sourceTree = "<group>"; };
 		0E6D694919E6BAB6007C63F4 /* LRBShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBShareViewController.h; sourceTree = "<group>"; };
 		0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBShareViewController.m; sourceTree = "<group>"; };
 		0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBShareViewController.xib; sourceTree = "<group>"; };
@@ -203,6 +209,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5836FF1A18E1CF00C3035B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E5836FC1A18E1B700C3035B /* LRBUserInfo.h */,
+				0E5836FD1A18E1B700C3035B /* LRBUserInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0E6D697519E6BE0F007C63F4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				0E97BBA81A0F941900A35F45 /* Third_party */,
+				0E5836FF1A18E1CF00C3035B /* Model */,
 				0EBD7FA01A01CAF200802544 /* Tool */,
 				0E6D697519E6BE0F007C63F4 /* ViewController */,
 				0E71CA6519E4CC9C003C9F2D /* AppDelegate.h */,
@@ -365,6 +381,8 @@
 				0E9211101A0D10AF00D3BDFB /* EScrollerView.h */,
 				0E9211111A0D10AF00D3BDFB /* EScrollerView.m */,
 				0EBD7F9D1A01CAEC00802544 /* LRBUtil.h */,
+				0E5B6E651A1111AD00B12C59 /* UIViewController+Blur.h */,
+				0E5B6E661A1111AD00B12C59 /* UIViewController+Blur.m */,
 				0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */,
 				0EE7C5871A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.h */,
 				0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */,
@@ -604,6 +622,7 @@
 				0E97BBAF1A0F943C00A35F45 /* CHTCollectionViewWaterfallCell.m in Sources */,
 				0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */,
 				0EE7C5761A0E7A9B0064F315 /* LRBShareAppViewController.m in Sources */,
+				0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */,
 				0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */,
 				0E97BBB41A0F94B200A35F45 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				0EE363AF1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m in Sources */,
@@ -618,6 +637,7 @@
 				0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */,
 				0EE7C5801A0E7B220064F315 /* LRBAboutUsViewController.m in Sources */,
 				0EE7C5711A0E68C70064F315 /* LRBIndexViewTableViewCell.m in Sources */,
+				0E5B6E671A1111AD00B12C59 /* UIViewController+Blur.m in Sources */,
 				0E363BFA1A0905770075A38C /* LRBTestViewController.m in Sources */,
 				0E6D696C19E6BD2C007C63F4 /* LRBNotificationViewController.m in Sources */,
 				0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */,

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LRBRouteInfoViewController">
             <connections>
+                <outlet property="blurBlackView" destination="lTa-ya-AWb" id="HpU-sf-xmq"/>
                 <outlet property="titileLabel" destination="RRu-Dw-j1b" id="sKx-7h-ci3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -191,6 +192,13 @@
                         <rect key="frame" x="223" y="433" width="68" height="21"/>
                     </variation>
                 </label>
+                <view alpha="0.64999999999999969" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-ya-AWb">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="5658"/>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -199,12 +207,14 @@
                 <mask key="subviews">
                     <exclude reference="q0Z-eB-5R3"/>
                     <exclude reference="C4x-Ts-7Kd"/>
+                    <exclude reference="lTa-ya-AWb"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="q0Z-eB-5R3"/>
                     <include reference="C4x-Ts-7Kd"/>
+                    <include reference="lTa-ya-AWb"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="387" y="355"/>

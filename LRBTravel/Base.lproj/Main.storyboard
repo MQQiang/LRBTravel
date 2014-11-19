@@ -89,7 +89,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="JYE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mq" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-Zq-dCs">
@@ -121,6 +121,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="264" width="269" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O5m-G1-On4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRs-wC-pXw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -161,18 +164,6 @@
                                     <action selector="loginWifhWeiBo:" destination="vXZ-lx-hvc" eventType="touchUpOutside" id="dAS-yw-wGK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-Zi-G3m">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="34" y="186" width="67" height="30"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="34" y="187" width="67" height="28"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5M-WD-GbE">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="忘记密码？">
@@ -210,6 +201,18 @@
                                     <rect key="frame" x="34" y="225" width="69" height="28"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-Zi-G3m">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="34" y="186" width="67" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="34" y="187" width="67" height="28"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.22139921821017572" green="0.67061093321790266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -220,10 +223,10 @@
                                 <exclude reference="fRs-wC-pXw"/>
                                 <exclude reference="kKl-7a-2WW"/>
                                 <exclude reference="FR7-f3-YJy"/>
-                                <exclude reference="Cj4-Zi-G3m"/>
                                 <exclude reference="k5M-WD-GbE"/>
                                 <exclude reference="FEg-O8-xUB"/>
                                 <exclude reference="GcA-CV-GRZ"/>
+                                <exclude reference="Cj4-Zi-G3m"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -234,15 +237,15 @@
                                 <include reference="fRs-wC-pXw"/>
                                 <include reference="kKl-7a-2WW"/>
                                 <include reference="FR7-f3-YJy"/>
-                                <include reference="Cj4-Zi-G3m"/>
                                 <include reference="k5M-WD-GbE"/>
                                 <include reference="FEg-O8-xUB"/>
                                 <include reference="GcA-CV-GRZ"/>
+                                <include reference="Cj4-Zi-G3m"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="alT-Fq-nwz"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="headImage" destination="2QB-Zq-dCs" id="Oql-kv-Ntl"/>
                         <outlet property="password" destination="FEg-O8-xUB" id="0Lx-un-ZfW"/>
@@ -439,6 +442,6 @@
         <image name="mq" width="530" height="446"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8sX-r3-dfh"/>
+        <segue reference="BB7-Fp-3wg"/>
     </inferredMetricsTieBreakers>
 </document>

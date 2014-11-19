@@ -5,7 +5,7 @@
 //  Created by mq on 14-10-9.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
-
+#import "AFNetworking.h"
 #import "LRBLoginViewController.h"
 #import "LRBUtil.h"
 #import "REFrostedViewController.h"
@@ -24,7 +24,7 @@
     
     [LRBUtil drawCircleImage:_headImage];
     
-    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapppGestureRecognized:)]];
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -35,9 +35,28 @@
 }
 
 
+- (IBAction)login:(id)sender {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"login",@"name":@"fpc",@"password":@"123456"};
+    [manager GET:@"http://121.40.173.195/lvrenbang/php/api/UserApi.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        
+        
+        [self userLoginSuccess];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+}
+
 -(void)loginInWithQQ:(id)sender
 {
-    [self userLoginSuccess];
+    
 }
 
 - (IBAction)loginWithWeiChat:(id)sender {
@@ -90,5 +109,15 @@
 */
 
 - (IBAction)forgetPassword:(id)sender {
+    
+    
 }
+
+#pragma mark 
+-(void)tapppGestureRecognized:(id)sender{
+    [_password resignFirstResponder];
+    [_userName resignFirstResponder];
+    
+}
+
 @end
