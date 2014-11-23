@@ -23,7 +23,7 @@
 @property (nonatomic,strong)NSString *qqNumber;
 @property (nonatomic,assign)NSUInteger userLevel;
 @property (nonatomic,strong)NSString *email;
-
+@property (nonatomic,strong)NSNumber *userId;
 @end
 
 
@@ -62,6 +62,7 @@ static LRBUserInfo * shareInfo;
     _createTime = [indoDic objectForKey:@"create_time"];
     _email = [indoDic objectForKey:@"email"];
     _selfDescription   = [indoDic objectForKey:@"description"];
+    _userId = [indoDic objectForKey:@"id"];
     
 }
 @end

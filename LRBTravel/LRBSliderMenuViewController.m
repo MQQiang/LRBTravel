@@ -155,4 +155,9 @@
     
 }
 
+-(void)beginRequestWithExtensionContext:(NSExtensionContext *)context{
+    
+    
+}
+
 @end

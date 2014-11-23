@@ -39,7 +39,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"type":@"login",@"name":@"fpc",@"password":@"123456"};
-    [manager GET:@"http://121.40.173.195/lvrenbang/php/api/UserApi.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
         

@@ -24,7 +24,7 @@
 @property (nonatomic,strong,readonly)NSString *qqNumber;
 @property (nonatomic,assign,readonly)NSUInteger userLevel;
 @property (nonatomic,strong,readonly)NSString *email;
-
+@property (nonatomic,strong,readonly)NSNumber *userId;
 -(void)setupUserInfo:(NSDictionary *)indoDic;
 
 
