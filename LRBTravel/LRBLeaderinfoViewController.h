@@ -12,5 +12,5 @@
 - (IBAction)backtoForward:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
-
+@property (assign,nonatomic) NSInteger leaderId;
 @end

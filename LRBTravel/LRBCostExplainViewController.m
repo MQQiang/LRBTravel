@@ -1,18 +1,18 @@
 //
-//  LRBSearchViewController.m
+//  LRBCostExplainViewController.m
 //  LRBTravel
 //
-//  Created by mq on 14/10/25.
+//  Created by mq on 14/11/24.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBSearchViewController.h"
+#import "LRBCostExplainViewController.h"
 
-@interface LRBSearchViewController ()
+@interface LRBCostExplainViewController ()
 
 @end
 
-@implementation LRBSearchViewController
+@implementation LRBCostExplainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,11 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)search {
+-(void)refreshView:(NSDictionary*)dic{
+    
+    
+}
+
+-(void)getCostExplain{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"search",@"keyword":@""};
-    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSDictionary *parameters = @{@"type":@"chargeAnnouncement",@"id":[NSNumber numberWithUnsignedInteger:_costExplainId ]};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self refreshView:responseObject];
         
@@ -40,12 +45,8 @@
         
     }];
 
-}
--(void)refreshView:(NSDictionary *)dic{
     
-    
-}
-/*
+}/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

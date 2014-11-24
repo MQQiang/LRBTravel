@@ -24,6 +24,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)refreshView:(NSDictionary *)dic{
+    
+    
+    
+}
+
+-(void)getJourneyInfo{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"shortIntro",@"id":[NSNumber numberWithUnsignedInteger:_journeyId ]};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshView:responseObject];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+    
+}
+
 /*
 #pragma mark - Navigation
 

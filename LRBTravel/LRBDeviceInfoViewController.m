@@ -1,18 +1,18 @@
 //
-//  LRBShareViewController.m
+//  LRBDeviceInfoViewController.m
 //  LRBTravel
 //
-//  Created by mq on 14-10-9.
+//  Created by mq on 14/11/23.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBShareViewController.h"
+#import "LRBDeviceInfoViewController.h"
 
-@interface LRBShareViewController ()
+@interface LRBDeviceInfoViewController ()
 
 @end
 
-@implementation LRBShareViewController
+@implementation LRBDeviceInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,24 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)sharePic{
-    
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"shortIntro"};
-    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/ShareApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"Error: %@", error);
-        
-    }];
 
+-(void)getDeviceInfo{
+    
+    
+    
 }
-
-
 /*
 #pragma mark - Navigation
 

@@ -48,4 +48,31 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+-(void)refreshView:(NSDictionary *)dic{
+    
+    
+    
+}
+
+
+
+-(void)getLeaderInfo{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"leader",@"id":[NSNumber numberWithUnsignedInteger:_leaderId ]};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshView:responseObject];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+    
+}
 @end

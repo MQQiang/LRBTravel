@@ -10,4 +10,6 @@
 
 @interface LRBJourneyViewController : UIViewController
 
+@property(nonatomic,assign) NSInteger journeyId;
+
 @end

@@ -1,18 +1,18 @@
 //
-//  LRBSearchViewController.m
+//  LRBJourneyNoticeViewController.m
 //  LRBTravel
 //
-//  Created by mq on 14/10/25.
+//  Created by mq on 14/11/24.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBSearchViewController.h"
+#import "LRBJourneyNoticeViewController.h"
 
-@interface LRBSearchViewController ()
+@interface LRBJourneyNoticeViewController ()
 
 @end
 
-@implementation LRBSearchViewController
+@implementation LRBJourneyNoticeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,10 +24,15 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)search {
+
+-(void)refreshView:(NSDictionary *)dic{
+    
+}
+
+-(void)getJourneyNotice{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"search",@"keyword":@""};
+    NSDictionary *parameters = @{@"type":@"notify",@"id":[NSNumber numberWithUnsignedInteger:_noticeId ]};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self refreshView:responseObject];
@@ -40,10 +45,6 @@
         
     }];
 
-}
--(void)refreshView:(NSDictionary *)dic{
-    
-    
 }
 /*
 #pragma mark - Navigation

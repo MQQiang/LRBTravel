@@ -5,7 +5,7 @@
 //  Created by mq on 14-10-9.
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
-#import "AFNetworking.h"
+
 #import "LRBLoginViewController.h"
 #import "LRBUtil.h"
 #import "REFrostedViewController.h"
@@ -112,6 +112,7 @@
     
     
 }
+
 
 #pragma mark 
 -(void)tapppGestureRecognized:(id)sender{
