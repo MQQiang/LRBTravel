@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LRBSetupViewController : LRBFirstLayerBaseViewController
+@interface LRBSetupViewController : LRBFirstLayerBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *setupTableView;
 
 @end

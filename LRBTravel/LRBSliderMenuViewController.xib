@@ -10,6 +10,7 @@
                 <outlet property="headImageView" destination="kzV-iK-3GY" id="AQN-89-3XY"/>
                 <outlet property="menuTableView" destination="f9c-Pc-MUW" id="FRC-OA-1gc"/>
                 <outlet property="nameLabel" destination="QrD-MF-hGW" id="mEn-4r-4C2"/>
+                <outlet property="userMessageCountLabel" destination="q2M-Mw-VGa" id="oE2-Rd-pQU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,6 +39,12 @@
                         <outlet property="delegate" destination="-1" id="YfL-rh-JCo"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2M-Mw-VGa">
+                    <rect key="frame" x="148" y="198" width="42" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.1277621505" blue="0.10775290730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

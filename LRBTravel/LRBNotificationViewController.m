@@ -8,15 +8,16 @@
 
 #import "LRBNotificationViewController.h"
 #import "LRBNotificationDetailViewController.h"
-
+#import "LRBUserInfo.h"
 @interface LRBNotificationViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@property NSMutableArray *messageArray;
 @end
 
 @implementation LRBNotificationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _messageArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -37,7 +38,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [_messageArray count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -45,6 +46,32 @@
     LRBNotificationDetailViewController *detailVC = [[LRBNotificationDetailViewController alloc] init];
     
     [self presentViewController:detailVC animated:YES completion:^(){}];
+    
+}
+-(void)requestUserMessage{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"getMessageList",@"id":[LRBUserInfo shareUserInfo].userId};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshView:responseObject];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+}
+-(void)refreshView:(NSDictionary *)sender{
+    
+    if([[sender objectForKey:@"status"] isEqualToNumber:@1]){
+        
+        [_messageArray addObjectsFromArray:[sender objectForKey:@"message"]];
+        [_notificationTableView reloadData];
+    }
     
 }
 /*

@@ -54,7 +54,7 @@
     
     [self.view addSubview:scroller];
     
-    
+    [self requestDataFromServer];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -138,5 +138,29 @@
     
 }
 
+-(void)requestDataFromServer{
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"index"};
+    
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshView:responseObject];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+}
+
+-(void)refreshView:(NSDictionary *)sender{
+    
+    NSLog(@"%@",sender);
+}
 
 @end

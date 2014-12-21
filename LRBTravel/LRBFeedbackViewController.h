@@ -10,4 +10,10 @@
 
 @interface LRBFeedbackViewController : LRBFirstLayerBaseViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *contactTextField;
+@property (strong, nonatomic) IBOutlet UITextView *feedBackTextView;
+
+@property (strong, nonatomic) IBOutlet UILabel *backGroundLabel;
+@property (strong, nonatomic) IBOutlet UILabel *wordNumberLabel;
+
 @end

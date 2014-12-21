@@ -16,6 +16,7 @@
 #import "LRBAboutUsViewController.h"
 #import "LRBSetupViewController.h"
 #import "LRBPersonInfoViewController.h"
+#import "LRBUserInfo.h"
 
 @interface LRBSliderMenuViewController ()
 {
@@ -40,6 +41,8 @@
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
  
     [_headImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapppGestureRecognized:)]];
+    _userMessageCountLabel.hidden = YES;
+//    [self RequestUserMessageCount];
    
     // Do any additional setup after loading the view from its nib.
 }
@@ -47,6 +50,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+//    [self RequestUserMessageCount];
 }
 
 /*
@@ -158,6 +165,48 @@
 -(void)beginRequestWithExtensionContext:(NSExtensionContext *)context{
     
     
+}
+
+-(void)RequestUserMessageCount{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"getMessageCount",@"id":[LRBUserInfo shareUserInfo].userId};
+    
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshView:responseObject];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+}
+-(void)refreshView:(NSDictionary *)sender{
+    
+    if([sender objectForKey:@"status"])
+    {
+        [self setMessageCountWith:[sender objectForKey:@"count"]];
+    }
+    else{
+        
+    }
+    
+}
+-(void)setMessageCountWith:(NSNumber *)number{
+    
+    if ([number isEqualToNumber:@0]) {
+        
+        _userMessageCountLabel.hidden = YES;
+        
+    }
+    else {
+        _userMessageCountLabel.hidden = NO;
+        _userMessageCountLabel.text = [number stringValue];
+    }
 }
 
 @end

@@ -27,7 +27,7 @@
 -(void)search {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"search",@"keyword":@""};
+    NSDictionary *parameters = @{@"type":@"search",@"keyword":_searchBar.text};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self refreshView:responseObject];

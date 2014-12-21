@@ -12,7 +12,9 @@
 #import "LRBIndexViewController.h"
 #import "LRBSliderMenuViewController.h"
 #import "LRBNavigationController.h"
-
+#import "LRBRegisterViewController.h"
+#import "LRBUserInfo.h"
+#import "PrefixHeader.pch"
 @interface LRBLoginViewController ()
 
 @end
@@ -24,8 +26,11 @@
     
     [LRBUtil drawCircleImage:_headImage];
     
+
+    
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapppGestureRecognized:)]];
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registerMethod:)];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -37,18 +42,35 @@
 
 - (IBAction)login:(id)sender {
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"type":@"login",@"name":@"fpc",@"password":@"123456"};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
-        
-        [self userLoginSuccess];
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([[dic objectForKey:@"status"] isEqual:@1]){
+            
+                    [self userLoginSuccess];
+            [[LRBUserInfo shareUserInfo] setupUserInfo:[dic objectForKey:@"user"]];
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }
+        else{
+            
+            [[[UIAlertView alloc] initWithTitle:@"登入失败" message:@"检查用户名和密码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+
         
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
         NSLog(@"Error: %@", error);
+        
+        
     }];
     
     
@@ -111,6 +133,14 @@
 - (IBAction)forgetPassword:(id)sender {
     
     
+}
+
+-(void)registerMethod:(id)sender{
+    
+    LRBRegisterViewController *vc = [[LRBRegisterViewController alloc] init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 

@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UITableView *menuTableView;
+@property (strong, nonatomic) IBOutlet UILabel *userMessageCountLabel;
 
 @end
