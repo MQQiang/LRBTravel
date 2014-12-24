@@ -56,6 +56,8 @@
             [[LRBUserInfo shareUserInfo] setupUserInfo:[dic objectForKey:@"user"]];
             
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
+            [LRBUtil requestImagePrefix];
         }
         else{
             

@@ -26,6 +26,6 @@
 @property (nonatomic,strong,readonly)NSString *email;
 @property (nonatomic,strong,readonly)NSNumber *userId;
 -(void)setupUserInfo:(NSDictionary *)indoDic;
-
+-(void)setImagePrefix:(NSDictionary *)dic;
 
 @end

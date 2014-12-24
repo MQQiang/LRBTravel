@@ -163,6 +163,28 @@
 -(void)refreshView:(NSDictionary *)sender{
     
     NSLog(@"%@",sender);
+    NSDictionary *dataDic = [sender objectForKey:@"result"];
+    NSArray *banner = [dataDic objectForKey:@"banner"];
+    NSArray *path = [dataDic objectForKey:@"path"];
+    NSDictionary *theme = [dataDic objectForKey:@"theme"];
+    
+    
+}
+
+-(void)setBanner:(NSArray *)bannerData{
+    
+    
+    
+}
+-(void)setPath:(NSArray *)pathData{
+    
+    
+    
+}
+-(void)setTheme:(NSDictionary *)themeDic{
+    
+    
+    
 }
 
 @end
