@@ -8,6 +8,7 @@
 
 #import "LRBIndexViewTableViewCell.h"
 
+
 @implementation LRBIndexViewTableViewCell
 
 - (void)awakeFromNib {
@@ -23,6 +24,15 @@
 -(void)setupCell:(UIImage *)guideImage
 {
     self.guideImageView.image = guideImage;
+}
+
+-(void)setupCellWith:(NSDictionary*)dic{
+    
+    
+    
+    [self.guideImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix]stringByAppendingString:[dic objectForKey:@"image"] ]]];
+    _titleLabel.text = [dic objectForKey:@"address"];
+    _priceLabel.text =[dic objectForKey:@"price"];
 }
 
 @end

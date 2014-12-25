@@ -67,6 +67,7 @@
 		0E97BBB41A0F94B200A35F45 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BBB31A0F94B200A35F45 /* CHTCollectionViewWaterfallLayout.m */; };
 		0E97BBB61A0FA3CC00A35F45 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E97BBB51A0FA3CC00A35F45 /* QuartzCore.framework */; };
 		0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */; };
+		0EC248D21A4C5A6F003E79E5 /* LRBBannerPathModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */; };
 		0EE363AF1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */; };
 		0EE363B01A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */; };
 		0EE7C5711A0E68C70064F315 /* LRBIndexViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C56F1A0E68C70064F315 /* LRBIndexViewTableViewCell.m */; };
@@ -192,6 +193,8 @@
 		0E97BBB51A0FA3CC00A35F45 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0EBD7F9D1A01CAEC00802544 /* LRBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBUtil.h; sourceTree = "<group>"; };
 		0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBUtil.m; sourceTree = "<group>"; };
+		0EC248D01A4C5A6F003E79E5 /* LRBBannerPathModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBBannerPathModel.h; sourceTree = "<group>"; };
+		0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBBannerPathModel.m; sourceTree = "<group>"; };
 		0EE363AC1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormTableViewCell.h; sourceTree = "<group>"; };
 		0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormTableViewCell.m; sourceTree = "<group>"; };
 		0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBFillFormTableViewCell.xib; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 			children = (
 				0E5836FC1A18E1B700C3035B /* LRBUserInfo.h */,
 				0E5836FD1A18E1B700C3035B /* LRBUserInfo.m */,
+				0EC248D01A4C5A6F003E79E5 /* LRBBannerPathModel.h */,
+				0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -706,6 +711,7 @@
 				0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */,
 				0E97BBB41A0F94B200A35F45 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				0E600DFE1A2C083A003920D3 /* LRBRegisterViewController.m in Sources */,
+				0EC248D21A4C5A6F003E79E5 /* LRBBannerPathModel.m in Sources */,
 				0EE363AF1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m in Sources */,
 				0E7AA2CA19FBC6BE00B59782 /* LRBSearchViewController.m in Sources */,
 				0E9211151A0D284600D3BDFB /* LRBNavigationController.m in Sources */,

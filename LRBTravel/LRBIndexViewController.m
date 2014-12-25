@@ -13,6 +13,8 @@
 #import "LRBSearchViewController.h"
 #import "LRBRouteInfoViewController.h"
 #import "LRBIndexViewTableViewCell.h"
+#import "LRBBannerPathModel.h"
+
 
 #define kIndexTableViewCellID @"IndexTableViewCellID"
 
@@ -20,15 +22,19 @@
 @interface LRBIndexViewController ()<EScrollerViewDelegate,UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *_guideImageArray;
 }
-
+@property (nonatomic,strong)UIScrollView *m_sc;
+@property (nonatomic,strong)UIPageControl *m_pageC;
+@property (nonatomic,strong)NSMutableArray *bannerDataArray;
 @end
 
 @implementation LRBIndexViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _bannerDataArray = [[NSMutableArray alloc] init];
     
-    _guideImageArray = [NSMutableArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil];
+    
+    _guideImageArray = [NSMutableArray new];
     
     _indexTableView.dataSource = self;
     _indexTableView.delegate = self;
@@ -43,19 +49,23 @@
     self.title = @"旅人帮";
     
     
-//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:nil action:nil];
     
     
-    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 66, self.view.frame.size.width, 120)
-                                                          ImageArray:[NSArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil]
-                                                          TitleArray:[NSArray arrayWithObjects:@"11",@"22",@"33", nil]];
+    [self requestDataFromServer];
+//    [self buildLayout];
+    // Do any additional setup after loading the view from its nib.
+}
+
+-(void)addBannerViewWithUrlArray:(NSArray *)image{
+    
+    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height/4)
+                                                          ImageArray:image
+                                                          TitleArray:nil];
     
     scroller.delegate=self;
     
     [self.view addSubview:scroller];
-    
-    [self requestDataFromServer];
-    // Do any additional setup after loading the view from its nib.
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -95,7 +105,7 @@
 {
     LRBIndexViewTableViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
     
-    [cell setupCell:[UIImage imageNamed:[_guideImageArray objectAtIndex:indexPath.row]]];
+    [cell setupCellWith:[_guideImageArray objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -167,17 +177,28 @@
     NSArray *banner = [dataDic objectForKey:@"banner"];
     NSArray *path = [dataDic objectForKey:@"path"];
     NSDictionary *theme = [dataDic objectForKey:@"theme"];
-    
+    [self setBanner:banner];
+    [self setPath:theme];
     
 }
 
 -(void)setBanner:(NSArray *)bannerData{
     
-    
+    NSMutableArray* imageArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in bannerData) {
+        
+        LRBBannerPathModel *model = [[LRBBannerPathModel alloc]init];
+        [model setModelWithDic:dic];
+        [imageArray addObject:model.image];
+        
+    }
+    [self addBannerViewWithUrlArray:imageArray];
     
 }
 -(void)setPath:(NSArray *)pathData{
     
+    [_guideImageArray addObjectsFromArray: pathData];
+    [_indexTableView reloadData];
     
     
 }
@@ -185,6 +206,66 @@
     
     
     
+}
+
+#pragma mark
+#pragma mark build interface
+
+-(void)buildLayout
+{
+    self.m_sc.delegate =self;
+    [self.view addSubview:self.m_sc];
+    [self.view addSubview:self.m_pageC];
+}
+
+-(UIScrollView *)m_sc
+{
+    if (!_m_sc)
+    {
+        _m_sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0,64, self.view.frame.size.width,self.view.frame.size.height/4)];
+        [_m_sc setContentSize:CGSizeMake(self.view.frame.size.width*4,self.view.frame.size.height)];
+        for (int i=0; i<4; i++)
+        {
+            UIView *uv = [[UIView alloc]init];
+            uv.frame =CGRectMake(self.view.bounds.size.width*i,0 , self.view.bounds.size.width,self.view.bounds.size.height) ;
+            uv.backgroundColor = [UIColor colorWithRed:i*0.1+0.5 green:i*0.1+0.7 blue:i*0.1+0.1 alpha:1];
+            UILabel *lab = [[UILabel alloc]init];
+            lab.frame =CGRectMake(100,100, 200, 50);
+            lab.backgroundColor = [UIColor clearColor];
+            lab.text = [@"welcome"stringByAppendingFormat:@"%d",i+1 ];
+            lab.textColor=[UIColor blackColor];
+            [uv addSubview:lab];
+            [_m_sc addSubview:uv];
+        }
+        _m_sc.showsHorizontalScrollIndicator =NO; //是否显示水平滚动条
+        _m_sc.showsVerticalScrollIndicator =NO;//是否垂直水平滚动条
+        _m_sc.pagingEnabled =YES;  //是否翻页
+        _m_sc.scrollEnabled =YES;
+    }
+    return _m_sc;
+}
+
+-(UIPageControl *)m_pageC
+{
+    if (!_m_pageC)
+    {
+        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,100,200 ,30)];
+        _m_pageC.backgroundColor = [UIColor clearColor];
+        _m_pageC.currentPageIndicatorTintColor = [UIColor redColor];
+        _m_pageC.pageIndicatorTintColor = [UIColor blackColor];
+        _m_pageC.numberOfPages =4;
+        
+    }
+    return _m_pageC;
+}
+
+#pragma mark
+#pragma mark UIScrollViewDelegate method
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int size  = self.view.frame.size.width;
+    int page = self.m_sc.contentOffset.x/size;
+    self.m_pageC.currentPage = page;
 }
 
 @end

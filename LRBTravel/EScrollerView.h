@@ -25,4 +25,5 @@
 }
 @property(nonatomic,retain)id<EScrollerViewDelegate> delegate;
 -(id)initWithFrameRect:(CGRect)rect ImageArray:(NSArray *)imgArr TitleArray:(NSArray *)titArr;
+
 @end

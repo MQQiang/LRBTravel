@@ -7,6 +7,7 @@
 //
 
 #import "EScrollerView.h"
+#import "AFNetworking.h"
 @implementation EScrollerView
 @synthesize delegate;
 
@@ -51,7 +52,7 @@
             UIImageView *imgView=[[[UIImageView alloc] init] autorelease];
             if ([imgURL hasPrefix:@"http://"]) {
                 //网络图片 请使用ego异步图片库
-                //[imgView setImageWithURL:[NSURL URLWithString:imgURL]];
+                [imgView setImageWithURL:[NSURL URLWithString:imgURL]];
             }
             else
             {

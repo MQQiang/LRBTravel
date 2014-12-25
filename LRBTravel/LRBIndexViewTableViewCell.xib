@@ -17,12 +17,26 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljn-Od-QDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWV-31-joj">
+                        <rect key="frame" x="8" y="14" width="312" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-K9-vmC">
+                        <rect key="frame" x="13" y="139" width="77" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="guideImageView" destination="ljn-Od-QDh" id="d0A-S9-G0X"/>
+                <outlet property="priceLabel" destination="UnT-K9-vmC" id="viL-3j-EWl"/>
+                <outlet property="titleLabel" destination="aWV-31-joj" id="A60-RN-DkL"/>
             </connections>
-            <point key="canvasLocation" x="348" y="314"/>
+            <point key="canvasLocation" x="439" y="318"/>
         </tableViewCell>
     </objects>
 </document>
