@@ -124,6 +124,7 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar{           // called when cancel button pressed
     [searchBar setShowsCancelButton:NO animated:NO];    // 取消按钮回收
     [searchBar resignFirstResponder];
+    
     _hotTagView.hidden = FALSE;// 取消第一响应值,键盘回收,搜索结束
 }
 

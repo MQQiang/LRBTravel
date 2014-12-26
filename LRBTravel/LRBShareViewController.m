@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"分享";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sharePic:)];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -40,7 +43,10 @@
     }];
 
 }
-
+-(void)sharePic:(id)sender{
+    
+    
+}
 
 /*
 #pragma mark - Navigation
