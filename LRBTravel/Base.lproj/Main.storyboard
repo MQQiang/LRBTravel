@@ -78,19 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iW-8i-sA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <point key="canvasLocation" x="519.5" y="-597.5"/>
-=======
             <point key="canvasLocation" x="-15.75" y="675.375"/>
->>>>>>> FETCH_HEAD
-=======
-            <point key="canvasLocation" x="-15.75" y="675.375"/>
->>>>>>> FETCH_HEAD
-=======
-            <point key="canvasLocation" x="-15.75" y="675.375"/>
->>>>>>> FETCH_HEAD
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -266,19 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <point key="canvasLocation" x="-77" y="-113"/>
-=======
             <point key="canvasLocation" x="136.5" y="82.5"/>
->>>>>>> FETCH_HEAD
-=======
-            <point key="canvasLocation" x="136.5" y="82.5"/>
->>>>>>> FETCH_HEAD
-=======
-            <point key="canvasLocation" x="136.5" y="82.5"/>
->>>>>>> FETCH_HEAD
         </scene>
         <!--Leader Info View Controller-->
         <scene sceneID="e7s-Nf-AKZ">
