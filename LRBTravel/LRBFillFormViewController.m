@@ -21,7 +21,7 @@
     
 }
 - (IBAction)addPerson:(id)sender;
-
+-(void)changeFrameyFor:(UIView*)view by:(UIView*)lastView;
 @end
 
 @implementation LRBFillFormViewController
@@ -43,6 +43,7 @@
     [self.personInfo addObject:[[LRBFillFormPersonInfo alloc]init]];
         NSLog(@"count1=%d",self.personInfo.count);
     self.numPerson=1;
+    [self resize];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +57,29 @@
     }
     return _personInfo;
 }
+
+-(void)resize
+{
+    double height= self.scrollview.frame.size.height;
+    self.formTableView.frame=CGRectMake(self.formTableView.frame.origin.x, self.formTableView.frame.origin.y, self.formTableView.frame.size.width, self.formTableView.contentSize.height);
+    [self changeFrameyFor:self.addPersonBtm by:self.formTableView];
+    [self changeFrameyFor:self.noticeLabel by:self.addPersonBtm];
+    [self changeFrameyFor:self.warningLable by:self.noticeLabel];
+    [self changeFrameyFor:self.confrimView by:self.warningLable];
+
+    self.scrollview.contentSize=CGSizeMake(self.titleLabel.frame.size.width, self.confrimView.frame.origin.y+self.confrimView.frame.size.height);
+    
+    
+    NSLog(@"self.formTableView.contentSize.height=%f", self.formTableView.contentSize.height);
+    
+}
+-(void)changeFrameyFor:(UIView*)view by:(UIView*)lastView
+{
+    view.frame=CGRectMake(view.frame.origin.x, lastView.frame.origin.y+lastView.frame.size.height, view.frame.size.width, view.frame.size.height);
+}
+
+
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -132,6 +156,7 @@
 {
     LRBFillFormTableHeadView *titleView=[[[NSBundle mainBundle] loadNibNamed:@"LRBFillFormTableHeadView" owner:nil options:nil] lastObject];
     titleView.delegate=self;
+    [self resize];
     if(section<2)
     {
         titleView.title.text= _headTitleArray[section];
@@ -148,7 +173,8 @@
 -(void)changeText:(LRBFillFormTableViewCell *)cell
 {
     NSIndexPath *idxPath=[self.formTableView indexPathForCell:cell];
-    NSLog(@"section=%d %d",idxPath.section,idxPath.row);
+    NSLog(@"section=%ld %ld",(long)idxPath.section,(long)idxPath.row);
+
 
     if (idxPath.section==0) {
         [_orderInfo setInfo:cell.textField.text at:idxPath.row];
@@ -163,7 +189,7 @@
 
 -(void)deleteSectionAt:(NSUInteger)idx
 {
-           NSLog(@"removeAt=%d",idx);
+           NSLog(@"removeAt=%lu",(unsigned long)idx);
     [self.personInfo removeObjectAtIndex:idx];
         [self.formTableView reloadData];
 }
@@ -183,5 +209,6 @@
 - (IBAction)addPerson:(id)sender {
     [self.personInfo addObject:[[LRBFillFormPersonInfo alloc]init]];
     [self.formTableView reloadData];
+        [self resize];
 }
 @end
