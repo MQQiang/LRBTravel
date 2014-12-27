@@ -11,4 +11,7 @@
 @interface LRBIndexViewTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *guideImageView;
 -(void)setupCell:(UIImage *)guideImage;
+-(void)setupCellWith:(NSDictionary*)dic;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @end

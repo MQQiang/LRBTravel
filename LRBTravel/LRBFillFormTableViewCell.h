@@ -7,9 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol LRBFillFormTableViewCellandHeadDelegate;
+
 
 @interface LRBFillFormTableViewCell : UITableViewCell
+
+@property(nonatomic,assign) id<LRBFillFormTableViewCellandHeadDelegate> delegate;
+
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
+- (IBAction)didEditing:(id)sender;
+
+@end
+@protocol LRBFillFormTableViewCellandHeadDelegate<NSObject>
+@optional
+-(void)changeText:(LRBFillFormTableViewCell *)cell;
+-(void)deleteSectionAt:(NSUInteger)idx;
 
 @end

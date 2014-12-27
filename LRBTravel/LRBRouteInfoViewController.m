@@ -8,7 +8,7 @@
 
 #import "LRBRouteInfoViewController.h"
 #import "EScrollerView.h"
-#import "LRBFillFromViewController.h"
+#import "LRBFillFormViewController.h"
 #import "LRBLeaderInfoViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "UIViewController+Blur.h"
@@ -95,9 +95,9 @@
 }
 
 - (IBAction)enrollForJourney:(id)sender {
-    
- 
-    
+    //Tuotuo
+    LRBFillFormViewController *fillFormVC=[[LRBFillFormViewController alloc]init];
+    [self.navigationController pushViewController:fillFormVC animated:nil];
 }
 
 - (IBAction)presentLeaderInfo:(id)sender {

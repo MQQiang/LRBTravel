@@ -7,7 +7,7 @@
 //
 
 #import "LRBTestViewController.h"
-#import "LRBFillFromViewController.h"
+#import "LRBFillFormViewController.h"
 @interface LRBTestViewController ()
 
 @end
@@ -37,7 +37,7 @@
 
 - (IBAction)testFillFrom:(id)sender {
     
-    LRBFillFromViewController  * controller = [[LRBFillFromViewController alloc ] init];
+    LRBFillFormViewController  * controller = [[LRBFillFormViewController alloc ] init];
     
     [self.navigationController pushViewController:controller animated:YES];
     

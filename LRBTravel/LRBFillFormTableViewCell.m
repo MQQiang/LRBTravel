@@ -22,4 +22,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)didEditing:(id)sender {
+    [self.delegate changeText:self];
+}
 @end

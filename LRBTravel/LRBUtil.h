@@ -13,5 +13,6 @@
 +(void)drawCircleImage:(UIImageView *) imageView;
 +(void)makePhoneCall:(NSString *)phoneNumber;
 +(UIImage*)fullScreenShots;
-
++(void)requestImagePrefix;
++(NSString *)imageProfix;
 @end

@@ -19,5 +19,6 @@
 - (IBAction)enrollForJourney:(id)sender;
 - (IBAction)presentLeaderInfo:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *blurBlackView;
+@property (strong, nonatomic) IBOutlet UIView *fillFromViewView;
 
 @end

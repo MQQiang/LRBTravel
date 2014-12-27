@@ -10,6 +10,7 @@
 #import "CHTCollectionViewWaterfallCell.h"
 #import "CHTCollectionViewWaterfallHeader.h"
 #import "CHTCollectionViewWaterfallFooter.h"
+#import "LRBShareViewController.h"
 
 #define CELL_COUNT 30
 #define CELL_IDENTIFIER @"WaterfallCell"
@@ -18,6 +19,9 @@
 
 
 @interface LRBPictureShareViewController ()
+{
+    NSMutableArray * _dataArray;
+}
 @property (nonatomic, strong) NSMutableArray *cellSizes;
 
 @end
@@ -73,7 +77,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self sharePic];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(sharePic:)];
+    _dataArray = [[NSMutableArray alloc] init];
+    
     [self.view addSubview:self.collectionView];
+}
+-(void)sharePic:(id)sender{
+    
+    LRBShareViewController *vc = [[LRBShareViewController    alloc] init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -95,11 +112,11 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return CELL_COUNT;
+    return _dataArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,6 +124,7 @@
     (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
                                                                                 forIndexPath:indexPath];
     cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
+    [cell setupCellWithDic:[_dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -135,10 +153,13 @@
 
 -(void)sharePic{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"shortIntro"};
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    
+    NSDictionary *parameters = @{@"type":@"getShare"};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/ShareApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        //        [self refreshView:responseObject];
+                [self refreshView:responseObject];
         
         
         
@@ -147,6 +168,14 @@
         NSLog(@"Error: %@", error);
         
     }];
+    
+}
+-(void)refreshView:(NSDictionary *)dic{
+    
+    NSArray *_shareContent = dic[@"share"];
+    
+    [_dataArray addObjectsFromArray:_shareContent];
+    [_collectionView reloadData];
     
 }
 @end

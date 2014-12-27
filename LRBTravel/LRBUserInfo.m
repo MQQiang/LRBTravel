@@ -58,11 +58,16 @@ static LRBUserInfo * shareInfo;
     _nickWeiXin = [indoDic objectForKey:@"weixin_nick"];
     _qqNumber = [indoDic objectForKey:@"qq"];
     _phoneNumber = [indoDic objectForKey:@"phone"];
-    _cash = [[indoDic objectForKey:@"cash"] integerValue];
+//    _cash = [[indoDic objectForKey:@"cash"] integerValue];
     _createTime = [indoDic objectForKey:@"create_time"];
     _email = [indoDic objectForKey:@"email"];
     _selfDescription   = [indoDic objectForKey:@"description"];
     _userId = [indoDic objectForKey:@"id"];
+    
+}
+
+-(void)setImagePrefix:(NSDictionary *)dic{
+    
     
 }
 @end

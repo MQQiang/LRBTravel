@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -17,25 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-eB-5R3">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" red="0.69882149665782567" green="0.94017330433557511" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="208" width="320" height="30"/>
-                    </variation>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-RR-t1P">
-                    <rect key="frame" x="56" y="331" width="46" height="30"/>
-                    <state key="normal" title="Button" image="route">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="40" y="257" width="60" height="60"/>
-                    </variation>
-                    <connections>
-                        <action selector="presentPathInfo:" destination="-1" eventType="touchUpInside" id="P73-a0-rYQ"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-ED-mY5">
                     <rect key="frame" x="164" y="331" width="46" height="30"/>
                     <state key="normal" title="Button" image="leader">
@@ -199,25 +180,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="5658"/>
                     </variation>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-eB-5R3">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.69882149665782567" green="0.94017330433557511" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="208" width="320" height="30"/>
+                    </variation>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSj-RR-t1P">
+                    <rect key="frame" x="56" y="331" width="46" height="30"/>
+                    <state key="normal" title="Button" image="route">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="40" y="257" width="60" height="60"/>
+                    </variation>
+                    <connections>
+                        <action selector="presentPathInfo:" destination="-1" eventType="touchUpInside" id="P73-a0-rYQ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="q0Z-eB-5R3"/>
                     <exclude reference="C4x-Ts-7Kd"/>
                     <exclude reference="lTa-ya-AWb"/>
+                    <exclude reference="q0Z-eB-5R3"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="q0Z-eB-5R3"/>
                     <include reference="C4x-Ts-7Kd"/>
                     <include reference="lTa-ya-AWb"/>
+                    <include reference="q0Z-eB-5R3"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="387" y="355"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <point key="canvasLocation" x="442" y="360"/>
+=======
+            <point key="canvasLocation" x="111" y="313"/>
+>>>>>>> FETCH_HEAD
+=======
+            <point key="canvasLocation" x="111" y="313"/>
+>>>>>>> FETCH_HEAD
         </view>
     </objects>
     <resources>
