@@ -12,7 +12,7 @@
 
 
 
-@interface LRBFillFormTableHeadView : UIView
+@interface LRBCommonTableHeadView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (assign,nonatomic) NSUInteger sectionId;
 @property (weak, nonatomic) IBOutlet UIButton *delBtm;

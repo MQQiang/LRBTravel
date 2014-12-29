@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LRBRouteInfo.h"
 @interface LRBRouteInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *titileLabel;
 - (IBAction)presentPathInfo:(id)sender;
@@ -20,5 +20,6 @@
 - (IBAction)presentLeaderInfo:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *blurBlackView;
 @property (strong, nonatomic) IBOutlet UIView *fillFromViewView;
-
+@property(nonatomic,assign) NSInteger journeyId;
+@property(nonatomic,assign) NSDictionary* routeInfo;
 @end

@@ -87,7 +87,7 @@
     
     NSLog(@"%lu",(unsigned long)index);
     LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
-    
+    routeInfoVC.routeInfo=_guideImageArray[index];
 //    routeInfoVC = self.view.window.rootViewController;
     
     [self.navigationController pushViewController:routeInfoVC animated:YES];
@@ -115,8 +115,8 @@
     return [_guideImageArray count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [self EScrollerViewDidClicked:1];
+//    [self EScrollerViewDidClicked:indexPath.row];
 }
 /*
 #pragma mark - Navigation
@@ -167,6 +167,7 @@
         NSLog(@"Error: %@", error);
         
     }];
+    NSLog(@"");
 
 }
 
@@ -176,8 +177,11 @@
     NSDictionary *dataDic = [sender objectForKey:@"result"];
     NSArray *banner = [dataDic objectForKey:@"banner"];
     NSArray *path = [dataDic objectForKey:@"path"];
-    NSDictionary *theme = [dataDic objectForKey:@"theme"];
+#warning NSDICTIONARY??为什么dic  array
+//    NSDictionary *theme = [dataDic objectForKey:@"theme"];
+    NSArray *theme = [dataDic objectForKey:@"theme"];
     [self setBanner:banner];
+#warning theme????
     [self setPath:theme];
     
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-#import "LRBFillFormTableHeadView.h"
+#import "LRBCommonTableHeadView.h"
 
-@implementation LRBFillFormTableHeadView
+@implementation LRBCommonTableHeadView
 
 /*
 // Only override drawRect: if you perform custom drawing.
