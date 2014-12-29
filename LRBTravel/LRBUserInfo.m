@@ -11,7 +11,7 @@
 
 
 @property (nonatomic,strong)NSString * userName;
-@property (nonatomic,strong)UIImage *profile;
+@property (nonatomic,strong)NSString *profile;
 @property (nonatomic,strong)NSString *nickName;
 @property (nonatomic,strong)NSString *phoneNumber;
 @property (nonatomic,strong)NSString *nickWeiXin;
@@ -64,6 +64,7 @@ static LRBUserInfo * shareInfo;
     _selfDescription   = [indoDic objectForKey:@"description"];
     _userId = [indoDic objectForKey:@"id"];
     
+    _profile = indoDic[@"image"];
 }
 
 -(void)setImagePrefix:(NSDictionary *)dic{

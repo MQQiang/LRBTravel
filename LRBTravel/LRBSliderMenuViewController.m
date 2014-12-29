@@ -35,7 +35,7 @@
     
     
     _nowViewTag = 0;
-     [LRBUtil drawCircleImage:_headImageView];
+    
      _menuNameArray = @[@"精品路线",@"旅图分享",@"分享APP",@"意见反馈",@"关于旅人帮",@"设置"];
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -43,7 +43,10 @@
     [_headImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapppGestureRecognized:)]];
     _userMessageCountLabel.hidden = YES;
 //    [self RequestUserMessageCount];
-   
+    [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+    _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
+    
+     [LRBUtil drawCircleImage:_headImageView];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -54,6 +57,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 //    [self RequestUserMessageCount];
+    
+    
 }
 
 /*

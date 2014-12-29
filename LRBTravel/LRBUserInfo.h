@@ -12,7 +12,7 @@
 
 +(LRBUserInfo *)shareUserInfo;
 @property (nonatomic,strong,readonly)NSString * userName;
-@property (nonatomic,strong,readonly)UIImage *profile;
+@property (nonatomic,strong,readonly)NSString *profile;
 @property (nonatomic,strong,readonly)NSString *nickName;
 @property (nonatomic,strong,readonly)NSString *phoneNumber;
 @property (nonatomic,strong,readonly)NSString *nickWeiXin;
