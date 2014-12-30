@@ -45,10 +45,6 @@
 		0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E71CA6E19E4CC9C003C9F2D /* Main.storyboard */; };
 		0E71CA7219E4CC9C003C9F2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E71CA7119E4CC9C003C9F2D /* Images.xcassets */; };
 		0E71CA7E19E4CC9C003C9F2D /* LRBTravelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E71CA7D19E4CC9C003C9F2D /* LRBTravelTests.m */; };
-		0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E72049D1A50469F0049598B /* LRBPathTabelViewCell.m */; };
-		0E7204A01A50469F0049598B /* LRBPathTabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E72049E1A50469F0049598B /* LRBPathTabelViewCell.xib */; };
-		0E7204A41A50494F0049598B /* LRBSharePictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7204A21A50494F0049598B /* LRBSharePictureCollectionViewCell.m */; };
-		0E7204A51A50494F0049598B /* LRBSharePictureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */; };
 		0E7AA2CA19FBC6BE00B59782 /* LRBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7AA2C819FBC6BE00B59782 /* LRBSearchViewController.m */; };
 		0E7AA2CB19FBC6BE00B59782 /* LRBSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7AA2C919FBC6BE00B59782 /* LRBSearchViewController.xib */; };
 		0E7AA2CD19FBC97300B59782 /* LRBNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7AA2CC19FBC97200B59782 /* LRBNotificationViewController.xib */; };
@@ -169,12 +165,6 @@
 		0E71CA7719E4CC9C003C9F2D /* LRBTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRBTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E71CA7C19E4CC9C003C9F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E71CA7D19E4CC9C003C9F2D /* LRBTravelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRBTravelTests.m; sourceTree = "<group>"; };
-		0E72049C1A50469F0049598B /* LRBPathTabelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPathTabelViewCell.h; sourceTree = "<group>"; };
-		0E72049D1A50469F0049598B /* LRBPathTabelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPathTabelViewCell.m; sourceTree = "<group>"; };
-		0E72049E1A50469F0049598B /* LRBPathTabelViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPathTabelViewCell.xib; sourceTree = "<group>"; };
-		0E7204A11A50494F0049598B /* LRBSharePictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBSharePictureCollectionViewCell.h; sourceTree = "<group>"; };
-		0E7204A21A50494F0049598B /* LRBSharePictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBSharePictureCollectionViewCell.m; sourceTree = "<group>"; };
-		0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBSharePictureCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E7AA2C719FBC6BE00B59782 /* LRBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBSearchViewController.h; sourceTree = "<group>"; };
 		0E7AA2C819FBC6BE00B59782 /* LRBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBSearchViewController.m; sourceTree = "<group>"; };
 		0E7AA2C919FBC6BE00B59782 /* LRBSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBSearchViewController.xib; sourceTree = "<group>"; };
@@ -282,9 +272,6 @@
 				0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */,
 				0E39EDAA1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.h */,
 				0E39EDAB1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.m */,
-				0E72049C1A50469F0049598B /* LRBPathTabelViewCell.h */,
-				0E72049D1A50469F0049598B /* LRBPathTabelViewCell.m */,
-				0E72049E1A50469F0049598B /* LRBPathTabelViewCell.xib */,
 			);
 			name = PersonInfo;
 			sourceTree = "<group>";
@@ -301,9 +288,6 @@
 				0E39EDAF1A224BC600A384C3 /* LRBPictureDetailViewController.h */,
 				0E39EDB01A224BC600A384C3 /* LRBPictureDetailViewController.m */,
 				0E39EDB11A224BC600A384C3 /* LRBPictureDetailViewController.xib */,
-				0E7204A11A50494F0049598B /* LRBSharePictureCollectionViewCell.h */,
-				0E7204A21A50494F0049598B /* LRBSharePictureCollectionViewCell.m */,
-				0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */,
 			);
 			name = SharePic;
 			sourceTree = "<group>";
@@ -669,7 +653,6 @@
 				0E6D697119E6BD70007C63F4 /* LRBNotificationDetailViewController.xib in Resources */,
 				0EE7C5771A0E7A9B0064F315 /* LRBShareAppViewController.xib in Resources */,
 				0E92110A1A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib in Resources */,
-				0E7204A51A50494F0049598B /* LRBSharePictureCollectionViewCell.xib in Resources */,
 				0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */,
 				0E7AA2DF19FBD4DE00B59782 /* LRBFillFormViewController.xib in Resources */,
 				0EE7C5811A0E7B220064F315 /* LRBAboutUsViewController.xib in Resources */,
@@ -688,7 +671,6 @@
 				0E39EDB31A224BC600A384C3 /* LRBPictureDetailViewController.xib in Resources */,
 				0E71CA7219E4CC9C003C9F2D /* Images.xcassets in Resources */,
 				0E7AA2D319FBCBBF00B59782 /* LRBNotificationCellTableViewCell.xib in Resources */,
-				0E7204A01A50469F0049598B /* LRBPathTabelViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,14 +735,12 @@
 				0E39ED9E1A22417D00A384C3 /* LRBCostExplainViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
 				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
-				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources
 				F2FE687C1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m in Sources */,
 				0E97BBB11A0F943C00A35F45 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,
 				0E97BBAF1A0F943C00A35F45 /* CHTCollectionViewWaterfallCell.m in Sources */,
 				0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */,
 				0EE7C5761A0E7A9B0064F315 /* LRBShareAppViewController.m in Sources */,
-				0E7204A41A50494F0049598B /* LRBSharePictureCollectionViewCell.m in Sources */,
 				F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */,
 				0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */,
 				0E39EDB21A224BC600A384C3 /* LRBPictureDetailViewController.m in Sources */,

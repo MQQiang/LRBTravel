@@ -9,7 +9,9 @@
 #import "LRBFillFormViewController.h"
 #import "LRBFillFormTableViewCell.h"
 #import "LRBFillFormPersonInfo.h"
-#import "LRBFillFormTableHeadView.h"
+#import "LRBCommonTableHeadView.h"
+#import "LRBUserInfo.h"
+#import "LRBAcceptedOrderViewController.h"
 
 
 #define kFillFormTableViewCellID @"FillFormTableViewCellID"
@@ -22,6 +24,7 @@
 }
 - (IBAction)addPerson:(id)sender;
 -(void)changeFrameyFor:(UIView*)view by:(UIView*)lastView;
+
 @end
 
 @implementation LRBFillFormViewController
@@ -31,25 +34,30 @@
     self.title = @"报名";
     _formTableView.dataSource = self;
     _formTableView.delegate  = self;
+#warning budong
     [_formTableView registerNib:[UINib nibWithNibName:@"LRBFillFormTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kFillFormTableViewCellID];
    _headTitleArray = @[@"订单信息" , @"联系人信息", @"第%d位联系人"];
     
-    _formTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
+    //_formTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
     _contentTitleArray = @[@[@"出发日期：",@"报名人数：",@"价格："],@[@"姓名：",@"电话：",@"邮箱："]];
     // Do any additional setup after loading the view from its nib.
     self.formTableView.scrollEnabled=YES;
-    _orderInfo=[[LRBFillFormOrderInfo alloc]init];
-
+    //[self.formTableView.tableHeaderView setHidden:YES];
+    self.formTableView.tableHeaderView.backgroundColor=[UIColor blackColor] ;
+//    LRBFillFormTableHeadView *titleView=[[[NSBundle mainBundle] loadNibNamed:@"LRBFillFormTableHeadView" owner:nil options:nil] lastObject];
+//    self.formTableView.tableHeaderView=titleView;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self.personInfo addObject:[[LRBFillFormPersonInfo alloc]init]];
-        NSLog(@"count1=%d",self.personInfo.count);
-    self.numPerson=1;
+        NSLog(@"count1=%lu",(unsigned long)self.personInfo.count);
     [self resize];
 }
-
+		
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (NSArray *)personInfo
 {
     if (_personInfo == nil) {
@@ -60,17 +68,18 @@
 
 -(void)resize
 {
-    double height= self.scrollview.frame.size.height;
     self.formTableView.frame=CGRectMake(self.formTableView.frame.origin.x, self.formTableView.frame.origin.y, self.formTableView.frame.size.width, self.formTableView.contentSize.height);
+    
     [self changeFrameyFor:self.addPersonBtm by:self.formTableView];
-    [self changeFrameyFor:self.noticeLabel by:self.addPersonBtm];
-    [self changeFrameyFor:self.warningLable by:self.noticeLabel];
-    [self changeFrameyFor:self.confrimView by:self.warningLable];
+    
+    NSLog(@"sy=%f", self.formTableView.frame.origin.y);
+    [self changeFrameyFor:self.noticeView by:self.addPersonBtm];
+//    [self changeFrameyFor:self.noticeLabel by:self.addPersonBtm];
+//    [self changeFrameyFor:self.warningLable by:self.noticeLabel];
+    [self changeFrameyFor:self.confrimView by:self.noticeView];
 
     self.scrollview.contentSize=CGSizeMake(self.titleLabel.frame.size.width, self.confrimView.frame.origin.y+self.confrimView.frame.size.height);
     
-    
-    NSLog(@"self.formTableView.contentSize.height=%f", self.formTableView.contentSize.height);
     
 }
 -(void)changeFrameyFor:(UIView*)view by:(UIView*)lastView
@@ -99,6 +108,7 @@
 {
     return 1;
 }
+
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
@@ -154,21 +164,30 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    LRBFillFormTableHeadView *titleView=[[[NSBundle mainBundle] loadNibNamed:@"LRBFillFormTableHeadView" owner:nil options:nil] lastObject];
+    LRBCommonTableHeadView *titleView=[[[NSBundle mainBundle] loadNibNamed:@"LRBCommonTableHeadView" owner:nil options:nil] lastObject];
     titleView.delegate=self;
     [self resize];
     if(section<2)
     {
         titleView.title.text= _headTitleArray[section];
-        titleView.delBtm.hidden=YES;
+     
     }else{
         titleView.title.text= [NSString stringWithFormat:_headTitleArray[2],section];
         titleView.sectionId=section-1;
+           titleView.delBtm.hidden=NO;
     }
     
     
     return titleView;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 41;
+}
+
+
+
+
 
 -(void)changeText:(LRBFillFormTableViewCell *)cell
 {
@@ -211,4 +230,40 @@
     [self.formTableView reloadData];
         [self resize];
 }
+-(void)requestDataFromServer
+{
+//    http://121.40.173.195/lvrenbang/php/api/PathApi.php?type=join&user_id=1&path_id=1&name=zhangsan&phone=15157181976&email=fpc_2011@sina.com
+    
+    LRBUserInfo *userInfo=[LRBUserInfo shareUserInfo];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    LRBFillFormPersonInfo *keyPerson=[_personInfo objectAtIndex:0];
+    if (keyPerson.userName==nil||keyPerson.phoneNumber==nil||keyPerson.email==nil) {
+        NSLog(@"no input");
+        return;
+    }
+    NSDictionary *parameters = @{@"type":@"join",@"user_id":userInfo.userId,@"path_id":[_routeInfo objectForKey:@"id"],@"name":keyPerson.userName,@"phone":keyPerson.phoneNumber,@"email":keyPerson.email};
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+       // [self refreshView:responseObject];
+        NSDictionary* returnInfo =responseObject;
+        if([returnInfo objectForKey:@"status"])
+        [self.navigationController pushViewController:[[LRBAcceptedOrderViewController alloc]init] animated:YES];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+    NSLog(@"");
+    
+}
+
+- (IBAction)submit:(id)sender {
+    [self requestDataFromServer];
+}
 @end
+
+

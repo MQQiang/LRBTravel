@@ -88,12 +88,9 @@
 		0EE7C58F1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C58D1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m */; };
 		0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */; };
 		F29A992A1A4DE08300288FC9 /* LRBFillFormPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A99291A4DE08300288FC9 /* LRBFillFormPersonInfo.m */; };
-		F29A992D1A4E79E700288FC9 /* LRBCommonTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */; };
-		F29A99311A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */; };
+		F29A992D1A4E79E700288FC9 /* LRBFillFormTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A992C1A4E79E700288FC9 /* LRBFillFormTableHeadView.m */; };
+		F29A99311A4E7A2A00288FC9 /* LRBFillFormTableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29A99301A4E7A2A00288FC9 /* LRBFillFormTableHeadView.xib */; };
 		F29A99361A4EAE9700288FC9 /* LRBFillFormOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A99351A4EAE9700288FC9 /* LRBFillFormOrderInfo.m */; };
-		F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DE2DF61A51B869009725C8 /* LRBRouteInfo.m */; };
-		F2FE687C1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */; };
-		F2FE687D1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FE687B1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib */; };
 		F5FC73BBDEAE4B81AD2D80D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5767629C9B74237BE1BBAF5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -239,16 +236,11 @@
 		5A4FF41F99C04A709DCC081B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F29A99281A4DE08300288FC9 /* LRBFillFormPersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormPersonInfo.h; sourceTree = "<group>"; };
 		F29A99291A4DE08300288FC9 /* LRBFillFormPersonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormPersonInfo.m; sourceTree = "<group>"; };
-		F29A992B1A4E79E700288FC9 /* LRBCommonTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBCommonTableHeadView.h; sourceTree = "<group>"; };
-		F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBCommonTableHeadView.m; sourceTree = "<group>"; };
-		F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBCommonTableHeadView.xib; sourceTree = "<group>"; };
+		F29A992B1A4E79E700288FC9 /* LRBFillFormTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormTableHeadView.h; sourceTree = "<group>"; };
+		F29A992C1A4E79E700288FC9 /* LRBFillFormTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormTableHeadView.m; sourceTree = "<group>"; };
+		F29A99301A4E7A2A00288FC9 /* LRBFillFormTableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBFillFormTableHeadView.xib; sourceTree = "<group>"; };
 		F29A99341A4EAE9700288FC9 /* LRBFillFormOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormOrderInfo.h; sourceTree = "<group>"; };
 		F29A99351A4EAE9700288FC9 /* LRBFillFormOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormOrderInfo.m; sourceTree = "<group>"; };
-		F2DE2DF51A51B869009725C8 /* LRBRouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBRouteInfo.h; sourceTree = "<group>"; };
-		F2DE2DF61A51B869009725C8 /* LRBRouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBRouteInfo.m; sourceTree = "<group>"; };
-		F2FE68791A51CCAE0062F461 /* LRBAcceptedOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBAcceptedOrderViewController.h; sourceTree = "<group>"; };
-		F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBAcceptedOrderViewController.m; sourceTree = "<group>"; };
-		F2FE687B1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBAcceptedOrderViewController.xib; sourceTree = "<group>"; };
 		F5767629C9B74237BE1BBAF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -319,8 +311,6 @@
 				F29A99351A4EAE9700288FC9 /* LRBFillFormOrderInfo.m */,
 				0EC248D01A4C5A6F003E79E5 /* LRBBannerPathModel.h */,
 				0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */,
-				F2DE2DF51A51B869009725C8 /* LRBRouteInfo.h */,
-				F2DE2DF61A51B869009725C8 /* LRBRouteInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -478,9 +468,6 @@
 				0E39ED961A22389000A384C3 /* LRBDeviceInfoViewController.h */,
 				0E39ED971A22389000A384C3 /* LRBDeviceInfoViewController.m */,
 				0E39ED981A22389000A384C3 /* LRBDeviceInfoViewController.xib */,
-				F2FE68791A51CCAE0062F461 /* LRBAcceptedOrderViewController.h */,
-				F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */,
-				F2FE687B1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib */,
 				0EE363AB1A0FC50900C2E4F7 /* FillFormTableViewCell */,
 			);
 			name = JourneyDetailVC;
@@ -514,9 +501,6 @@
 				0E5B6E661A1111AD00B12C59 /* UIViewController+Blur.m */,
 				0EE7C5871A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.h */,
 				0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */,
-				F29A992B1A4E79E700288FC9 /* LRBCommonTableHeadView.h */,
-				F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */,
-				F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -527,6 +511,9 @@
 				0EE363AC1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.h */,
 				0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */,
 				0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */,
+				F29A992B1A4E79E700288FC9 /* LRBFillFormTableHeadView.h */,
+				F29A992C1A4E79E700288FC9 /* LRBFillFormTableHeadView.m */,
+				F29A99301A4E7A2A00288FC9 /* LRBFillFormTableHeadView.xib */,
 			);
 			name = FillFormTableViewCell;
 			sourceTree = "<group>";
@@ -656,13 +643,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2FE687D1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib in Resources */,
 				0E7AA2CD19FBC97300B59782 /* LRBNotificationViewController.xib in Resources */,
 				0E600DFF1A2C083A003920D3 /* LRBRegisterViewController.xib in Resources */,
 				0E363BFB1A0905770075A38C /* LRBTestViewController.xib in Resources */,
 				0E6D696419E6BC9A007C63F4 /* LRBPictureShareViewController.xib in Resources */,
 				0E39ED9A1A22389000A384C3 /* LRBDeviceInfoViewController.xib in Resources */,
-				F29A99311A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib in Resources */,
+				F29A99311A4E7A2A00288FC9 /* LRBFillFormTableHeadView.xib in Resources */,
 				0E92110F1A0CB4F900D3BDFB /* LRBLoginViewController.xib in Resources */,
 				0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */,
 				0E6D696919E6BCE2007C63F4 /* LRBIndexViewController.xib in Resources */,
@@ -753,15 +739,13 @@
 				0E39ED9E1A22417D00A384C3 /* LRBCostExplainViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
 				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
-				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources
-				F2FE687C1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m in Sources */,
+				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources */,
 				0E97BBB11A0F943C00A35F45 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,
 				0E97BBAF1A0F943C00A35F45 /* CHTCollectionViewWaterfallCell.m in Sources */,
 				0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */,
 				0EE7C5761A0E7A9B0064F315 /* LRBShareAppViewController.m in Sources */,
 				0E7204A41A50494F0049598B /* LRBSharePictureCollectionViewCell.m in Sources */,
-				F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */,
 				0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */,
 				0E39EDB21A224BC600A384C3 /* LRBPictureDetailViewController.m in Sources */,
 				0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */,
@@ -777,7 +761,7 @@
 				0E71CA6719E4CC9C003C9F2D /* AppDelegate.m in Sources */,
 				0E97BBB01A0F943C00A35F45 /* CHTCollectionViewWaterfallFooter.m in Sources */,
 				0E71CA6419E4CC9C003C9F2D /* main.m in Sources */,
-				F29A992D1A4E79E700288FC9 /* LRBCommonTableHeadView.m in Sources */,
+				F29A992D1A4E79E700288FC9 /* LRBFillFormTableHeadView.m in Sources */,
 				0E600EC01A2CC3B9003920D3 /* LRBNotificationViewController.m in Sources */,
 				0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */,
 				F29A99361A4EAE9700288FC9 /* LRBFillFormOrderInfo.m in Sources */,

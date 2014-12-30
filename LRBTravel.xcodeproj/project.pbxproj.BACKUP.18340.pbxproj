@@ -753,15 +753,21 @@
 				0E39ED9E1A22417D00A384C3 /* LRBCostExplainViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
 				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
-				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources
+<<<<<<< HEAD
+				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources */,
+=======
 				F2FE687C1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m in Sources */,
+>>>>>>> FETCH_HEAD
 				0E97BBB11A0F943C00A35F45 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,
 				0E97BBAF1A0F943C00A35F45 /* CHTCollectionViewWaterfallCell.m in Sources */,
 				0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */,
 				0EE7C5761A0E7A9B0064F315 /* LRBShareAppViewController.m in Sources */,
+<<<<<<< HEAD
 				0E7204A41A50494F0049598B /* LRBSharePictureCollectionViewCell.m in Sources */,
+=======
 				F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */,
+>>>>>>> FETCH_HEAD
 				0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */,
 				0E39EDB21A224BC600A384C3 /* LRBPictureDetailViewController.m in Sources */,
 				0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */,

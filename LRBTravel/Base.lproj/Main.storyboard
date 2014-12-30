@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iW-8i-sA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.75" y="675.375"/>
+            <point key="canvasLocation" x="-302.5" y="695.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -272,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMT-tV-8Mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="692"/>
+            <point key="canvasLocation" x="-794" y="770"/>
         </scene>
         <!--Person Info View Controller-->
         <scene sceneID="n1S-Le-llS">
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llu-dk-GIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69" y="692"/>
+            <point key="canvasLocation" x="759" y="858"/>
         </scene>
         <!--Journey View Controller-->
         <scene sceneID="3mA-84-fuh">
@@ -442,6 +442,6 @@
         <image name="mq" width="530" height="446"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8sX-r3-dfh"/>
+        <segue reference="BB7-Fp-3wg"/>
     </inferredMetricsTieBreakers>
 </document>

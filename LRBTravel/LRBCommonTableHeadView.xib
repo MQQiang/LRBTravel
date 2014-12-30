@@ -7,35 +7,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view opaque="NO" contentMode="center" id="ksp-8T-9Si" customClass="LRBFillFormTableHeadView">
-            <rect key="frame" x="0.0" y="0.0" width="296" height="41"/>
+        <view opaque="NO" contentMode="center" id="ksp-8T-9Si" customClass="LRBCommonTableHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="296" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bV8-V0-8tf">
-                    <rect key="frame" x="13" y="10" width="214" height="21"/>
+                    <rect key="frame" x="13" y="13" width="214" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ocl-0P-zxs">
-                    <rect key="frame" x="252" y="5" width="36" height="31"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ocl-0P-zxs">
+                    <rect key="frame" x="252" y="8" width="36" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="删除">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="del:" destination="ksp-8T-9Si" eventType="touchUpInside" id="zcp-Bu-Phm"/>
+                        <action selector="del:" destination="ksp-8T-9Si" eventType="touchUpInside" id="kMi-ZV-C5L"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" id="6Cp-gV-blP">
+                    <rect key="frame" x="4" y="8" width="4" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.91372549020000005" green="0.78039215689999997" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="delBtm" destination="ocl-0P-zxs" id="dsV-9J-OcQ"/>
-                <outlet property="title" destination="bV8-V0-8tf" id="Qqr-kT-Ziy"/>
+                <outlet property="delBtm" destination="ocl-0P-zxs" id="rKo-M4-zQl"/>
+                <outlet property="title" destination="bV8-V0-8tf" id="BCk-WK-f5a"/>
             </connections>
             <point key="canvasLocation" x="1047" y="-197.5"/>
         </view>
