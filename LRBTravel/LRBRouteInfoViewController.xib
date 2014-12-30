@@ -14,7 +14,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-ED-mY5">
@@ -151,19 +151,6 @@
                         <action selector="enrollForJourney:" destination="-1" eventType="touchUpInside" id="c2k-FE-7V3"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZv-Yn-pkT">
-                    <rect key="frame" x="107" y="570" width="60" height="30"/>
-                    <state key="normal" title="电话咨询">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="65" y="505" width="60" height="30"/>
-                    </variation>
-                    <connections>
-                        <action selector="connectPhoneNumber:" destination="-1" eventType="touchUpInside" id="OyS-3q-SXJ"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="预定须知" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-Yn-UMH">
                     <rect key="frame" x="273" y="488" width="68" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -199,10 +186,22 @@
                         <action selector="presentPathInfo:" destination="-1" eventType="touchUpInside" id="P73-a0-rYQ"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZv-Yn-pkT">
+                    <rect key="frame" x="107" y="570" width="60" height="30"/>
+                    <state key="normal" title="电话咨询">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="65" y="505" width="60" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="connectPhoneNumber:" destination="-1" eventType="touchUpInside" id="OyS-3q-SXJ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="C4x-Ts-7Kd"/>
