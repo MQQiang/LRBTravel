@@ -8,8 +8,9 @@
 
 #import "LRBShareViewController.h"
 #define MAXTEXTINPUT 120
-
-
+#import "PrefixHeader.pch"
+#import "AFNetworking.h"
+#import "LRBUserInfo.h"
 @interface LRBShareViewController ()
 
 @end
@@ -119,14 +120,20 @@
 
 
 
--(void)sharePic{
+-(void)sharePicWithURL:(NSString*) imageURL{
     
-    
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"shortIntro"};
+  //  NSLog(@"aaa=%@",[[LRBUserInfo shareUserInfo].userId ]);
+    NSDictionary *parameters = @{@"type":@"postShare",@"user_id":[LRBUserInfo shareUserInfo].userId,@"title":self.imageTitle.text,@"content":self.descriptionField.text,@"image":imageURL};
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    
+    
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/ShareApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
+        NSDictionary *result=responseObject;
+        //NSString *str=[[NSString alloc] initWithData:responseObject encoding:NSASCIIStringEncoding  ];
+        NSLog(@"%@",responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -136,8 +143,35 @@
 
 }
 -(void)sharePic:(id)sender{
+    NSDictionary *dic =@{};
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     
-    
+    manager.responseSerializer =  [AFHTTPResponseSerializer serializer];
+
+   manager.responseSerializer.acceptableContentTypes =[NSSet setWithObject:@"text/html"];
+    [manager POST:[kHTTPServerAddress stringByAppendingString:@"php/api/ImageApi.php"] parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+    {
+        
+        [formData appendPartWithFileData:UIImageJPEGRepresentation(_image, 0.05) name:@"image" fileName:@"test.jpg" mimeType:@"image/jpg"];
+        
+    }success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        
+
+        NSString *str=[[NSString alloc] initWithData:responseObject encoding:NSASCIIStringEncoding  ];
+        NSError * error;
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData: [str dataUsingEncoding:NSUTF8StringEncoding]  options: NSJSONReadingMutableContainers  error: &error];
+                NSLog(@"%@",result);
+       [ self sharePicWithURL:[result objectForKey:@"pic_path"]];
+        
+        NSLog(@"%@",result);
+        
+    }failure:^(AFHTTPRequestOperation *operation,NSError *error) {
+        
+        NSLog(@"%ld  %@",(long)error.code,error.domain);
+        
+    }];
+
+
 }
 
 /*

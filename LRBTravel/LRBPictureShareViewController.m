@@ -87,7 +87,7 @@
 -(void)sharePic:(id)sender{
     
     LRBShareViewController *vc = [[LRBShareViewController    alloc] init];
-    
+    NSLog(@"aaaaaaaaaaaa");
     [self.navigationController pushViewController:vc animated:YES];
     
     

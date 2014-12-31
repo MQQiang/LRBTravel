@@ -87,12 +87,12 @@
 		0EE7C5891A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */; };
 		0EE7C58F1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C58D1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m */; };
 		0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */; };
+		F22A7A851A547A05008B587A /* LRBAcceptedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */; };
 		F29A992A1A4DE08300288FC9 /* LRBFillFormPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A99291A4DE08300288FC9 /* LRBFillFormPersonInfo.m */; };
 		F29A992D1A4E79E700288FC9 /* LRBCommonTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */; };
 		F29A99311A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */; };
 		F29A99361A4EAE9700288FC9 /* LRBFillFormOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A99351A4EAE9700288FC9 /* LRBFillFormOrderInfo.m */; };
 		F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DE2DF61A51B869009725C8 /* LRBRouteInfo.m */; };
-		F2FE687C1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */; };
 		F2FE687D1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FE687B1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib */; };
 		F5FC73BBDEAE4B81AD2D80D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5767629C9B74237BE1BBAF5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -739,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22A7A851A547A05008B587A /* LRBAcceptedOrderViewController.m in Sources */,
 				0E9211121A0D10AF00D3BDFB /* EScrollerView.m in Sources */,
 				F29A992A1A4DE08300288FC9 /* LRBFillFormPersonInfo.m in Sources */,
 				0E7AA2DE19FBD4DE00B59782 /* LRBFillFormViewController.m in Sources */,
@@ -753,8 +754,7 @@
 				0E39ED9E1A22417D00A384C3 /* LRBCostExplainViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
 				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
-				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources
-				F2FE687C1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m in Sources */,
+				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources */,
 				0E97BBB11A0F943C00A35F45 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,
 				0E97BBAF1A0F943C00A35F45 /* CHTCollectionViewWaterfallCell.m in Sources */,
