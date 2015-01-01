@@ -19,5 +19,11 @@
 
     // Configure the view for the selected state
 }
+-(void)setupViewWithDic:(NSDictionary *)dic{
+    
+    _pathNumLabel.text = @"2条线路";
+    [_picView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"image"]]]];
 
+
+}
 @end

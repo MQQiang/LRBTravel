@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _costTextView.text = self.info;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -58,4 +59,8 @@
 }
 */
 
+- (IBAction)close:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

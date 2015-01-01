@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+     _textField.text = _info;
+    
+    _textField.editable = false;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -29,6 +33,12 @@
     
     
     
+}
+
+-(void)setInfo:(NSString *)info{
+    _info = info;
+    
+   
 }
 
 -(void)getJourneyInfo{
@@ -60,4 +70,8 @@
 }
 */
 
+- (IBAction)close:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

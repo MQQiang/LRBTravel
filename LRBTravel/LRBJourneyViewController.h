@@ -12,4 +12,9 @@
 
 @property(nonatomic,assign) NSInteger journeyId;
 
+@property (strong, nonatomic) IBOutlet UITextView *textField;
+
+@property(nonatomic,copy)NSString *info;
+- (IBAction)close:(id)sender;
+
 @end

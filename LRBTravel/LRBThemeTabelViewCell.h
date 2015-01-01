@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LRBThemeTabelViewCell : UITableViewCell
-
+@property (strong, nonatomic) IBOutlet UILabel *pathNumLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *picView;
+-(void)setupViewWithDic:(NSDictionary *)dic;
 @end

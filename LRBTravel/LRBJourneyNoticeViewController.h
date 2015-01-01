@@ -11,4 +11,5 @@
 @interface LRBJourneyNoticeViewController : UIViewController
 
 @property(nonatomic,assign)NSInteger noticeId;
+@property(nonatomic,copy)NSString *info;
 @end

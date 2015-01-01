@@ -94,10 +94,12 @@
 
 -(void)EScrollerViewDidClicked:(NSUInteger)index{
     
+    
     NSLog(@"%lu",(unsigned long)index);
     LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
-    routeInfoVC.routeInfo=_guideImageArray[index];
+//    routeInfoVC.routeInfo=_guideImageArray[index];
 //    routeInfoVC = self.view.window.rootViewController;
+    routeInfoVC.journeyId = [[_bannerDataArray objectAtIndex:index][@"id"] intValue];
     
     [self.navigationController pushViewController:routeInfoVC animated:YES];
     
@@ -115,6 +117,7 @@
     if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Theme"]) {
         
         LRBThemeTabelViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kThemeTabelViewCellID];
+        [cell setupViewWithDic:_dataArray[indexPath.row]];
         //             _guideImageIndex++;
                     return cell;
         
@@ -172,8 +175,16 @@
     return [_guideImageArray count]+[_pathImageArray count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self EScrollerViewDidClicked:1];
-//    [self EScrollerViewDidClicked:indexPath.row];
+  
+
+    LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
+
+    routeInfoVC.journeyId = [[_dataArray objectAtIndex:indexPath.row][@"id"] intValue];
+    
+    [self.navigationController pushViewController:routeInfoVC animated:YES];
+    
+    
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
@@ -254,11 +265,15 @@
 
 -(void)setBanner:(NSArray *)bannerData{
     
+    [_bannerDataArray addObjectsFromArray:bannerData];
+    
     NSMutableArray* imageArray = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in bannerData) {
         
         LRBBannerPathModel *model = [[LRBBannerPathModel alloc]init];
         [model setModelWithDic:dic];
+        
+        if(model.image)
         [imageArray addObject:model.image];
         
     }

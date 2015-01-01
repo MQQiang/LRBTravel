@@ -21,5 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIView *blurBlackView;
 @property (strong, nonatomic) IBOutlet UIView *fillFromViewView;
 @property(nonatomic,assign) NSInteger journeyId;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *datanumLabel;
 @property(nonatomic,assign) NSDictionary* routeInfo;
 @end

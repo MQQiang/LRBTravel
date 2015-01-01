@@ -69,7 +69,7 @@
     if (!_cellSizes) {
         _cellSizes = [NSMutableArray array];
         for (NSInteger i = 0; i < CELL_COUNT; i++) {
-            CGSize size = CGSizeMake(arc4random() % 20 + 140, arc4random() % 20 + 230);
+            CGSize size = CGSizeMake(arc4random() % 20 + 140, arc4random() % 20 + 246);
             _cellSizes[i] = [NSValue valueWithCGSize:size];
         }
     }
