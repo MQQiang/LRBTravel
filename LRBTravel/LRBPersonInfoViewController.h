@@ -10,7 +10,7 @@
 
 @interface LRBPersonInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-
+@property (strong,nonatomic) UINavigationController* tempNavC;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *settingButton;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UIButton *notificationButton;
+- (IBAction)editInfo:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *notifiacationNumberLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UITableView *infoTabelView;
