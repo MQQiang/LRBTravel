@@ -14,13 +14,17 @@
 #import "LRBRouteInfoViewController.h"
 #import "LRBIndexViewTableViewCell.h"
 #import "LRBBannerPathModel.h"
-
+#import "LRBThemeTabelViewCell.h"
 
 #define kIndexTableViewCellID @"IndexTableViewCellID"
-
+#define kThemeTabelViewCellID @"ThemeTabelViewCellID"
 
 @interface LRBIndexViewController ()<EScrollerViewDelegate,UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *_guideImageArray;
+    NSMutableArray *_pathImageArray;
+    int _guideImageIndex;
+    int _pathImageIndex;
+    NSMutableArray *_dataArray;
 }
 @property (nonatomic,strong)UIScrollView *m_sc;
 @property (nonatomic,strong)UIPageControl *m_pageC;
@@ -32,13 +36,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _bannerDataArray = [[NSMutableArray alloc] init];
-    
-    
+    _dataArray = [NSMutableArray new];
+    _pathImageArray  = [[NSMutableArray alloc] init];
     _guideImageArray = [NSMutableArray new];
     
     _indexTableView.dataSource = self;
     _indexTableView.delegate = self;
-    [_indexTableView registerNib:[UINib nibWithNibName:@"LRBIndexViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexTableViewCellID];
+    
+    [_indexTableView registerNib:[UINib nibWithNibName:@"LRBIndexViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexTableViewCellID  ];
+    
+     [_indexTableView registerNib:[UINib nibWithNibName:@"LRBThemeTabelViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kThemeTabelViewCellID];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -66,6 +73,8 @@
     scroller.delegate=self;
     
     [self.view addSubview:scroller];
+    _guideImageIndex = 0;
+    _pathImageIndex = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -103,20 +112,77 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LRBIndexViewTableViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
+    if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Theme"]) {
+        
+        LRBThemeTabelViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kThemeTabelViewCellID];
+        //             _guideImageIndex++;
+                    return cell;
+        
+    }
+        
+        LRBIndexViewTableViewCell *cell = [ _indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
+                    [cell setupCellWith:_dataArray[indexPath.row]];
     
-    [cell setupCellWith:[_guideImageArray objectAtIndex:indexPath.row]];
+                    return  cell;
+        
+
+
+//    if (indexPath.row%2 ==0) {
+//        if (_guideImageIndex < [_guideImageArray count]) {
+//            
+//            
+//            LRBThemeTabelViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kThemeTabelViewCellID];
+//             _guideImageIndex++;
+//            return cell;
+//           
+//           
+//        }
+//        else{
+//            
+//            LRBIndexViewTableViewCell *cell = [ _indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
+//            [cell setupCellWith:_pathImageArray[_pathImageIndex]];
+//            _pathImageIndex++;
+//            return  cell;
+//            
+//        }
+//        
+//    }
+//    else{
+//        
+//        if (_pathImageIndex < [_pathImageArray count]) {
+//            
+//            LRBIndexViewTableViewCell *cell = [ _indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
+//            [cell setupCellWith:_pathImageArray[_pathImageIndex]];
+//            _pathImageIndex++;
+//            return cell;
+//        }
+//        else{
+//            LRBThemeTabelViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kThemeTabelViewCellID];
+//            _guideImageIndex++;
+//            return cell;
+//            
+//        }
+//        
+//    }
     
-    return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return [_guideImageArray count];
+    return [_guideImageArray count]+[_pathImageArray count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self EScrollerViewDidClicked:1];
 //    [self EScrollerViewDidClicked:indexPath.row];
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
+    
+    if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Path"]) {
+        
+        return  200.0f;
+    }
+    return 180.0f;
+    
 }
 /*
 #pragma mark - Navigation
@@ -150,7 +216,7 @@
 
 -(void)requestDataFromServer{
     
-    
+    [MBProgressHUD  showHUDAddedTo:self.view animated:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"type":@"index"};
     
@@ -160,7 +226,7 @@
         
         [self refreshView:responseObject];
         
-        
+        [MBProgressHUD  hideHUDForView:self.view animated:YES];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -182,8 +248,8 @@
     NSArray *theme = [dataDic objectForKey:@"theme"];
     [self setBanner:banner];
 #warning theme????
-    [self setPath:theme];
-    
+    [self setPath:path];
+    [self setTheme:theme];
 }
 
 -(void)setBanner:(NSArray *)bannerData{
@@ -201,14 +267,39 @@
 }
 -(void)setPath:(NSArray *)pathData{
     
-    [_guideImageArray addObjectsFromArray: pathData];
-    [_indexTableView reloadData];
+    [_pathImageArray addObjectsFromArray: pathData];
+//    [_indexTableView reloadData];
     
     
 }
--(void)setTheme:(NSDictionary *)themeDic{
+-(void)setTheme:(NSArray *)themeDic{
     
+    [_guideImageArray addObjectsFromArray: themeDic];
     
+    [self mixArray];
+    [_indexTableView reloadData];
+    
+}
+-(void)mixArray{
+    
+    NSInteger maxIndex = [_guideImageArray count]> [_pathImageArray count]?[_guideImageArray count]:[_pathImageArray count];
+    
+    for (NSInteger i = 0; i < maxIndex; i++) {
+        
+        if(i < [_guideImageArray count]){
+            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:_guideImageArray[i]];
+            dic[@"type"] = @"Theme";
+            [_dataArray addObject:dic];
+        }
+        if (i < [_pathImageArray count]) {
+            
+            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:_pathImageArray[i]];
+            dic[@"type"] = @"Path";
+          
+            [_dataArray addObject:dic];
+        }
+        
+    }
     
 }
 

@@ -11,6 +11,8 @@
 #import "CHTCollectionViewWaterfallHeader.h"
 #import "CHTCollectionViewWaterfallFooter.h"
 #import "LRBShareViewController.h"
+#import "LRBSharePictureCollectionViewCell.h"
+
 
 #define CELL_COUNT 30
 #define CELL_IDENTIFIER @"WaterfallCell"
@@ -35,18 +37,24 @@
         CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
         
         layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-        layout.headerHeight = 15;
-        layout.footerHeight = 10;
+        layout.headerHeight = 0;
+        layout.footerHeight = 0;
         layout.minimumColumnSpacing = 20;
         layout.minimumInteritemSpacing = 30;
-        
+        _collectionView.backgroundColor = [UIColor lightGrayColor];
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         _collectionView.backgroundColor = [UIColor whiteColor];
+//        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
+//            forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        
+        
         [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
             forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        [_collectionView registerNib:[UINib nibWithNibName:@"LRBSharePictureCollectionViewCell" bundle:nil]forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        
         [_collectionView registerClass:[CHTCollectionViewWaterfallHeader class]
             forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader
                    withReuseIdentifier:HEADER_IDENTIFIER];
@@ -61,7 +69,7 @@
     if (!_cellSizes) {
         _cellSizes = [NSMutableArray array];
         for (NSInteger i = 0; i < CELL_COUNT; i++) {
-            CGSize size = CGSizeMake(arc4random() % 50 + 50, arc4random() % 50 + 50);
+            CGSize size = CGSizeMake(arc4random() % 20 + 140, arc4random() % 20 + 230);
             _cellSizes[i] = [NSValue valueWithCGSize:size];
         }
     }
@@ -82,6 +90,8 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(sharePic:)];
     _dataArray = [[NSMutableArray alloc] init];
     
+   
+    
     [self.view addSubview:self.collectionView];
 }
 -(void)sharePic:(id)sender{
@@ -96,6 +106,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self updateLayoutForOrientation:[UIApplication sharedApplication].statusBarOrientation];
+    
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -120,10 +131,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CHTCollectionViewWaterfallCell *cell =
-    (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
-                                                                                forIndexPath:indexPath];
-    cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
+//    
+//    CHTCollectionViewWaterfallCell *cell =
+//    (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
+//                                                                                forIndexPath:indexPath];
+    
+    LRBSharePictureCollectionViewCell  *cell = (LRBSharePictureCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    
+//    cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
     [cell setupCellWithDic:[_dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
@@ -146,6 +161,7 @@
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%f",[self.cellSizes[indexPath.item] CGSizeValue].height);
     return [self.cellSizes[indexPath.item] CGSizeValue];
 }
 
