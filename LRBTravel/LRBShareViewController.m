@@ -11,8 +11,15 @@
 #import "PrefixHeader.pch"
 #import "AFNetworking.h"
 #import "LRBUserInfo.h"
-@interface LRBShareViewController ()
 
+
+
+@interface LRBShareViewController ()
+{
+    
+    int responderId;
+
+}
 @end
 
 @implementation LRBShareViewController
@@ -23,55 +30,64 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sharePic:)];
     self.descriptionField.delegate=self;
+    self.imageTitle.delegate=self;
+    
+    
     self.imageView=[[UIImageView alloc] init];
     [self.view addSubview:self.imageView];
-    [self registerForKeyboardNotifications];
     // Do any additional setup after loading the view from its nib.
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    responderId=0;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(void)viewWillDisappear:(BOOL)animated
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-- (void)registerForKeyboardNotifications
-{
-    //使用NSNotificationCenter 鍵盤出現時
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:)  name:UIKeyboardDidShowNotification object:nil];
-    //使用NSNotificationCenter 鍵盤隐藏時
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
-}
+//
+//- (void)keyboardWillChangeFrame:(NSNotification *)note
+//{
+//    // 设置窗口的颜色
+// //  self.view.window.backgroundColor = self.tableView.backgroundColor;
+//    
+//    if (responderId) {
+//        
+//    NSLog(@"%@",note);
+//    // 0.取出键盘动画的时间
+//    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+//    
+//    // 1.取得键盘最后的frame
+//    CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    //CGRect keyboardOriginFrame = [note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+//    if (keyboardFrame.size.width==0) {
+//            return;
+//    }
+//    // 2.计算控制器的view需要平移的距离
+//    CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height;
+//    
+//    // 3.执行动画
+//    [UIView animateWithDuration:duration animations:^{
+//        self.view.transform = CGAffineTransformMakeTranslation(0, transformY);
+//    }];
+//        
+//    }
+//}
 
-//实现当键盘出现的时候计算键盘的高度大小。用于输入框显示位置
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    NSDictionary* info = [aNotification userInfo];
-    //kbSize即為鍵盤尺寸 (有width, height)
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//得到鍵盤的高度
-    NSLog(@"hight_hitht:%f",kbSize.height);
-    int keyboardhight;
-    if(kbSize.height == 216)
-    {
-        keyboardhight = 0;
-    }
-    else
-    {
-        keyboardhight = 36;   //252 - 216 系统键盘的两个不同高度
-    }
-    self.scrollView.contentOffset=CGPointMake(0, 216);
-    //输入框位置动画加载
-   // [self begainMoveUpAnimation:keyboardhight];
-}
+
+
 
 //当键盘隐藏的时候
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
     //do something
 }
+
+
+
 
 
 //(TextView) 当键盘开始输入前。时行计算与动画加载
@@ -97,23 +113,6 @@
 //    return YES;
 //}
 //
-
-
-//输入结束时调用动画（把按键。背景。输入框都移下去）
--(void)textViewDidEndEditing:(UITextView *)textView
-{
-    NSLog(@"tabtabtab");
-   // [self endEditAnimation];
-    self.scrollView.contentOffset=CGPointMake(0, 0);
-    [textView resignFirstResponder];
-    //释放
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-
-
-
 
 
 
@@ -142,7 +141,8 @@
     }];
 
 }
--(void)sharePic:(id)sender{
+-(void)sharePic:(id)sender
+{
     NSDictionary *dic =@{};
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     
@@ -264,6 +264,8 @@
 
         
     }}
+
+
 -(CGSize)getImageViewSizeFrom:(UIImage*)initImage maxSize:(CGSize)maxSize
 {
 #warning 两个都大于而且巨长。。会导致按钮超出边框
@@ -281,7 +283,8 @@
 
 
 // 保存图片后到相册后，调用的相关方法，查看是否保存成功
-- (void) imageWasSavedSuccessfully:(UIImage *)paramImage didFinishSavingWithError:(NSError *)paramError contextInfo:(void *)paramContextInfo{
+- (void) imageWasSavedSuccessfully:(UIImage *)paramImage didFinishSavingWithError:(NSError *)paramError contextInfo:(void *)paramContextInfo
+{
     if (paramError == nil){
         NSLog(@"Image was saved successfully.");
     } else {
@@ -291,7 +294,8 @@
 }
 
 // 当得到照片或者视频后，调用该方法
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
     NSLog(@"Picker returned successfully.");
     NSLog(@"%@", info);
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
@@ -319,7 +323,7 @@
         CGRect tframe= self.bottomView.frame;
         tframe.origin.y= self.imageView.frame.origin.y+ self.imageView.frame.size.height+10.0f;
         self.bottomView.frame=tframe;
-        self.scrollView.contentSize=CGSizeMake(self.bottomView.frame.origin.x+self.bottomView.frame.size.width, self.bottomView.frame.origin.y+self.bottomView.frame.size.height);
+        //self.scrollView.contentSize=CGSizeMake(self.bottomView.frame.origin.x+self.bottomView.frame.size.width, self.bottomView.frame.origin.y+self.bottomView.frame.size.height);
                 // 保存图片到相册中
         
     }else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]){
@@ -342,22 +346,51 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+//-(void)textViewDidBeginEditing:(UITextView *)textView
+//{
+//    responderId=1;
+//    [textView becomeFirstResponder];	
+//
+//
+//}
+
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+//    responderId=1;
+//    [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillChangeFrameNotification object:self];    //[self.descriptionField becomeFirstResponder];
     
-    self.scrollView.contentOffset=CGPointMake(0.0, 252.0);
+        [UIView animateWithDuration:0.5 animations:^{
+            self.view.transform = CGAffineTransformMakeTranslation(0, -90);
+        }];
+    return YES;
+}
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
 
+    [UIView animateWithDuration:0.5 animations:^{
+        self.view.transform = CGAffineTransformMakeTranslation(0, 0);
+    }];
+//    [textView resignFirstResponder];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillChangeFrameNotification object:self];
     return YES;
 }
 
--(void)textViewDidBeginEditing:(UITextField *)textField
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-
+//    [textField resignFirstResponder];
+    return YES;
 }
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    responderId=0;
+    return YES;
+}
+//
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
      NSString * toBeString = [textView.text stringByReplacingCharactersInRange:range withString:text];
+
     if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;

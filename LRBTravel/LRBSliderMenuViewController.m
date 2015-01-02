@@ -163,8 +163,11 @@
     
     LRBPersonInfoViewController *personVc = [[LRBPersonInfoViewController alloc] init];
     
-    [self presentViewController:personVc animated:YES completion:^(){
-        
+    UINavigationController* navVC = [[UINavigationController alloc]initWithRootViewController:personVc];
+    //[self presentViewController:navVC animated:YES completion:^{}];
+    
+    [self presentViewController:navVC animated:YES completion:^(){
+#warning 什么东西0.0
         [self.frostedViewController hideMenuViewController];
     }];
     
