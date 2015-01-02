@@ -8,7 +8,7 @@
 
 #import "LRBPersonInfoViewController.h"
 #import "LRBUserInfo.h"
-
+#include "UIImageView+Circle.h"
 #import "LRBPathTabelViewCell.h"
 @interface LRBPersonInfoViewController (){
 
@@ -26,20 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-  
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = CGRectMake(0, 0,_gradientView.frame.size.width, 240);
-    gradient.colors = [NSArray arrayWithObjects:
-                       (id)UIColorFromRGB(0x191970).CGColor,
-                       (id)[UIColor darkGrayColor].CGColor,
-                       (id)UIColorFromRGB(0xFFD700).CGColor,
-                       nil];
-    [self.gradientView.layer insertSublayer:gradient atIndex:0];
+    
+    NSLog(@"%@",_profileImageView);
+     [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
     
     
     
-     [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+      [_profileImageView drawCircleImage];
+    
     _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
     
     _infoTabelView.delegate = self;

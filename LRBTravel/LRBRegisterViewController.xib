@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LRBRegisterViewController">
             <connections>
+                <outlet property="bgView" destination="8Zw-ca-HYp" id="ZQR-cM-1sR"/>
                 <outlet property="emailTextField" destination="PAA-lF-AUP" id="Otq-hf-poc"/>
                 <outlet property="ensurePasswordTextField" destination="PtQ-e5-4gO" id="4zR-5T-tra"/>
                 <outlet property="passwordTextField" destination="ct9-Hy-PBs" id="Ruf-CR-LSC"/>
@@ -65,7 +66,7 @@
                             </connections>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.2213992182" green="0.67061093319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.21310729974080389" green="0.72777978213329564" blue="0.91571593915343918" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="0.2213992182" green="0.67061093319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>

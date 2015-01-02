@@ -17,7 +17,7 @@
 #import "LRBSetupViewController.h"
 #import "LRBPersonInfoViewController.h"
 #import "LRBUserInfo.h"
-
+#import "UIImageView+Circle.h"
 @interface LRBSliderMenuViewController ()
 {
     NSArray* _menuNameArray ;
@@ -46,7 +46,9 @@
     [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
     _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
     
-     [LRBUtil drawCircleImage:_headImageView];
+
+    
+    [_headImageView drawCircleImage];
     // Do any additional setup after loading the view from its nib.
 }
 

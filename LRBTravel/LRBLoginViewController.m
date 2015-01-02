@@ -26,7 +26,7 @@
     
     [LRBUtil drawCircleImage:_headImage];
     
-
+    self.view.backgroundColor = UIColorFromRGB(0x009EE5);
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapppGestureRecognized:)]];
 
@@ -76,6 +76,14 @@
     }];
     
     
+}
+
+- (IBAction)registerApp:(id)sender {
+    
+    [self registerMethod:sender];
+}
+
+- (IBAction)register:(id)sender {
 }
 
 -(void)loginInWithQQ:(id)sender
@@ -141,7 +149,18 @@
     
     LRBRegisterViewController *vc = [[LRBRegisterViewController alloc] init];
     
-    [self.navigationController pushViewController:vc animated:YES];
+    if (self.navigationController) {
+        
+            [self.navigationController pushViewController:vc animated:YES];
+    }
+    else{
+        
+        UINavigationController  *navC = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:navC animated:YES completion:nil];
+        
+        
+    }
+
 
 }
 

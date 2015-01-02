@@ -12,6 +12,7 @@
 @interface LRBRegisterViewController (){
     MBProgressHUD *HUD;
 }
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 
 @end
 
@@ -21,7 +22,9 @@
     [super viewDidLoad];
     
     self.title = @"注册";
-    
+    self.bgView.backgroundColor = UIColorFromRGB(0x009EE5);
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem    alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(close:)];
+    self.view.backgroundColor = UIColorFromRGB(0x009EE5);
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -31,6 +34,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)close:(id)sender{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 /*
 #pragma mark - Navigation
 
