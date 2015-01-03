@@ -121,7 +121,6 @@
 
 -(void)sharePicWithURL:(NSString*) imageURL{
     
-
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   //  NSLog(@"aaa=%@",[[LRBUserInfo shareUserInfo].userId ]);
     NSDictionary *parameters = @{@"type":@"postShare",@"user_id":[LRBUserInfo shareUserInfo].userId,@"title":self.imageTitle.text,@"content":self.descriptionField.text,@"image":imageURL};
@@ -131,16 +130,22 @@
     
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/ShareApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result=responseObject;
-        //NSString *str=[[NSString alloc] initWithData:responseObject encoding:NSASCIIStringEncoding  ];
+        if ([result objectForKey:@"status"]) {
+            [self alertInfoWithTitle:@"上传成功" message:nil ];
+        }else
+            [self alertInfoWithTitle:@"上传失败" message:@"用户信息错误" ];
+        
         NSLog(@"%@",responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self alertInfoWithTitle:@"上传失败" message:@"网络问题" ];
         
         NSLog(@"Error: %@", error);
         
     }];
 
 }
+
 -(void)sharePic:(id)sender
 {
     NSDictionary *dic =@{};
@@ -404,6 +409,11 @@
 }
 
 
+-(void)alertInfoWithTitle:(NSString*)string message:(NSString*)message
+{
+    UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:string message:message delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    [alertView show];
+}
 
 
 

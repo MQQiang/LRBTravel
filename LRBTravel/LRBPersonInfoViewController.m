@@ -38,8 +38,8 @@
     [self.gradientView.layer insertSublayer:gradient atIndex:0];
     
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sharePic:)];
-    
-     [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+    if ([LRBUserInfo shareUserInfo].profile !=nil)
+        [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
     _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
     
     _infoTabelView.delegate = self;

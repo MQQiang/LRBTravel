@@ -45,7 +45,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"login",@"name":@"fpc",@"password":@"123456"};
+    NSDictionary *parameters = @{@"type":@"login",@"name":@"fpc2",@"password":@"123456"};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         

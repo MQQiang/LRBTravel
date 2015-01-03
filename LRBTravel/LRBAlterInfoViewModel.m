@@ -11,7 +11,7 @@
 @implementation LRBAlterInfoViewModel
 
 
--(instancetype)initWithFirstLine:(NSString*)l1 secondline:(NSString *) l2 enableLine1:(BOOL) enable firstFieldText:(NSString*) f1t
+-(instancetype)initWithType:(NSString*)type FirstLine:(NSString*)l1 secondline:(NSString *) l2 enableLine1:(BOOL) enable firstFieldText:(NSString*) f1t
 {
    if(self=[super init])
    {
@@ -20,6 +20,7 @@
        self.line2=l2;
        self.EnableLine1=enable;
        self.field1Text=f1t;
+       self.type=type;
    }
     return self;
 }
