@@ -8,7 +8,7 @@
 
 #import "LRBPersonInfoViewController.h"
 #import "LRBUserInfo.h"
-#import "LRBEditPersonInfoViewController.h"
+#include "UIImageView+Circle.h"
 #import "LRBPathTabelViewCell.h"
 @interface LRBPersonInfoViewController (){
 
@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     [self.navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 //    self.tempNavC=[[UINavigationController alloc]init];
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -40,14 +41,22 @@
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sharePic:)];
     if ([LRBUserInfo shareUserInfo].profile !=nil)
         [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+=======
+    
+    NSLog(@"%@",_profileImageView);
+     [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+    
+    
+    
+      [_profileImageView drawCircleImage];
+    
+>>>>>>> FETCH_HEAD
     _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
     
     _infoTabelView.delegate = self;
     _infoTabelView.dataSource = self;
     _infoTabelView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    [self.navigationController setToolbarHidden:YES];
-    [self.navigationController setNavigationBarHidden:YES];
     
     [_segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
     
@@ -55,16 +64,6 @@
     [self initData];
     // Do any additional setup after loading the view from its nib.
 }
-
-
--(void)viewWillAppear:(BOOL)animated
-{
-    
-    [self.navigationController setToolbarHidden:YES];
-    [self.navigationController setNavigationBarHidden:YES];
-
-}
-
 
 -(void)initData{
     _myOrderArray = [[NSMutableArray alloc] init];
@@ -256,20 +255,4 @@
     }];
 }
 
-- (IBAction)editInfo:(id)sender {
-    
-    
-    
-    LRBEditPersonInfoViewController *newView=[[LRBEditPersonInfoViewController alloc] init];
-// 
-//    [self presentViewController:newView animated:YES completion:^(){
-//        
-//       // [self.frostedViewController hideMenuViewController];
-//    }];
-//    
-    
-    [self.navigationController pushViewController:newView animated:YES];
-    
-    
-}
 @end

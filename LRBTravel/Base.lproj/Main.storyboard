@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nt7-A6-Rbd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="vdD-da-bWe">
-            <objects>
-                <navigationController id="nt7-A6-Rbd" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gz0-EG-4db">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="8sX-r3-dfh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C9x-Mf-RNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-761.5" y="-106.5"/>
-        </scene>
         <!--Test View Controller-->
         <scene sceneID="F3X-gT-Frc">
             <objects>
@@ -212,6 +195,25 @@
                                     <rect key="frame" x="34" y="187" width="67" height="28"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="APP_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3qu-Vl-3Bv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="34" y="50" width="240" height="128"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z2-U2-fpx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="注册">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="145" y="359" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="registerApp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4D5-uY-g7V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.22139921821017572" green="0.67061093321790266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -226,6 +228,8 @@
                                 <exclude reference="FEg-O8-xUB"/>
                                 <exclude reference="GcA-CV-GRZ"/>
                                 <exclude reference="Cj4-Zi-G3m"/>
+                                <exclude reference="3qu-Vl-3Bv"/>
+                                <exclude reference="6z2-U2-fpx"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -242,11 +246,17 @@
                                 <include reference="Cj4-Zi-G3m"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="2QB-Zq-dCs"/>
+                                <include reference="3qu-Vl-3Bv"/>
+                                <include reference="6z2-U2-fpx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="alT-Fq-nwz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="headImage" destination="2QB-Zq-dCs" id="Oql-kv-Ntl"/>
                         <outlet property="password" destination="FEg-O8-xUB" id="0Lx-un-ZfW"/>
                         <outlet property="userName" destination="HCk-oo-Rv0" id="AdI-FX-lf8"/>
                     </connections>
@@ -438,9 +448,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="APP_logo" width="364" height="172"/>
         <image name="mq" width="530" height="446"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BB7-Fp-3wg"/>
-    </inferredMetricsTieBreakers>
 </document>

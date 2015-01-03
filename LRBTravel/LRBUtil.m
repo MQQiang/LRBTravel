@@ -7,35 +7,36 @@
 //
 
 #import "LRBUtil.h"
-
 @implementation LRBUtil
 
 static NSString * imagePrefix;
 
 +(void)drawCircleImage:(UIImageView *)imageView{
 
-    UIGraphicsBeginImageContext(imageView.frame.size);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    UIGraphicsBeginImageContext(imageView.frame.size);
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    
+//    CGAffineTransform transform =   CGAffineTransformConcat(CGAffineTransformIdentity, CGAffineTransformMakeScale(1.0f, -1.0f));
+//    
+//    transform = CGAffineTransformConcat(transform, CGAffineTransformMakeTranslation(0, imageView.frame.size.height));
+//    
+//    CGContextConcatCTM(ctx, transform);
+//    
+//    CGContextBeginPath(ctx);
+//    
+//    CGContextAddEllipseInRect(ctx, CGRectMake(0.0, 0.0, imageView.frame.size.width, imageView.frame.size.height ));
+//    
+//    CGContextClip(ctx);
+//    
+//    CGContextDrawImage(ctx, CGRectMake(0.0, 0.0, imageView.frame.size.width, imageView.frame.size.height), imageView.image.CGImage);
+//    
+//    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+//    
+//    UIGraphicsEndImageContext();
+//    
+//    imageView.image = finalImage;
     
-    CGAffineTransform transform =   CGAffineTransformConcat(CGAffineTransformIdentity, CGAffineTransformMakeScale(1.0f, -1.0f));
-    
-    transform = CGAffineTransformConcat(transform, CGAffineTransformMakeTranslation(0, imageView.frame.size.height));
-    
-    CGContextConcatCTM(ctx, transform);
-    
-    CGContextBeginPath(ctx);
-    
-    CGContextAddEllipseInRect(ctx, CGRectMake(0.0, 0.0, imageView.frame.size.width, imageView.frame.size.height ));
-    
-    CGContextClip(ctx);
-    
-    CGContextDrawImage(ctx, CGRectMake(0.0, 0.0, imageView.frame.size.width, imageView.frame.size.height), imageView.image.CGImage);
-    
-    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    imageView.image = finalImage;
+//    [imageView drawCircleImage];
     
 }
 

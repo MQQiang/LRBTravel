@@ -11,6 +11,7 @@
 @interface LRBLoginViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *headImage;
 - (IBAction)login:(id)sender;
+- (IBAction)registerApp:(id)sender;
 
 -(IBAction)loginInWithQQ:(id)sender;
 - (IBAction)loginWithWeiChat:(id)sender;
