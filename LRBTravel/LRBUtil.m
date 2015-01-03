@@ -7,6 +7,10 @@
 //
 
 #import "LRBUtil.h"
+<<<<<<< HEAD
+=======
+#include "UIImageView+Circle.h"
+>>>>>>> FETCH_HEAD
 @implementation LRBUtil
 
 static NSString * imagePrefix;
@@ -36,7 +40,11 @@ static NSString * imagePrefix;
 //    
 //    imageView.image = finalImage;
     
+<<<<<<< HEAD
 //    [imageView drawCircleImage];
+=======
+    [imageView drawCircleImage];
+>>>>>>> FETCH_HEAD
     
 }
 

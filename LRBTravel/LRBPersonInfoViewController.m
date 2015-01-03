@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 <<<<<<< HEAD
+<<<<<<< HEAD
     [self.navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 //    self.tempNavC=[[UINavigationController alloc]init];
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -42,6 +43,8 @@
     if ([LRBUserInfo shareUserInfo].profile !=nil)
         [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
 =======
+=======
+>>>>>>> FETCH_HEAD
     
     NSLog(@"%@",_profileImageView);
      [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
@@ -50,6 +53,9 @@
     
       [_profileImageView drawCircleImage];
     
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
     _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E272A8D1A56FE380046D293 /* UIImageView+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */; };
 		0E36253B1A0D394500B53C0C /* LRBJourneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3625391A0D394500B53C0C /* LRBJourneyViewController.m */; };
 		0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E36253A1A0D394500B53C0C /* LRBJourneyViewController.xib */; };
 		0E363BFA1A0905770075A38C /* LRBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E363BF81A0905770075A38C /* LRBTestViewController.m */; };
@@ -146,6 +147,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E272A8B1A56FE380046D293 /* UIImageView+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Circle.h"; sourceTree = "<group>"; };
+		0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Circle.m"; sourceTree = "<group>"; };
 		0E3625381A0D394500B53C0C /* LRBJourneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBJourneyViewController.h; sourceTree = "<group>"; };
 		0E3625391A0D394500B53C0C /* LRBJourneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBJourneyViewController.m; sourceTree = "<group>"; };
 		0E36253A1A0D394500B53C0C /* LRBJourneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBJourneyViewController.xib; sourceTree = "<group>"; };
@@ -573,6 +576,8 @@
 			children = (
 				0E97BBA11A0F520600A35F45 /* UIImage+ImageEffects.h */,
 				0E97BBA21A0F520600A35F45 /* UIImage+ImageEffects.m */,
+				0E272A8B1A56FE380046D293 /* UIImageView+Circle.h */,
+				0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -933,7 +938,10 @@
 				F22A7A8F1A55DCF3008B587A /* LRBAlterPersonInfoViewController.xib in Resources */,
 				0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */,
 				0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */,
+<<<<<<< HEAD
 				F22A7A991A583119008B587A /* LRBPortraitChangeViewController.xib in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 				0EB4656B1A583BEF002B240E /* UMSCommentInputControlleriPad.xib in Resources */,
 				0EE363B01A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib in Resources */,
 				0EB4656C1A583BEF002B240E /* UMShareEditViewController.xib in Resources */,
@@ -941,7 +949,10 @@
 				0EB465701A583BEF002B240E /* UMSShareListController.xib in Resources */,
 				0E39ED9F1A22417D00A384C3 /* LRBCostExplainViewController.xib in Resources */,
 				0E39EDA41A22428A00A384C3 /* LRBCostViewController.xib in Resources */,
+<<<<<<< HEAD
 				F22A7A9F1A5835B7008B587A /* LRBEditPersonInforViewCell.xib in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 				0EB465711A583BEF002B240E /* UMSocialSDKResourcesNew.bundle in Resources */,
 				0E6D695F19E6BC34007C63F4 /* LRBRouteInfoViewController.xib in Resources */,
 				0E39EDA91A2243BB00A384C3 /* LRBJourneyNoticeViewController.xib in Resources */,
@@ -1021,6 +1032,7 @@
 				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
 				F22A7A981A583119008B587A /* LRBPortraitChangeViewController.m in Sources */,
 				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources */,
+				0E272A8D1A56FE380046D293 /* UIImageView+Circle.m in Sources */,
 				0E97BBB11A0F943C00A35F45 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,
 				F22A7A8E1A55DCF3008B587A /* LRBAlterPersonInfoViewController.m in Sources */,

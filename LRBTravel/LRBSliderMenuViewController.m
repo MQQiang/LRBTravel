@@ -17,7 +17,11 @@
 #import "LRBSetupViewController.h"
 #import "LRBPersonInfoViewController.h"
 #import "LRBUserInfo.h"
+<<<<<<< HEAD
 //#import "UIImageView+Circle.h"
+=======
+#import "UIImageView+Circle.h"
+>>>>>>> FETCH_HEAD
 @interface LRBSliderMenuViewController ()
 {
     NSArray* _menuNameArray ;
@@ -53,7 +57,11 @@
     
 
     
+<<<<<<< HEAD
 //    [_headImageView drawCircleImage];
+=======
+    [_headImageView drawCircleImage];
+>>>>>>> FETCH_HEAD
     // Do any additional setup after loading the view from its nib.
 }
 
