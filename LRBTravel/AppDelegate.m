@@ -10,10 +10,10 @@
 #import "REFrostedViewController.h"
 #import "LRBLoginViewController.h"
 #import "LRBIndexViewController.h"
-
-
-
-
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaHandler.h"
 @interface AppDelegate ()
 
 @end
@@ -27,6 +27,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [UMSocialData setAppKey:@"54a42e23fd98c564c2001c2d"];
+    
+    [UMSocialWechatHandler setWXAppId:@"wx0a62a2a279da0455" appSecret:@"af5c02a030ec9263e0c9752dfc4103b9" url:@"http://www.umeng.com/social"];
+    
+    [UMSocialQQHandler setQQWithAppId:@"1103829194" appKey:@"jYK4O0N9DYOj2oN8" url:@"http://www.tripbong.com/backcall_tx.php"];
+    
+    
+     [UMSocialSinaHandler openSSOWithRedirectURL:@"http://www.tripbong.com/backcall_wb.php"];
     [self setNavigationBar];
        return YES;
 }
@@ -66,6 +74,19 @@
             abort();
         } 
     }
+}
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
 }
 
 #pragma mark - Core Data stack
