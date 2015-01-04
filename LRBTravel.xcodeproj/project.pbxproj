@@ -127,6 +127,10 @@
 		F29A992D1A4E79E700288FC9 /* LRBCommonTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */; };
 		F29A99311A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */; };
 		F29A99361A4EAE9700288FC9 /* LRBFillFormOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A99351A4EAE9700288FC9 /* LRBFillFormOrderInfo.m */; };
+		F2C3C8D91A59BA740021236C /* LRBPortraitChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C3C8D71A59BA740021236C /* LRBPortraitChangeViewController.m */; };
+		F2C3C8DA1A59BA740021236C /* LRBPortraitChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C3C8D81A59BA740021236C /* LRBPortraitChangeViewController.xib */; };
+		F2C3C8DF1A59BC350021236C /* LRBEditPersonInforViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C3C8DD1A59BC350021236C /* LRBEditPersonInforViewCell.m */; };
+		F2C3C8E01A59BC350021236C /* LRBEditPersonInforViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C3C8DE1A59BC350021236C /* LRBEditPersonInforViewCell.xib */; };
 		F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DE2DF61A51B869009725C8 /* LRBRouteInfo.m */; };
 		F2FE687D1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FE687B1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib */; };
 		F5FC73BBDEAE4B81AD2D80D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5767629C9B74237BE1BBAF5 /* libPods.a */; };
@@ -335,6 +339,12 @@
 		F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBCommonTableHeadView.xib; sourceTree = "<group>"; };
 		F29A99341A4EAE9700288FC9 /* LRBFillFormOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormOrderInfo.h; sourceTree = "<group>"; };
 		F29A99351A4EAE9700288FC9 /* LRBFillFormOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormOrderInfo.m; sourceTree = "<group>"; };
+		F2C3C8D61A59BA740021236C /* LRBPortraitChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPortraitChangeViewController.h; sourceTree = "<group>"; };
+		F2C3C8D71A59BA740021236C /* LRBPortraitChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPortraitChangeViewController.m; sourceTree = "<group>"; };
+		F2C3C8D81A59BA740021236C /* LRBPortraitChangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPortraitChangeViewController.xib; sourceTree = "<group>"; };
+		F2C3C8DC1A59BC350021236C /* LRBEditPersonInforViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBEditPersonInforViewCell.h; sourceTree = "<group>"; };
+		F2C3C8DD1A59BC350021236C /* LRBEditPersonInforViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBEditPersonInforViewCell.m; sourceTree = "<group>"; };
+		F2C3C8DE1A59BC350021236C /* LRBEditPersonInforViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBEditPersonInforViewCell.xib; sourceTree = "<group>"; };
 		F2DE2DF51A51B869009725C8 /* LRBRouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBRouteInfo.h; sourceTree = "<group>"; };
 		F2DE2DF61A51B869009725C8 /* LRBRouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBRouteInfo.m; sourceTree = "<group>"; };
 		F2FE68791A51CCAE0062F461 /* LRBAcceptedOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBAcceptedOrderViewController.h; sourceTree = "<group>"; };
@@ -383,6 +393,7 @@
 		0E39EDAD1A22480C00A384C3 /* PersonInfo */ = {
 			isa = PBXGroup;
 			children = (
+				F2C3C8DB1A59BBD20021236C /* LRBEditPersonInfoViewCell */,
 				0E6D695119E6BB66007C63F4 /* LRBPersonInfoViewController.h */,
 				0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */,
 				0E6D695319E6BB66007C63F4 /* LRBPersonInfoViewController.xib */,
@@ -397,6 +408,9 @@
 				F22A7A8B1A55DCF3008B587A /* LRBAlterPersonInfoViewController.h */,
 				F22A7A8C1A55DCF3008B587A /* LRBAlterPersonInfoViewController.m */,
 				F22A7A8D1A55DCF3008B587A /* LRBAlterPersonInfoViewController.xib */,
+				F2C3C8D61A59BA740021236C /* LRBPortraitChangeViewController.h */,
+				F2C3C8D71A59BA740021236C /* LRBPortraitChangeViewController.m */,
+				F2C3C8D81A59BA740021236C /* LRBPortraitChangeViewController.xib */,
 			);
 			name = PersonInfo;
 			sourceTree = "<group>";
@@ -799,6 +813,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F2C3C8DB1A59BBD20021236C /* LRBEditPersonInfoViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2C3C8DC1A59BC350021236C /* LRBEditPersonInforViewCell.h */,
+				F2C3C8DD1A59BC350021236C /* LRBEditPersonInforViewCell.m */,
+				F2C3C8DE1A59BC350021236C /* LRBEditPersonInforViewCell.xib */,
+			);
+			name = LRBEditPersonInfoViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -896,11 +920,13 @@
 				0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */,
 				0E6D696919E6BCE2007C63F4 /* LRBIndexViewController.xib in Resources */,
 				0E6D697119E6BD70007C63F4 /* LRBNotificationDetailViewController.xib in Resources */,
+				F2C3C8DA1A59BA740021236C /* LRBPortraitChangeViewController.xib in Resources */,
 				0EE7C5771A0E7A9B0064F315 /* LRBShareAppViewController.xib in Resources */,
 				0E92110A1A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib in Resources */,
 				0E7204A51A50494F0049598B /* LRBSharePictureCollectionViewCell.xib in Resources */,
 				0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */,
 				0E7AA2DF19FBD4DE00B59782 /* LRBFillFormViewController.xib in Resources */,
+				F2C3C8E01A59BC350021236C /* LRBEditPersonInforViewCell.xib in Resources */,
 				0EE7C5811A0E7B220064F315 /* LRBAboutUsViewController.xib in Resources */,
 				0E7AA2CB19FBC6BE00B59782 /* LRBSearchViewController.xib in Resources */,
 				F22A7A8A1A55BE41008B587A /* LRBEditPersonInfoViewController.xib in Resources */,
@@ -994,10 +1020,12 @@
 				0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */,
 				0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */,
 				0E39EDA31A22428A00A384C3 /* LRBCostViewController.m in Sources */,
+				F2C3C8DF1A59BC350021236C /* LRBEditPersonInforViewCell.m in Sources */,
 				0E39ED9E1A22417D00A384C3 /* LRBCostExplainViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
 				0EE7C5851A0E7BA50064F315 /* LRBSetupViewController.m in Sources */,
 				0E72049F1A50469F0049598B /* LRBPathTabelViewCell.m in Sources */,
+				F2C3C8D91A59BA740021236C /* LRBPortraitChangeViewController.m in Sources */,
 				0E272A8D1A56FE380046D293 /* UIImageView+Circle.m in Sources */,
 				0E97BBB11A0F943C00A35F45 /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */,

@@ -13,7 +13,7 @@
 @property(nonatomic,copy) NSString* line2;
 @property(nonatomic,assign) BOOL EnableLine1;
 @property(nonatomic,copy)NSString* field1Text;
-
--(instancetype)initWithFirstLine:(NSString*)l1 secondline:(NSString *) l2 enableLine1:(BOOL) enable firstFieldText:(NSString*) f1t;
+@property(nonatomic,copy)NSString* type;
+-(instancetype)initWithType:(NSString*)type FirstLine:(NSString*)l1 secondline:(NSString *) l2 enableLine1:(BOOL) enable firstFieldText:(NSString*) f1t;
 
 @end

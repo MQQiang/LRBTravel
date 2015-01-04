@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "LRBAlterInfoViewModel.h"
-@interface LRBAlterPersonInfoViewController : UIViewController
+@interface LRBAlterPersonInfoViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lable1;
 @property (weak, nonatomic) IBOutlet UILabel *lable2;
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
+
+- (IBAction)update:(id)sender;
+
 @property  (strong,nonatomic) LRBAlterInfoViewModel* viewStyle;
 
 @end

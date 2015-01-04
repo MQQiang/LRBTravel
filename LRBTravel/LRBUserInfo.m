@@ -6,6 +6,26 @@
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
+@interface NSDictionary(usrinfo)
+-(id)objectForKeyNotNSNULL:(id)aKey;
+
+
+@end
+@implementation NSDictionary(usrinfo)
+
+-(id)objectForKeyNotNSNULL:(id)aKey
+{
+    id temp= [self objectForKey:aKey];
+    if (temp==[NSNull null]) {
+        temp=nil;
+    }
+    return temp;
+    
+}
+
+@end
+
+
 #import "LRBUserInfo.h"
 @interface LRBUserInfo()
 
@@ -34,12 +54,12 @@ static LRBUserInfo * shareInfo;
 
 +(LRBUserInfo *)shareUserInfo{
     
-
+    
     
     static dispatch_once_t userInfoOnceToken;
     
     dispatch_once(&userInfoOnceToken, ^{
-    
+        
         shareInfo = [LRBUserInfo new];
     });
     
@@ -47,28 +67,43 @@ static LRBUserInfo * shareInfo;
 }
 
 
--(void)setupUserInfo:(NSDictionary *)indoDic{
+
+
+-(void)setupUserInfo:(NSMutableDictionary *)indoDic{
     
-    _userName = [indoDic objectForKey:@"name"];
-    _nickName = [indoDic objectForKey:@"nick"];
-    _updateTime = [indoDic objectForKey:@"update_time"];
-    _userLevel = [[indoDic objectForKey:@"user_level"] integerValue  ];
+    NSEnumerator *enumerator = [indoDic keyEnumerator];
+    id key;
     
-    _nickWeiBo = [indoDic objectForKey:@"weibo_nick"];
-    _nickWeiXin = [indoDic objectForKey:@"weixin_nick"];
-    _qqNumber = [indoDic objectForKey:@"qq"];
-    _phoneNumber = [indoDic objectForKey:@"phone"];
-//    _cash = [[indoDic objectForKey:@"cash"] integerValue];
-    _createTime = [indoDic objectForKey:@"create_time"];
-    _email = [indoDic objectForKey:@"email"];
-    _selfDescription   = [indoDic objectForKey:@"description"];
-    _userId = [indoDic objectForKey:@"id"];
     
-    _profile = indoDic[@"image"];
+    _userName = [indoDic objectForKeyNotNSNULL:@"name"];
+#warning 貌似不支持中文。。
+    _nickName = [indoDic objectForKeyNotNSNULL:@"nick"];
+    _updateTime = [indoDic objectForKeyNotNSNULL:@"update_time"];
+    _userLevel = [[indoDic objectForKeyNotNSNULL:@"user_level"] integerValue  ];
+    
+    _nickWeiBo = [indoDic objectForKeyNotNSNULL:@"weibo_nick"];
+    _nickWeiXin = [indoDic objectForKeyNotNSNULL:@"weixin_nick"];
+    _qqNumber = [indoDic objectForKeyNotNSNULL:@"qq"];
+    _phoneNumber = [indoDic objectForKeyNotNSNULL:@"phone"];
+    //    _cash = [[indoDic objectForKey:@"cash"] integerValue];
+    _createTime = [indoDic objectForKeyNotNSNULL:@"create_time"];
+    _email = [indoDic objectForKeyNotNSNULL:@"email"];
+    _selfDescription   = [indoDic objectForKeyNotNSNULL:@"description"];
+    _userId = [indoDic objectForKeyNotNSNULL:@"id"];
+    
+    _profile = [indoDic objectForKeyNotNSNULL:@"image" ];
+    
+    
 }
 
 -(void)setImagePrefix:(NSDictionary *)dic{
     
     
 }
+-(void)uploadPrefix:(NSString *)url
+{
+    _profile=url;
+}
+
+
 @end

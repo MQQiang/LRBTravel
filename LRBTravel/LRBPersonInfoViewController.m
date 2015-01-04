@@ -10,6 +10,7 @@
 #import "LRBUserInfo.h"
 #include "UIImageView+Circle.h"
 #import "LRBPathTabelViewCell.h"
+#import "LRBEditPersonInfoViewController.h"
 @interface LRBPersonInfoViewController (){
 
     NSMutableArray * _collectionArray;
@@ -40,6 +41,8 @@
     _infoTabelView.dataSource = self;
     _infoTabelView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
     
+    [self.navigationController setToolbarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
     
     [_segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
     
@@ -47,7 +50,13 @@
     [self initData];
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [self.navigationController setToolbarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+}
 -(void)initData{
     _myOrderArray = [[NSMutableArray alloc] init];
     _myShareArray = [[NSMutableArray alloc] init];
@@ -238,4 +247,20 @@
     }];
 }
 
+- (IBAction)editInfo:(id)sender {
+    
+    
+    
+    LRBEditPersonInfoViewController *newView=[[LRBEditPersonInfoViewController alloc] init];
+    //
+    //    [self presentViewController:newView animated:YES completion:^(){
+    //
+    //       // [self.frostedViewController hideMenuViewController];
+    //    }];
+    //
+    
+    [self.navigationController pushViewController:newView animated:YES];
+    
+    
+}
 @end

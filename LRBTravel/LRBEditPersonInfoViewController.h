@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LRBAlterInfoViewModel.h"
-
-@interface LRBEditPersonInfoViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
+#import "LRBEditPersonInforViewCell.h"
+@interface LRBEditPersonInfoViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,LRBEditPersonInfoViewCellDelegate>
 @property (nonatomic,strong) NSArray *tableTitle;
 @property(nonatomic,strong) NSArray *sectionTitle;
 

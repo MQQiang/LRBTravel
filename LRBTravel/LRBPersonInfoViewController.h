@@ -23,5 +23,5 @@
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UITableView *infoTabelView;
 - (IBAction)showNotification:(id)sender;
-
+- (IBAction)editInfo:(id)sender;
 @end
