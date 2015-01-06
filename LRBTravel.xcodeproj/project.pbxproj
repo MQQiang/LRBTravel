@@ -27,7 +27,6 @@
 		0E5B6E671A1111AD00B12C59 /* UIViewController+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B6E661A1111AD00B12C59 /* UIViewController+Blur.m */; };
 		0E600DFE1A2C083A003920D3 /* LRBRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E600DFC1A2C083A003920D3 /* LRBRegisterViewController.m */; };
 		0E600DFF1A2C083A003920D3 /* LRBRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E600DFD1A2C083A003920D3 /* LRBRegisterViewController.xib */; };
-		0E600EC01A2CC3B9003920D3 /* LRBNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E600EBF1A2CC3B9003920D3 /* LRBNotificationViewController.m */; };
 		0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */; };
 		0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */; };
 		0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D695219E6BB66007C63F4 /* LRBPersonInfoViewController.m */; };
@@ -52,7 +51,6 @@
 		0E7204A51A50494F0049598B /* LRBSharePictureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */; };
 		0E7AA2CA19FBC6BE00B59782 /* LRBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7AA2C819FBC6BE00B59782 /* LRBSearchViewController.m */; };
 		0E7AA2CB19FBC6BE00B59782 /* LRBSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7AA2C919FBC6BE00B59782 /* LRBSearchViewController.xib */; };
-		0E7AA2CD19FBC97300B59782 /* LRBNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7AA2CC19FBC97200B59782 /* LRBNotificationViewController.xib */; };
 		0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7AA2D019FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m */; };
 		0E7AA2D319FBCBBF00B59782 /* LRBNotificationCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7AA2D119FBCBBF00B59782 /* LRBNotificationCellTableViewCell.xib */; };
 		0E7AA2DE19FBD4DE00B59782 /* LRBFillFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7AA2DC19FBD4DE00B59782 /* LRBFillFormViewController.m */; };
@@ -101,6 +99,8 @@
 		0EB4658A1A584381002B240E /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB465881A584381002B240E /* libSocialSina.a */; };
 		0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */; };
 		0EC248D21A4C5A6F003E79E5 /* LRBBannerPathModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */; };
+		0ECCE7811A5AEE45001ECBD9 /* LRBNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE77F1A5AEE45001ECBD9 /* LRBNoticeViewController.m */; };
+		0ECCE7821A5AEE45001ECBD9 /* LRBNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECCE7801A5AEE45001ECBD9 /* LRBNoticeViewController.xib */; };
 		0EE363AF1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */; };
 		0EE363B01A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */; };
 		0EE7C5711A0E68C70064F315 /* LRBIndexViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C56F1A0E68C70064F315 /* LRBIndexViewTableViewCell.m */; };
@@ -179,8 +179,6 @@
 		0E600DFB1A2C083A003920D3 /* LRBRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBRegisterViewController.h; sourceTree = "<group>"; };
 		0E600DFC1A2C083A003920D3 /* LRBRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBRegisterViewController.m; sourceTree = "<group>"; };
 		0E600DFD1A2C083A003920D3 /* LRBRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBRegisterViewController.xib; sourceTree = "<group>"; };
-		0E600EBF1A2CC3B9003920D3 /* LRBNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBNotificationViewController.m; sourceTree = "<group>"; };
-		0E600EC11A2CC482003920D3 /* LRBNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRBNotificationViewController.h; path = ../LRBNotificationViewController.h; sourceTree = "<group>"; };
 		0E6D694919E6BAB6007C63F4 /* LRBShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBShareViewController.h; sourceTree = "<group>"; };
 		0E6D694A19E6BAB6007C63F4 /* LRBShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBShareViewController.m; sourceTree = "<group>"; };
 		0E6D694B19E6BAB6007C63F4 /* LRBShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBShareViewController.xib; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 		0E7AA2C719FBC6BE00B59782 /* LRBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBSearchViewController.h; sourceTree = "<group>"; };
 		0E7AA2C819FBC6BE00B59782 /* LRBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBSearchViewController.m; sourceTree = "<group>"; };
 		0E7AA2C919FBC6BE00B59782 /* LRBSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBSearchViewController.xib; sourceTree = "<group>"; };
-		0E7AA2CC19FBC97200B59782 /* LRBNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBNotificationViewController.xib; sourceTree = "<group>"; };
 		0E7AA2CF19FBCBBF00B59782 /* LRBNotificationCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBNotificationCellTableViewCell.h; sourceTree = "<group>"; };
 		0E7AA2D019FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBNotificationCellTableViewCell.m; sourceTree = "<group>"; };
 		0E7AA2D119FBCBBF00B59782 /* LRBNotificationCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBNotificationCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -299,6 +296,9 @@
 		0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBUtil.m; sourceTree = "<group>"; };
 		0EC248D01A4C5A6F003E79E5 /* LRBBannerPathModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBBannerPathModel.h; sourceTree = "<group>"; };
 		0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBBannerPathModel.m; sourceTree = "<group>"; };
+		0ECCE77E1A5AEE45001ECBD9 /* LRBNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBNoticeViewController.h; sourceTree = "<group>"; };
+		0ECCE77F1A5AEE45001ECBD9 /* LRBNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBNoticeViewController.m; sourceTree = "<group>"; };
+		0ECCE7801A5AEE45001ECBD9 /* LRBNoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBNoticeViewController.xib; sourceTree = "<group>"; };
 		0EE363AC1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormTableViewCell.h; sourceTree = "<group>"; };
 		0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormTableViewCell.m; sourceTree = "<group>"; };
 		0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBFillFormTableViewCell.xib; sourceTree = "<group>"; };
@@ -485,12 +485,12 @@
 				0E7AA2C719FBC6BE00B59782 /* LRBSearchViewController.h */,
 				0E7AA2C819FBC6BE00B59782 /* LRBSearchViewController.m */,
 				0E7AA2C919FBC6BE00B59782 /* LRBSearchViewController.xib */,
+				0ECCE77E1A5AEE45001ECBD9 /* LRBNoticeViewController.h */,
+				0ECCE77F1A5AEE45001ECBD9 /* LRBNoticeViewController.m */,
+				0ECCE7801A5AEE45001ECBD9 /* LRBNoticeViewController.xib */,
 				0E6D696D19E6BD70007C63F4 /* LRBNotificationDetailViewController.h */,
 				0E6D696E19E6BD70007C63F4 /* LRBNotificationDetailViewController.m */,
 				0E6D696F19E6BD70007C63F4 /* LRBNotificationDetailViewController.xib */,
-				0E600EC11A2CC482003920D3 /* LRBNotificationViewController.h */,
-				0E600EBF1A2CC3B9003920D3 /* LRBNotificationViewController.m */,
-				0E7AA2CC19FBC97200B59782 /* LRBNotificationViewController.xib */,
 				0E7AA2CE19FBCB7D00B59782 /* NotificationCell */,
 			);
 			name = ViewController;
@@ -907,7 +907,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2FE687D1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib in Resources */,
-				0E7AA2CD19FBC97300B59782 /* LRBNotificationViewController.xib in Resources */,
 				0EB4656E1A583BEF002B240E /* UMSLoginViewController.xib in Resources */,
 				0EB465741A583BEF002B240E /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0E600DFF1A2C083A003920D3 /* LRBRegisterViewController.xib in Resources */,
@@ -943,6 +942,7 @@
 				0EB4656B1A583BEF002B240E /* UMSCommentInputControlleriPad.xib in Resources */,
 				0EE363B01A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib in Resources */,
 				0EB4656C1A583BEF002B240E /* UMShareEditViewController.xib in Resources */,
+				0ECCE7821A5AEE45001ECBD9 /* LRBNoticeViewController.xib in Resources */,
 				0EE7C5721A0E68C70064F315 /* LRBIndexViewTableViewCell.xib in Resources */,
 				0EB465701A583BEF002B240E /* UMSShareListController.xib in Resources */,
 				0E39ED9F1A22417D00A384C3 /* LRBCostExplainViewController.xib in Resources */,
@@ -1008,6 +1008,7 @@
 				F22A7A941A55ECCE008B587A /* LRBAlterInfoViewModel.m in Sources */,
 				F22A7A931A55EC4E008B587A /* LRBAlterInfoViewModel.h in Sources */,
 				F22A7A851A547A05008B587A /* LRBAcceptedOrderViewController.m in Sources */,
+				0ECCE7811A5AEE45001ECBD9 /* LRBNoticeViewController.m in Sources */,
 				0E9211121A0D10AF00D3BDFB /* EScrollerView.m in Sources */,
 				F29A992A1A4DE08300288FC9 /* LRBFillFormPersonInfo.m in Sources */,
 				0E7AA2DE19FBD4DE00B59782 /* LRBFillFormViewController.m in Sources */,
@@ -1051,7 +1052,6 @@
 				0E97BBB01A0F943C00A35F45 /* CHTCollectionViewWaterfallFooter.m in Sources */,
 				0E71CA6419E4CC9C003C9F2D /* main.m in Sources */,
 				F29A992D1A4E79E700288FC9 /* LRBCommonTableHeadView.m in Sources */,
-				0E600EC01A2CC3B9003920D3 /* LRBNotificationViewController.m in Sources */,
 				0E6D694C19E6BAB6007C63F4 /* LRBShareViewController.m in Sources */,
 				F29A99361A4EAE9700288FC9 /* LRBFillFormOrderInfo.m in Sources */,
 				0EE7C5801A0E7B220064F315 /* LRBAboutUsViewController.m in Sources */,

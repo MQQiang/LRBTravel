@@ -11,6 +11,7 @@
 #include "UIImageView+Circle.h"
 #import "LRBPathTabelViewCell.h"
 #import "LRBEditPersonInfoViewController.h"
+#import "LRBNoticeViewController.h"
 @interface LRBPersonInfoViewController (){
 
     NSMutableArray * _collectionArray;
@@ -167,6 +168,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)showNotification:(id)sender{
+    
+    LRBNoticeViewController *vc = [[LRBNoticeViewController alloc] init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
     
 }
 -(void)requestOrderData{

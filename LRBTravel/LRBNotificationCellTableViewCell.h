@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;
+-(void)setupLabelWithDic:(NSDictionary *)dic;
+
 @end
