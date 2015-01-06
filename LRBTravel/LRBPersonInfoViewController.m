@@ -49,6 +49,7 @@
     
     [_infoTabelView registerNib:[UINib nibWithNibName:@"LRBPathTabelViewCell" bundle:nil] forCellReuseIdentifier:@"PathTableViewId"];
     [self initData];
+    [self requestUserMessageCount];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -267,6 +268,33 @@
     
     [self.navigationController pushViewController:newView animated:YES];
     
+    
+}
+-(void)requestUserMessageCount{
+    
+//    http://121.40.173.195/lvrenbang/php/api/UserApi.php?type=getMessageCount&user_id=1
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"getMessageCount",@"user_id":[LRBUserInfo shareUserInfo].userId};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        //        [self refreshView:responseObject];
+        
+        NSDictionary *dic =(NSDictionary *)responseObject
+        ;
+        _notifiacationNumberLabel.text =[dic objectForKeyNotNSNULL:@"count"];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
     
 }
 @end

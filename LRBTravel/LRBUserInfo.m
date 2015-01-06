@@ -6,24 +6,7 @@
 //  Copyright (c) 2014年 mqq.com. All rights reserved.
 //
 
-@interface NSDictionary(usrinfo)
--(id)objectForKeyNotNSNULL:(id)aKey;
 
-
-@end
-@implementation NSDictionary(usrinfo)
-
--(id)objectForKeyNotNSNULL:(id)aKey
-{
-    id temp= [self objectForKey:aKey];
-    if (temp==[NSNull null]) {
-        temp=nil;
-    }
-    return temp;
-    
-}
-
-@end
 
 
 #import "LRBUserInfo.h"

@@ -13,4 +13,5 @@
 
 @property (strong, nonatomic) IBOutlet UIView *hotTagView;
 @property (strong, nonatomic) IBOutlet UITableView *resultTableView;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *hotPathButtons;
 @end

@@ -18,4 +18,17 @@
     NSLog(@"%f",self.layer.cornerRadius);
 }
 
+
+-(void)setupimageViewWithString:(NSString *)string{
+    
+    if (string) {
+        
+        
+        [self setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:string ]] placeholderImage:nil];
+        
+    }
+  
+    
+}
+
 @end

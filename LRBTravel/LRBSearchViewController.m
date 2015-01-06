@@ -26,6 +26,7 @@
     _guideImageArray = [[NSMutableArray  alloc] init];
     
     [_resultTableView registerNib:[UINib nibWithNibName:@"LRBIndexViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kResultTableViewCellID];
+    [self requestHotPathTags];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -138,4 +139,45 @@
 }
 */
 
+-(void)requestHotPathTags{
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"type":@"getHotTag",@"num":@5};
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshButton:responseObject];
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+    
+    
+}
+
+-(void)refreshButton:(NSDictionary *)dic{
+    
+    if ([dic[@"status" ] isEqual:@1]) {
+        
+        NSArray * tagArray = dic[@"tags"];
+        
+        for (int i =0; i < [tagArray count]; i++) {
+            NSDictionary *dict = [tagArray objectAtIndex:i];
+            UIButton *button = [_hotPathButtons objectAtIndex:i];
+            button.titleLabel.text = dict[@"name"];
+        }
+        
+        
+    }
+    
+    
+}
 @end

@@ -23,13 +23,15 @@
     
     _nameLabel.text = dic[@"user_name"];
     
-    if (dic[@"user_image"]) {
+    if ([dic objectForKeyNotNSNULL:@"user_image"]) {
         
             [_headImage setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]]];
         
+        //    NSLog(@"%@",[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]);
+        
     }
 
-    NSLog(@"%@",[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]);
+
     
     NSLog(@"%f",self.bounds.size.height);
     [self setNeedsDisplay ];

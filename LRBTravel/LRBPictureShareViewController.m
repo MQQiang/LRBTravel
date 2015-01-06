@@ -46,7 +46,7 @@
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = [UIColor lightGrayColor];
 //        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
 //            forCellWithReuseIdentifier:CELL_IDENTIFIER];
         

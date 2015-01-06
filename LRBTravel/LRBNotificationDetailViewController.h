@@ -12,4 +12,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *notificationTitleLabel;
 @property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *notificationTextView;
 
+-(void)setupViewWithDic:(NSDictionary *)dic;
+
 @end

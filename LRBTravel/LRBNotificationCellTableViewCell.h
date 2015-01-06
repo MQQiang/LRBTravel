@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LRBNotificationCellTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;

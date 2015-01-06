@@ -33,5 +33,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)setupViewWithDic:(NSDictionary *)dic{
+    _notificationTitleLabel.text = dic [@""];
+    
+}
+
 
 @end

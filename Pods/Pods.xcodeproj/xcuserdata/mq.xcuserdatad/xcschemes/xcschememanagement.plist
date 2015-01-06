@@ -19,10 +19,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-XHImageViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+		</dict>
+		<key>Pods.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

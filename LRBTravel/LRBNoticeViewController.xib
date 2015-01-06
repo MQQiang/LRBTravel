@@ -17,24 +17,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eCI-c5-rKF">
-                    <rect key="frame" x="10" y="64" width="300" height="29"/>
+                    <rect key="frame" x="10" y="80" width="300" height="29"/>
+                    <color key="backgroundColor" red="0.91180294750000002" green="0.77901237099999998" blue="0.42109172569999997" alpha="1" colorSpace="calibratedRGB"/>
                     <segments>
                         <segment title="用户消息"/>
                         <segment title="系统消息"/>
                     </segments>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </segmentedControl>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TAK-Ai-Ux3">
-                    <rect key="frame" x="0.0" y="100" width="320" height="468"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="TAK-Ai-Ux3">
+                    <rect key="frame" x="0.0" y="116" width="320" height="473"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="A7c-mA-Gxf"/>
                         <outlet property="delegate" destination="-1" id="jLM-YS-B6A"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.80474213286713292" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="214" y="269"/>
+            <point key="canvasLocation" x="214" y="306"/>
         </view>
     </objects>
 </document>

@@ -15,4 +15,12 @@
 +(UIImage*)fullScreenShots;
 +(void)requestImagePrefix;
 +(NSString *)imageProfix;
++ (NSString*)intervalSinceNow:(NSString*)theDate;
+
+@end
+
+@interface NSDictionary(usrinfo)
+-(id)objectForKeyNotNSNULL:(id)aKey;
+
+
 @end

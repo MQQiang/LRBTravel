@@ -12,4 +12,5 @@
 
 -(void)drawCircleImage;
 
+-(void)setupimageViewWithString:(NSString *)string;
 @end

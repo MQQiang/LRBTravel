@@ -32,7 +32,15 @@
     
     
     [_noticeTableView registerNib:[UINib nibWithNibName:@"LRBNotificationCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"LRBNotificationCellTableViewCell"];
+   
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+//    [self.navigationController setToolbarHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +63,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LRBNotificationCellTableViewCell *cell = (LRBNotificationCellTableViewCell *)[_noticeTableView  dequeueReusableCellWithIdentifier:@"LRBNotificationCellTableViewCell"];
-    [cell setupLabelWithDic:nil];
+    [cell setupLabelWithDic:[_messageArray objectAtIndex:indexPath.row]];
     
     return  cell;
     
@@ -68,9 +76,10 @@
     
     
     LRBNotificationDetailViewController *detailVC = [[LRBNotificationDetailViewController alloc] init];
-    
-    [self presentViewController:detailVC animated:YES completion:^(){}];
-    
+//    
+//    [self presentViewController:detailVC animated:YES completion:^(){}];
+
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 -(void)requestMessageWithIndex:(NSNumber *)index{
     
@@ -78,7 +87,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"type":@"getMessageList",@"user_id":[LRBUserInfo shareUserInfo].userId,@"message_type":index};
-       manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+       manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self refreshView:responseObject];
@@ -96,6 +105,7 @@
 }
 -(void)refreshView:(NSDictionary *)sender{
     
+    [_messageArray removeAllObjects];
     if([[sender objectForKey:@"status"] isEqualToNumber:@1]){
         
         [_messageArray addObjectsFromArray:[sender objectForKey:@"message"]];
