@@ -7,16 +7,49 @@
 //
 
 #import "LRBSharePictureCollectionViewCell.h"
+#import "LRBUserInfo.h"
 
 @implementation LRBSharePictureCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    self.backgroundColor = [UIColor whiteColor];
     self.layer.cornerRadius = 5.0f;
     
 }
 
+- (IBAction)upThisPicture:(id)sender {
+    
+     [self.upButton setEnabled:false];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"addShareFavor",@"share_id":_dataDic[@"share_id"],@"user_id":[LRBUserInfo shareUserInfo].userId};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        //
+        NSLog(@"%@",responseObject);
+        
+        [self.upButton setEnabled:false];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+    
+    
+}
+
 -(void)setupCellWithDic:(NSDictionary *)dic{
+    
+    _dataDic = dic;
+    
     
     _titleLabel.text = dic[@"share_title"];
     [_sharedPictureView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"share_image"]]]];
@@ -29,6 +62,10 @@
         
         //    NSLog(@"%@",[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]);
         
+    }
+    if([dic objectForKeyNotNSNULL:@"collect_num"]){
+    
+        _upNumLabel.text = dic[@"collect_num"] ;
     }
 
 

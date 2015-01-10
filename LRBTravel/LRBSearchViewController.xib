@@ -74,6 +74,9 @@
                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                 <rect key="frame" x="30" y="35" width="39" height="30"/>
                             </variation>
+                            <connections>
+                                <action selector="hotPathButtonClick:" destination="-1" eventType="touchUpInside" id="Zaf-0i-FE8"/>
+                            </connections>
                         </button>
                         <button opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-Ff-Ufr">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -85,6 +88,9 @@
                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                 <rect key="frame" x="98" y="35" width="51" height="30"/>
                             </variation>
+                            <connections>
+                                <action selector="hotPathButtonClick:" destination="-1" eventType="touchUpInside" id="WIn-Ah-2iF"/>
+                            </connections>
                         </button>
                         <button opaque="NO" alpha="0.5499999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNt-4v-V4c">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -96,6 +102,9 @@
                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                 <rect key="frame" x="176" y="35" width="50" height="30"/>
                             </variation>
+                            <connections>
+                                <action selector="hotPathButtonClick:" destination="-1" eventType="touchUpInside" id="ROe-Nl-B4R"/>
+                            </connections>
                         </button>
                         <button opaque="NO" alpha="0.5499999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNs-LU-mbG">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -107,6 +116,9 @@
                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                 <rect key="frame" x="258" y="35" width="46" height="30"/>
                             </variation>
+                            <connections>
+                                <action selector="hotPathButtonClick:" destination="-1" eventType="touchUpInside" id="l7j-3Z-xM5"/>
+                            </connections>
                         </button>
                         <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgD-Ml-9RV">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -118,6 +130,9 @@
                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                 <rect key="frame" x="30" y="70" width="53" height="30"/>
                             </variation>
+                            <connections>
+                                <action selector="hotPathButtonClick:" destination="-1" eventType="touchUpInside" id="gLl-cg-Rk5"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

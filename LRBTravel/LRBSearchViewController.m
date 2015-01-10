@@ -172,11 +172,21 @@
         for (int i =0; i < [tagArray count]; i++) {
             NSDictionary *dict = [tagArray objectAtIndex:i];
             UIButton *button = [_hotPathButtons objectAtIndex:i];
-            button.titleLabel.text = dict[@"name"];
+            [button setTitle:dict[@"name"] forState:UIControlStateNormal];
         }
         
         
     }
+    
+    
+}
+- (IBAction)hotPathButtonClick:(id)sender {
+    
+    
+    UIButton *tapButton = (UIButton *)sender ;
+    
+    [_searchBar setText:tapButton.titleLabel.text];
+    
     
     
 }

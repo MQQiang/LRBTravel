@@ -12,23 +12,141 @@
 #import "LRBPathTabelViewCell.h"
 #import "LRBEditPersonInfoViewController.h"
 #import "LRBNoticeViewController.h"
-@interface LRBPersonInfoViewController (){
+#import "LRBPictureShareViewController.h"
+#import "CHTCollectionViewWaterfallCell.h"
+#import "CHTCollectionViewWaterfallHeader.h"
+#import "CHTCollectionViewWaterfallFooter.h"
+#import "LRBSharePictureCollectionViewCell.h"
+
+#define CELL_COUNT 30
+#define CELL_IDENTIFIER @"WaterfallCell"
+#define HEADER_IDENTIFIER @"WaterfallHeader"
+#define FOOTER_IDENTIFIER @"WaterfallFooter"
+
+@interface LRBPersonInfoViewController ()<CHTCollectionViewDelegateWaterfallLayout>{
 
     NSMutableArray * _collectionArray;
     NSMutableArray * _myOrderArray;
     NSMutableArray * _myShareArray;
     NSMutableArray *_dataArray;
-    
+
     
 }
+@property (strong, nonatomic) IBOutlet UISegmentedControl *shareTabBar;
+@property(nonatomic,strong)NSMutableArray *cellSizes;
 
 @end
 
 @implementation LRBPersonInfoViewController
 
+
+
+#pragma mark - Accessors
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
+        
+        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        layout.headerHeight = 0;
+        layout.footerHeight = 0;
+        layout.minimumColumnSpacing = 20;
+        layout.minimumInteritemSpacing = 30;
+
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+330, self.view.frame.size.width, self.view.frame.size.height-330)collectionViewLayout:layout];
+        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+                _collectionView.backgroundColor = [UIColor whiteColor];
+        //        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
+        //            forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        
+        
+        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
+            forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        [_collectionView registerNib:[UINib nibWithNibName:@"LRBSharePictureCollectionViewCell" bundle:nil]forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        
+        [_collectionView registerClass:[CHTCollectionViewWaterfallHeader class]
+            forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader
+                   withReuseIdentifier:HEADER_IDENTIFIER];
+        [_collectionView registerClass:[CHTCollectionViewWaterfallFooter class]
+            forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter
+                   withReuseIdentifier:FOOTER_IDENTIFIER];
+    }
+    [_collectionView setHidden:true];
+    return _collectionView;
+}
+
+- (NSMutableArray *)cellSizes {
+    if (!_cellSizes) {
+        _cellSizes = [NSMutableArray array];
+        for (NSInteger i = 0; i < CELL_COUNT; i++) {
+            CGSize size = CGSizeMake(arc4random() % 20 + 140, arc4random() % 20 + 246);
+            _cellSizes[i] = [NSValue valueWithCGSize:size];
+        }
+    }
+    return _cellSizes;
+}
+
+#pragma mark - Life Cycle
+
+- (void)dealloc {
+    _collectionView.delegate = nil;
+    _collectionView.dataSource = nil;
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _myShareArray.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    //
+    //    CHTCollectionViewWaterfallCell *cell =
+    //    (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
+    //                                                                                forIndexPath:indexPath];
+    
+    LRBSharePictureCollectionViewCell  *cell = (LRBSharePictureCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    
+    //    cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
+    [cell setupCellWithDic:[_myShareArray objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView = nil;
+    
+    if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                          withReuseIdentifier:HEADER_IDENTIFIER
+                                                                 forIndexPath:indexPath];
+    } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                          withReuseIdentifier:FOOTER_IDENTIFIER
+                                                                 forIndexPath:indexPath];
+    }
+    
+    return reusableView;
+}
+
+#pragma mark - CHTCollectionViewDelegateWaterfallLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%f",[self.cellSizes[indexPath.item] CGSizeValue].height);
+    return [self.cellSizes[indexPath.item] CGSizeValue];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view addSubview:self.collectionView];
+    _shareTabBar.hidden = YES;
     NSLog(@"%@",_profileImageView);
      [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
     
@@ -46,6 +164,9 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     [_segmentedControl addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
+    
+    
+    [_shareTabBar addTarget:self action:@selector(shareTabAction:)forControlEvents:UIControlEventValueChanged];
     
     [_infoTabelView registerNib:[UINib nibWithNibName:@"LRBPathTabelViewCell" bundle:nil] forCellReuseIdentifier:@"PathTableViewId"];
     [self initData];
@@ -71,6 +192,20 @@
 // BOOL enableFlag = [segmentedControl isEnabledForSegmentAtIndex:4];//判断指定索引选项是否可选
 //具体委托方法实例
 
+-(void)shareTabAction:(UISegmentedControl *)Seg{
+    
+     NSInteger Index = Seg.selectedSegmentIndex;
+    
+    if(Index){
+        [self requestShareFavouriteData];
+    }
+    else{
+        [self requestShareData];
+    }
+    
+}
+
+
 -(void)segmentAction:(UISegmentedControl *)Seg{
     
     NSInteger Index = Seg.selectedSegmentIndex;
@@ -79,12 +214,21 @@
     
     switch (Index) {
         case 1:
+            _shareTabBar.hidden = YES;
+            _collectionView.hidden = YES;
+             _infoTabelView.hidden = NO ;
             [self requestOrderData];
             break;
         case 2:
+            _shareTabBar.hidden = YES;
+            _collectionView.hidden = YES;
+            _infoTabelView.hidden = NO ;
             [self requestPathData];
             break;
         case 3:
+            _shareTabBar.hidden = NO ;
+            _collectionView.hidden = YES;
+            _infoTabelView.hidden = YES;
             [self requestShareData];
         default:
             break;
@@ -126,10 +270,31 @@
     
     if (_segmentedControl.selectedSegmentIndex !=0) {
         
-        LRBPathTabelViewCell *cell = [_infoTabelView dequeueReusableCellWithIdentifier:@"PathTableViewId"];
-        [cell setupTabelViewCellWith:[_dataArray[_segmentedControl.selectedSegmentIndex-1]objectAtIndex:indexPath.row] Type:_segmentedControl.selectedSegmentIndex];
-        
-        return cell;
+        if (_segmentedControl.selectedSegmentIndex ==1) {
+            
+            LRBPathTabelViewCell *cell = [_infoTabelView dequeueReusableCellWithIdentifier:@"PathTableViewId"];
+            [cell setupTabelViewCellWith:[_dataArray[_segmentedControl.selectedSegmentIndex-1]objectAtIndex:indexPath.row] Type:TYPE_ORDER_UNPAY];
+            
+            return cell;
+        }
+        else if (_segmentedControl.selectedSegmentIndex ==2){
+            
+            LRBPathTabelViewCell *cell = [_infoTabelView dequeueReusableCellWithIdentifier:@"PathTableViewId"];
+            [cell setupTabelViewCellWith:[_dataArray[_segmentedControl.selectedSegmentIndex-1]objectAtIndex:indexPath.row] Type:TYPE_COLLECTION];
+            
+            return cell;
+            
+            
+        }
+        else{
+            
+            
+            LRBPathTabelViewCell *cell = [_infoTabelView dequeueReusableCellWithIdentifier:@"PathTableViewId"];
+            [cell setupTabelViewCellWith:[_dataArray[_segmentedControl.selectedSegmentIndex-1]objectAtIndex:indexPath.row] Type:TYPE_COLLECTION];
+            
+            return cell;
+        }
+
         
     }
 
@@ -244,8 +409,35 @@
         
         [_myShareArray removeAllObjects];
         [_myShareArray addObjectsFromArray:dic[@"share"]];
+        _collectionView.hidden = false;
+        [_collectionView reloadData];
         
-        [_infoTabelView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+}
+
+
+-(void)requestShareFavouriteData{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"getFavoriteShare",@"user_id":[LRBUserInfo shareUserInfo].userId};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        //        [self refreshView:responseObject];
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        
+        [_myShareArray removeAllObjects];
+        [_myShareArray addObjectsFromArray:dic[@"share"]];
+        _collectionView.hidden = false;
+        [_collectionView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

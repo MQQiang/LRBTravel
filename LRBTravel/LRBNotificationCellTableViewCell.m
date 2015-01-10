@@ -25,6 +25,7 @@
 
 -(void)setupLabelWithDic:(NSDictionary *)dic{
     
+    _dic = dic;
     NSLog(@"dic+%@",dic);
     
     _nameLabel.text = dic[@"u_name"];

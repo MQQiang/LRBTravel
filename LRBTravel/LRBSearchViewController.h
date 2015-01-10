@@ -10,6 +10,7 @@
 
 @interface LRBSearchViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+- (IBAction)hotPathButtonClick:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *hotTagView;
 @property (strong, nonatomic) IBOutlet UITableView *resultTableView;

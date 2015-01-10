@@ -15,5 +15,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *sharedPictureView;
 @property (strong, nonatomic) IBOutlet UILabel *upNumLabel;
 @property (strong, nonatomic) IBOutlet UIButton *upButton;
+@property (strong,nonatomic) NSDictionary *dataDic;
+- (IBAction)upThisPicture:(id)sender;
+
 -(void)setupCellWithDic:(NSDictionary *)dic;
 @end

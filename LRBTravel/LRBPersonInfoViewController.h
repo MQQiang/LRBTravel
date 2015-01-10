@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LRBPersonInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface LRBPersonInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 
 
 
@@ -24,4 +24,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *infoTabelView;
 - (IBAction)showNotification:(id)sender;
 - (IBAction)editInfo:(id)sender;
+
+@property(nonatomic,strong) IBOutlet UICollectionView *collectionView;
+
 @end

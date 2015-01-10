@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,LRBPathTabelViewCellType ) {
+    
+    TYPE_COLLECTION =0,
+    TYPE_ORDER_CANCEL,
+    TYPE_ORDER_PAYED,
+    TYPE_ORDER_UNPAY
+
+};
+
+
+
 @interface LRBPathTabelViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *promptButton;
 @property (strong, nonatomic) IBOutlet UIImageView *picImageView;
@@ -15,5 +26,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
--(void)setupTabelViewCellWith:(NSDictionary *)dic Type:(NSInteger) type;
+@property (assign,nonatomic)LRBPathTabelViewCellType cellType;
+
+-(void)setupTabelViewCellWith:(NSDictionary *)dic Type:(LRBPathTabelViewCellType) type;
 @end
