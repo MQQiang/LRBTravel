@@ -44,6 +44,9 @@
 -(void)getJourneyInfo{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
+    
+    
     NSDictionary *parameters = @{@"type":@"shortIntro",@"id":[NSNumber numberWithUnsignedInteger:_journeyId ]};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

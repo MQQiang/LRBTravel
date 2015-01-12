@@ -10,8 +10,10 @@
 
 @interface LRBNotificationDetailViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *notificationTitleLabel;
-@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *notificationTextView;
+@property (strong, nonatomic) IBOutlet UITextView *notificationTextView;
 
 -(void)setupViewWithDic:(NSDictionary *)dic;
+
+@property(nonatomic,assign)int notificationId;
 
 @end

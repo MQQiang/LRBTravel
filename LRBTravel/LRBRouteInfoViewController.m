@@ -14,12 +14,14 @@
 #import "UIViewController+Blur.h"
 #import "LRBJourneyViewController.h"
 #import "LRBCostViewController.h"
-
+#import "LRBBannerPathModel.h"
+#import "LRBUserInfo.h"
 
 @interface LRBRouteInfoViewController ()<EScrollerViewDelegate>{
     
     UIBarButtonItem *_favouriteButton;
     NSDictionary *_infoDic;
+    NSMutableArray *_bannerDArray;
 }
 
 @end
@@ -29,27 +31,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    _bannerDArray = [NSMutableArray new];
     _blurBlackView.alpha = 0;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 66, self.view.frame.size.width, 150)
-                                                          ImageArray:[NSArray arrayWithObjects:@"1.jpg",@"2.jpg",@"3.jpg", nil]
-                                                          TitleArray:nil];
-    
-    scroller.delegate=self;
-    
-    [self.view addSubview:scroller];
+
+
     
     self.title = @"路线详情";
     
     
     
-    _favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite"]style:UIBarButtonItemStylePlain target:self action:@selector(addThisToMyFavourite:)];
+    _favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite_w"]style:UIBarButtonItemStylePlain target:self action:@selector(addThisToMyFavourite:)];
 //
     self.navigationItem.rightBarButtonItem = _favouriteButton;
     
     [self requestViewInfo];
+    [self getBannerInfo];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -86,9 +85,30 @@
 
 - (IBAction)presentArrangeMemt:(id)sender {
     
+    LRBLeaderinfoViewController * leaderInfoVC = [[LRBLeaderinfoViewController alloc] init];
+    
+    _blurBlackView.alpha = 0.7;
+    leaderInfoVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    
+    leaderInfoVC.dicArray =_infoDic[@"path_arrangement"];
+    
+    [self loadSubView:leaderInfoVC];
+    
+    
 }
 
 - (IBAction)presentEquipmentRequire:(id)sender {
+    
+    
+    LRBCostViewController *vc = [[LRBCostViewController alloc] init];
+    if ([_infoDic objectForKeyNotNSNULL:@"device_requirement"]) {
+        
+        vc.info =_infoDic[@"device_requirement"];
+    }
+    
+    
+    [self loadSubView:vc];
     
 }
 
@@ -100,6 +120,16 @@
 }
 
 - (IBAction)presentNotice:(id)sender {
+    
+    LRBCostViewController *vc = [[LRBCostViewController alloc] init];
+    if ([_infoDic objectForKeyNotNSNULL:@"notify"]) {
+        
+        vc.info =_infoDic[@"notify"];
+    }
+    
+    
+    [self loadSubView:vc];
+    
     
 }
 - (IBAction)connectPhoneNumber:(id)sender {
@@ -121,9 +151,10 @@
     _blurBlackView.alpha = 0.7;
     leaderInfoVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
-    [self presentViewControllerWithBlur:leaderInfoVC blurRedius:10 tintColor:[UIColor clearColor] saturationDeltaFactor:0.5];
     
-    _blurBlackView.alpha = 0;
+    leaderInfoVC.dicArray =_infoDic[@"leader"];
+    
+    [self loadSubView:leaderInfoVC];
     
 ////    leaderInfoVC.modalPresentationStyle = UIModalPresentationFormSheet;
 ////    
@@ -165,14 +196,37 @@
 #pragma mark - selector
 -(void)addThisToMyFavourite:(id)sender{
     
-    _favouriteButton.image = [UIImage imageNamed:@"favorite"];
+    [_favouriteButton setImage:[UIImage imageNamed:@"favorite"]];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    
+    NSDictionary *parameters = @{@"type":@"collectPath",@"journey":[NSNumber numberWithUnsignedInteger:_journeyId ],@"user_id":[LRBUserInfo shareUserInfo].userId};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        [self refreshView:responseObject];
+         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite"] style:UIBarButtonItemStylePlain target:nil action:nil];
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+    
+    
+    
 }
 
 -(void)requestViewInfo{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
     
     NSDictionary *parameters = @{@"type":@"getPath",@"id":[NSNumber numberWithUnsignedInteger:_journeyId ]};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -200,4 +254,56 @@
    _titileLabel.text = [dataString stringByAppendingString: [dic[@"paths"][@"start_time"] substringToIndex:10]];
     
 }
+-(void)getBannerInfo{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    
+    NSDictionary *parameters = @{@"type":@"banner"};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/PathApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self setBanner:[responseObject objectForKey:@"banner"]];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+    
+    
+}
+-(void)setBanner:(NSArray *)bannerData{
+    
+    [_bannerDArray addObjectsFromArray:bannerData];
+    
+    NSMutableArray* imageArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in bannerData) {
+        
+        LRBBannerPathModel *model = [[LRBBannerPathModel alloc]init];
+        [model setModelWithDic:dic];
+        
+        if(model.image)
+            [imageArray addObject:model.image];
+        
+    }
+    [self addBannerViewWithUrlArray:imageArray];
+    
+}
+
+-(void)addBannerViewWithUrlArray:(NSArray *)image{
+    
+    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 64, self.view.frame.size.width,140)
+                                                          ImageArray:image
+                                                          TitleArray:nil];
+    
+    scroller.delegate=self;
+    
+    [self.view addSubview:scroller];
+
+}
+
 @end

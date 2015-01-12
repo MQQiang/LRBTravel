@@ -8,8 +8,8 @@
 
 #import "LRBLeaderinfoViewController.h"
 #import "UIImage+ImageEffects.h"
-
-@interface LRBLeaderinfoViewController ()
+#import "PathDetailTableViewCell.h"
+@interface LRBLeaderinfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -21,6 +21,9 @@
     [LRBUtil drawCircleImage: self.bgImageView ];
 //        [self.bgImageView.image applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:1 alpha:0.2] saturationDeltaFactor:1.8 maskImage:nil];
 //    self.bgImageView.alpha = 0;
+    
+    
+    [_infoTableView registerNib:[UINib nibWithNibName:@"PathDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"InfoTabelViewId"];
     
 }
 
@@ -34,6 +37,28 @@
 {
     self.bgImageView.alpha = 1;
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    
+    return [_dicArray count];
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PathDetailTableViewCell *cell = (PathDetailTableViewCell *)[_infoTableView dequeueReusableCellWithIdentifier:@"InfoTabelViewId"];
+    
+    [cell setupCellWithDic:[_dicArray objectAtIndex:indexPath.row] Type:0];
+    
+    
+    return  cell;
+}
+
+
+
 /*
 #pragma mark - Navigation
 

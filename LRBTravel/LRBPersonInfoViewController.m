@@ -150,7 +150,7 @@
     NSLog(@"%@",_profileImageView);
      [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestPathData) name:@"RefreshCollectionView" object:nil];
     
       [_profileImageView drawCircleImage];
     

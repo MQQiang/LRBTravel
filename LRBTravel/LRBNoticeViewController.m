@@ -76,7 +76,9 @@
     
     
     LRBNotificationDetailViewController *detailVC = [[LRBNotificationDetailViewController alloc] init];
-//    
+//
+    detailVC.notificationId = [[[_messageArray objectAtIndex:indexPath.row] objectForKey:@"s_id" ] integerValue];
+    
 //    [self presentViewController:detailVC animated:YES completion:^(){}];
 
     [self.navigationController pushViewController:detailVC animated:YES];

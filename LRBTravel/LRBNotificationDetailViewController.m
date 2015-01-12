@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self requestNotificationInfo];
+    self.title = @"通知消息";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -35,6 +37,41 @@
 */
 -(void)setupViewWithDic:(NSDictionary *)dic{
     _notificationTitleLabel.text = dic [@""];
+    
+}
+-(void)requestNotificationInfo{
+    
+    
+
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"getMessage",@"id":[NSNumber numberWithUnsignedInteger:_notificationId]};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self refreshView:[[responseObject objectForKey:@"message"] objectAtIndex:0] ];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+
+    
+}
+-(void)refreshView:(NSDictionary *)dic{
+    
+    
+    
+    _notificationTitleLabel.text = dic [@"m_title"];
+    _notificationTextView.text = dic [@"m_content"];
     
 }
 

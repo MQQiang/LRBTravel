@@ -23,6 +23,8 @@
 		0E39EDAC1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39EDAB1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.m */; };
 		0E39EDB21A224BC600A384C3 /* LRBPictureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39EDB01A224BC600A384C3 /* LRBPictureDetailViewController.m */; };
 		0E39EDB31A224BC600A384C3 /* LRBPictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E39EDB11A224BC600A384C3 /* LRBPictureDetailViewController.xib */; };
+		0E4BBF7E1A642AF100D20F62 /* PathDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4BBF7C1A642AF100D20F62 /* PathDetailTableViewCell.m */; };
+		0E4BBF7F1A642AF100D20F62 /* PathDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4BBF7D1A642AF100D20F62 /* PathDetailTableViewCell.xib */; };
 		0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5836FD1A18E1B700C3035B /* LRBUserInfo.m */; };
 		0E5B6E671A1111AD00B12C59 /* UIViewController+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B6E661A1111AD00B12C59 /* UIViewController+Blur.m */; };
 		0E600DFE1A2C083A003920D3 /* LRBRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E600DFC1A2C083A003920D3 /* LRBRegisterViewController.m */; };
@@ -172,6 +174,9 @@
 		0E39EDAF1A224BC600A384C3 /* LRBPictureDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPictureDetailViewController.h; sourceTree = "<group>"; };
 		0E39EDB01A224BC600A384C3 /* LRBPictureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPictureDetailViewController.m; sourceTree = "<group>"; };
 		0E39EDB11A224BC600A384C3 /* LRBPictureDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPictureDetailViewController.xib; sourceTree = "<group>"; };
+		0E4BBF7B1A642AF100D20F62 /* PathDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathDetailTableViewCell.h; sourceTree = "<group>"; };
+		0E4BBF7C1A642AF100D20F62 /* PathDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathDetailTableViewCell.m; sourceTree = "<group>"; };
+		0E4BBF7D1A642AF100D20F62 /* PathDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathDetailTableViewCell.xib; sourceTree = "<group>"; };
 		0E5836FC1A18E1B700C3035B /* LRBUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBUserInfo.h; sourceTree = "<group>"; };
 		0E5836FD1A18E1B700C3035B /* LRBUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBUserInfo.m; sourceTree = "<group>"; };
 		0E5B6E651A1111AD00B12C59 /* UIViewController+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Blur.h"; sourceTree = "<group>"; };
@@ -590,6 +595,9 @@
 				0E39EDA71A2243BA00A384C3 /* LRBJourneyNoticeViewController.xib */,
 				0E6D695B19E6BC34007C63F4 /* LRBRouteInfoViewController.h */,
 				0E6D695C19E6BC34007C63F4 /* LRBRouteInfoViewController.m */,
+				0E4BBF7B1A642AF100D20F62 /* PathDetailTableViewCell.h */,
+				0E4BBF7C1A642AF100D20F62 /* PathDetailTableViewCell.m */,
+				0E4BBF7D1A642AF100D20F62 /* PathDetailTableViewCell.xib */,
 				0E6D695D19E6BC34007C63F4 /* LRBRouteInfoViewController.xib */,
 				0E3625381A0D394500B53C0C /* LRBJourneyViewController.h */,
 				0E3625391A0D394500B53C0C /* LRBJourneyViewController.m */,
@@ -913,6 +921,7 @@
 				0E363BFB1A0905770075A38C /* LRBTestViewController.xib in Resources */,
 				0E86CC991A55379400F8998B /* LRBThemeTabelViewCell.xib in Resources */,
 				0E6D696419E6BC9A007C63F4 /* LRBPictureShareViewController.xib in Resources */,
+				0E4BBF7F1A642AF100D20F62 /* PathDetailTableViewCell.xib in Resources */,
 				0E39ED9A1A22389000A384C3 /* LRBDeviceInfoViewController.xib in Resources */,
 				F29A99311A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib in Resources */,
 				0E92110F1A0CB4F900D3BDFB /* LRBLoginViewController.xib in Resources */,
@@ -1019,6 +1028,7 @@
 				0E39EDAC1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.m in Sources */,
 				0E9211091A0CB4B200D3BDFB /* LRBSliderMenuViewController.m in Sources */,
 				0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */,
+				0E4BBF7E1A642AF100D20F62 /* PathDetailTableViewCell.m in Sources */,
 				0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */,
 				0E39EDA31A22428A00A384C3 /* LRBCostViewController.m in Sources */,
 				F2C3C8DF1A59BC350021236C /* LRBEditPersonInforViewCell.m in Sources */,

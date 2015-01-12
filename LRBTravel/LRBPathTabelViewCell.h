@@ -29,4 +29,7 @@ typedef NS_ENUM(NSInteger,LRBPathTabelViewCellType ) {
 @property (assign,nonatomic)LRBPathTabelViewCellType cellType;
 
 -(void)setupTabelViewCellWith:(NSDictionary *)dic Type:(LRBPathTabelViewCellType) type;
+- (IBAction)cancelCollect:(id)sender;
+
+@property(nonatomic,strong)NSDictionary *selfDic;
 @end
