@@ -230,6 +230,12 @@
     [self.formTableView reloadData];
         [self resize];
 }
+-(void)nullInfoAlert{
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请填写完整信息" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    
+    [alert show];
+    
+}
 -(void)requestDataFromServer
 {
 //    http://121.40.173.195/lvrenbang/php/api/PathApi.php?type=join&user_id=1&path_id=1&name=zhangsan&phone=15157181976&email=fpc_2011@sina.com
@@ -237,10 +243,39 @@
     LRBUserInfo *userInfo=[LRBUserInfo shareUserInfo];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     LRBFillFormPersonInfo *keyPerson=[_personInfo objectAtIndex:0];
+    
     if (keyPerson.userName==nil||keyPerson.phoneNumber==nil||keyPerson.email==nil) {
-        NSLog(@"no input");
+        [self nullInfoAlert];
         return;
     }
+    
+
+    NSString *paraName=@"";
+    NSString *paraPhone=@"";
+    NSString *paraEmail=@"";
+    paraName=[paraName stringByAppendingString:keyPerson.userName];
+    paraPhone=[paraPhone stringByAppendingString:keyPerson.phoneNumber];
+    paraEmail=[paraEmail stringByAppendingString:keyPerson.email];
+    for (int i=1; i<_personInfo.count; i++) {
+        keyPerson=[_personInfo objectAtIndex:i];
+        if (keyPerson.userName==nil||keyPerson.phoneNumber==nil||keyPerson.email==nil) {
+           [self nullInfoAlert];
+            return;
+        }
+        
+        
+
+        paraName=[paraName stringByAppendingString:@"|"];
+        paraPhone=[paraPhone stringByAppendingString:@"|"];
+        paraEmail=[paraEmail stringByAppendingString:@"|"];
+        paraName=[paraName stringByAppendingString:keyPerson.userName];
+        paraPhone=[paraPhone stringByAppendingString:keyPerson.phoneNumber];
+        paraEmail=[paraEmail stringByAppendingString:keyPerson.email];
+        
+        
+    }
+    
+    
     NSDictionary *parameters = @{@"type":@"join",@"user_id":userInfo.userId,@"path_id":[_routeInfo objectForKey:@"id"],@"name":keyPerson.userName,@"phone":keyPerson.phoneNumber,@"email":keyPerson.email};
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
@@ -249,9 +284,12 @@
         
        // [self refreshView:responseObject];
         NSDictionary* returnInfo =responseObject;
-        if([returnInfo objectForKey:@"status"])
-        [self.navigationController pushViewController:[[LRBAcceptedOrderViewController alloc]init] animated:YES];
-        
+        if([returnInfo objectForKey:@"status"]){
+        LRBAcceptedOrderViewController* pushView= [[LRBAcceptedOrderViewController alloc]init];
+            pushView.orderInfo=[returnInfo objectForKey:@"order"];
+            
+        [self.navigationController pushViewController:pushView animated:YES];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
@@ -264,6 +302,21 @@
 - (IBAction)submit:(id)sender {
     [self requestDataFromServer];
 }
+
+
+
+#pragma marks - LRBFillFormTableViewCellandHeadDelegate
+-(CGFloat)getLocationWithFrame:(CGRect)cellFrame
+{
+    CGRect rect = [self.formTableView convertRect:cellFrame toView:[self.view superview]];
+    CGSize viewSize=self.view.frame.size;
+    return  viewSize.height/2-rect.origin.y-80;
+
+}
+
+
+
+
 @end
 
 

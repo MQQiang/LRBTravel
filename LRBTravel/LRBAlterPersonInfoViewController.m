@@ -8,7 +8,7 @@
 
 #import "LRBAlterPersonInfoViewController.h"
 #import "LRBUserInfo.h"
-@interface LRBAlterPersonInfoViewController ()
+@interface LRBAlterPersonInfoViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -46,16 +46,36 @@
     
     
 }
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+
+    if ([alertView.title isEqual:@"修改成功"])
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+
+}
+
 -(void)alertInfoWithTitle:(NSString*)string message:(NSString*)message
 {
     UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:string message:message delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [alertView show];
 }
 
+-(void)nullInfoAlert{
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请填写完整信息" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    
+    [alert show];
+    
+}
+
 - (IBAction)update:(id)sender {
     NSString *s1= self.textField1.text;
     NSString *s2= self.textField2.text;
-    
+    if (s2.length==0) {
+        [self nullInfoAlert];
+        return;
+    }
     if (self.textField1.text!=nil&&self.textField2.text!=nil) {
         if ([self.viewStyle.type isEqual:@"Password"]) {
 #warning 暂时不允许改密码

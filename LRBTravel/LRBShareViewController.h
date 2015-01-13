@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LRBShareViewController : UIViewController <UIImagePickerControllerDelegate,UITextViewDelegate,UITextFieldDelegate >
+@interface LRBShareViewController : UIViewController <UIImagePickerControllerDelegate,UITextViewDelegate,UITextFieldDelegate,UIAlertViewDelegate >
 @property (strong,nonatomic) UIImagePickerController *imagePicker;
 @property (strong,nonatomic) UIImageView *imageView;
 @property (strong,nonatomic) UIImage *image;

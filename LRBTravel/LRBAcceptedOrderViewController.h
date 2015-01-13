@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LRBAcceptedOrderViewController : UITableViewController
-
+@property(nonatomic,copy)NSDictionary* orderInfo;
 @end

@@ -115,6 +115,19 @@
 //
 
 
+-(void)successShareAlert{
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"照片分享成功" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    alert.delegate=self;
+    [alert show];
+    
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+
+    [self.navigationController popViewControllerAnimated:YES];
+
+
+}
 
 
 
@@ -133,7 +146,7 @@
         NSDictionary *result=responseObject;
         //NSString *str=[[NSString alloc] initWithData:responseObject encoding:NSASCIIStringEncoding  ];
         NSLog(@"%@",responseObject);
-        
+        [self successShareAlert];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
@@ -141,8 +154,25 @@
     }];
 
 }
+
+
+
+-(void)nullInfoAlert{
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请填写完整信息" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    
+    [alert show];
+    
+}
+
+
 -(void)sharePic:(id)sender
 {
+    if (self.imageTitle.text.length==0||self.descriptionField.text.length==0||self.image==nil) {
+        [self nullInfoAlert];
+        return;
+    }
+    
+    
     NSDictionary *dic =@{};
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     

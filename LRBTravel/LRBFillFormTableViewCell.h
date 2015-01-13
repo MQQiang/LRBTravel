@@ -10,7 +10,7 @@
 @protocol LRBFillFormTableViewCellandHeadDelegate;
 
 
-@interface LRBFillFormTableViewCell : UITableViewCell
+@interface LRBFillFormTableViewCell : UITableViewCell<UITextFieldDelegate>
 
 @property(nonatomic,assign) id<LRBFillFormTableViewCellandHeadDelegate> delegate;
 
@@ -24,5 +24,5 @@
 @optional
 -(void)changeText:(LRBFillFormTableViewCell *)cell;
 -(void)deleteSectionAt:(NSUInteger)idx;
-
+-(CGFloat)getLocationWithFrame:(CGRect)cellFrame;
 @end

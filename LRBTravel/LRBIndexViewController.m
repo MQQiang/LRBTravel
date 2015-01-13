@@ -180,7 +180,7 @@
     LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
 
     routeInfoVC.journeyId = [[_dataArray objectAtIndex:indexPath.row][@"id"] intValue];
-    
+        routeInfoVC.routeInfo = [_dataArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:routeInfoVC animated:YES];
     
     

@@ -11,6 +11,7 @@
 @interface LRBAcceptedOrderViewController ()
 {
     NSArray * _cellTitle;
+    NSArray * _cellDicKey;
    // NSArray *_contentTitleArray;
 
 }
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.title=@"报名成功";
-    self.title=@"报名成功0.0";
+    self.title=@"报名成功";
 
     
     UIView *headView=[ [UIView alloc]initWithFrame:CGRectMake(0.0f ,0.0f, 320, 50.0f) ];
@@ -45,6 +46,7 @@
     
     self.tableView.tableHeaderView.hidden=NO;
     _cellTitle=@[@"订单名称:",@"订单编号:",@"订单日期:",@"订单价格:"];
+    _cellDicKey=@[@"title",@"order_id",@"date",@"money"];
     //self.tableView.tableHeaderView.
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -78,7 +80,7 @@
     
 
     cell.textLabel.text=_cellTitle[indexPath.row];
-    cell.detailTextLabel.text=@"12222";
+    cell.detailTextLabel.text=[NSString stringWithFormat:@"%@",[self.orderInfo objectForKey:[_cellDicKey objectAtIndex:indexPath.row]]] ;
     cell.detailTextLabel.contentMode=UIViewContentModeLeft;
     return cell;
 }
