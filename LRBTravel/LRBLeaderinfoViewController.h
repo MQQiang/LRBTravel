@@ -14,9 +14,11 @@
 - (IBAction)backtoForward:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
+@property (strong, nonatomic) IBOutlet UILabel *titelLabel;
 @property (assign,nonatomic) NSInteger leaderId;
 @property (strong, nonatomic) IBOutlet UITableView *infoTableView;
 
-@property (strong,nonatomic)NSArray *dicArray;
-
+@property (strong,nonatomic)NSString *dicArrayString;
+@property (strong,nonatomic)NSMutableArray *dicArray;
+@property (assign,nonatomic)NSInteger type;
 @end

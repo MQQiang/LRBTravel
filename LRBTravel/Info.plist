@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>LRBTravel</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
@@ -37,10 +39,20 @@
 			<string>QQ</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ41cb18ca</string>
+				<string>QQ41CB18CA</string>
 			</array>
 			<key>tencent</key>
-			<string></string>
+			<string>tencent1103829194</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Sina</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>sina.54a42e23fd98c564c2001c2d</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>

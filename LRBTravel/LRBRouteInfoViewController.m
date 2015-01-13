@@ -89,9 +89,9 @@
     
     _blurBlackView.alpha = 0.7;
     leaderInfoVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    leaderInfoVC.type = 1;
     
-    
-    leaderInfoVC.dicArray =_infoDic[@"path_arrangement"];
+    leaderInfoVC.dicArrayString =_infoDic[@"path_arrangement"];
     
     [self loadSubView:leaderInfoVC];
     
@@ -150,9 +150,9 @@
     
     _blurBlackView.alpha = 0.7;
     leaderInfoVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    leaderInfoVC.type = 0;
     
-    
-    leaderInfoVC.dicArray =_infoDic[@"leader"];
+    leaderInfoVC.dicArrayString =_infoDic[@"leader"];
     
     [self loadSubView:leaderInfoVC];
     

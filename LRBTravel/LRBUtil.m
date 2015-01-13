@@ -44,9 +44,16 @@ static NSString * imagePrefix;
 
 +(void)makePhoneCall:(NSString *)phoneNumber{
     
-    UIWebView *phoneCallWebView = [[UIWebView alloc] init];
+    
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://15157181973"]];
+    
+    
+       NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneNumber]];
+    
+    UIWebView *phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
   
-    NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",phoneNumber]];
+
     if ( !phoneCallWebView ) {
         phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];// 这个webView只是一个后台的View 不需要add到页面上来  效果跟方法二一样 但是这个方法是合法的
     }

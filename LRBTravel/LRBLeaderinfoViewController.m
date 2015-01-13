@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+//    _dicArray = [NSMutableArray new];
+    if (_type) {
+        _titelLabel.text = @"行程安排";
+    }
     [LRBUtil drawCircleImage: self.bgImageView ];
 //        [self.bgImageView.image applyBlurWithRadius:5 tintColor:[UIColor colorWithWhite:1 alpha:0.2] saturationDeltaFactor:1.8 maskImage:nil];
 //    self.bgImageView.alpha = 0;
@@ -51,13 +55,45 @@
     
     PathDetailTableViewCell *cell = (PathDetailTableViewCell *)[_infoTableView dequeueReusableCellWithIdentifier:@"InfoTabelViewId"];
     
-    [cell setupCellWithDic:[_dicArray objectAtIndex:indexPath.row] Type:0];
+    [cell setupCellWithDic:[_dicArray objectAtIndex:indexPath.row] Type:_type];
     
     
     return  cell;
 }
 
+-(void)setDicArrayString:(NSString *)dicArrayString{
+    
+    _dicArrayString = dicArrayString;
+    
+    
+    _dicArrayString =  [_dicArrayString stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+    
+       NSData *jsData = [_dicArrayString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    
+    NSError *error = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsData
+                                                    options:NSJSONReadingAllowFragments
+                                                      error:&error];
+    
+    if (jsonObject != nil && error == nil){
+        
+        if(_dicArray== nil)
+            _dicArray = [NSMutableArray new];
+        
+        _dicArray = (NSArray *)jsonObject;
+        [self.infoTableView reloadData];
+        
+    }else{
+        
+        // 错误
+        
+    }
 
+    
+    
+}
 
 /*
 #pragma mark - Navigation
@@ -75,7 +111,7 @@
 }
 
 
--(void)refreshView:(NSDictionary *)dic{
+-(void)refreshView:(NSString *)dic{
     
     
     

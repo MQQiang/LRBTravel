@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     
+    if (_type) {
+        
+        [_headImage setFrame:CGRectMake(self.frame.origin.x-50, self.frame.origin.y-20, self.frame.size.width-60, self.frame.size.height-100)];
+    }
    
     // Initialization code
 }
@@ -23,7 +27,25 @@
 }
 
 -(void)setupCellWithDic:(NSDictionary *)dic Type:(NSInteger)type{
-     [LRBUtil drawCircleImage: _headImage];
+    
+    _type = type;
+    if (type) {
+        [_headImage setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y-20, self.frame.size.width-60, self.frame.size.height-100)];
+        
+          [_headImage setImageWithURL:[NSURL URLWithString: [[LRBUtil imageProfix] stringByAppendingString:[dic objectForKey:@"image"]]]];
+         _detailTextView.text = dic[@"intro"];
+        
+        _nameLabel.text = dic[@"name"];
+        _telLabel.text = dic[@"phone"];
+        
+        return;
+    }
+    [LRBUtil drawCircleImage: _headImage];
+    
+    [_headImage setImageWithURL:[NSURL URLWithString: [[LRBUtil imageProfix] stringByAppendingString:[dic objectForKey:@"image"]]]];
+    _detailTextView.text = dic[@"intro"];
+    _nameLabel.text = dic[@"name"];
+    _telLabel.text = dic[@"phone"];
 }
 
 @end

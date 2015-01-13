@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PathDetailTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *telLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *headImage;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
 -(void)setupCellWithDic:(NSDictionary *)dic Type:(NSInteger)type;
+@property(assign,nonatomic)NSInteger type;
 @end
