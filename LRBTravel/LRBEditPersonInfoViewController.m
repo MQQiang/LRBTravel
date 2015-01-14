@@ -80,6 +80,8 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+
+    
     LRBCommonTableHeadView *headView=[[[NSBundle mainBundle] loadNibNamed:@"LRBCommonTableHeadView" owner:nil options:nil] lastObject];
     headView.title.text=[self.sectionTitle objectAtIndex:section];
     return headView;
@@ -150,6 +152,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if(indexPath.section == 1)
+        return ;
     
     LRBAlterPersonInfoViewController *alterView=[[LRBAlterPersonInfoViewController alloc] init];
     alterView.viewStyle=[self.alterViewModels objectAtIndex:indexPath.row];

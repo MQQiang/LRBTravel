@@ -148,7 +148,11 @@
     [self.view addSubview:self.collectionView];
     _shareTabBar.hidden = YES;
     NSLog(@"%@",_profileImageView);
-     [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+    
+    if ([LRBUserInfo shareUserInfo].profile ) {
+        [_profileImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+    }
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestPathData) name:@"RefreshCollectionView" object:nil];
     
@@ -408,7 +412,11 @@
         NSDictionary *dic = (NSDictionary *)responseObject;
         
         [_myShareArray removeAllObjects];
-        [_myShareArray addObjectsFromArray:dic[@"share"]];
+        if ([dic objectForKeyNotNSNULL:@"share"]) {
+            
+             [_myShareArray addObjectsFromArray:dic[@"share"]];
+        }
+       
         _collectionView.hidden = false;
         [_collectionView reloadData];
         

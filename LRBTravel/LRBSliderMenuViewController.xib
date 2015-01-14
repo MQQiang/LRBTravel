@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mq" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-iK-3GY">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leader" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-iK-3GY">
                     <rect key="frame" x="86" y="84" width="80" height="80"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="孟强" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrD-MF-hGW">
@@ -51,6 +51,6 @@
         </view>
     </objects>
     <resources>
-        <image name="mq" width="530" height="446"/>
+        <image name="leader" width="120" height="120"/>
     </resources>
 </document>

@@ -43,9 +43,13 @@
     [_headImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapppGestureRecognized:)]];
     _userMessageCountLabel.hidden = YES;
 //    [self RequestUserMessageCount];
-    [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+    if ([LRBUserInfo shareUserInfo].profile) {
+        
+        [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
+        
+    }
+
     _nameLabel.text = [LRBUserInfo shareUserInfo].nickName;
-    
 
     
     [_headImageView drawCircleImage];

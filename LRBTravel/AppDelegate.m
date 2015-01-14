@@ -14,6 +14,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaHandler.h"
+#import "WXApi.h"
 @interface AppDelegate ()
 
 @end
@@ -36,6 +37,10 @@
     
      [UMSocialSinaHandler openSSOWithRedirectURL:@"http://www.tripbong.com/backcall_wb.php"];
     [self setNavigationBar];
+    
+    [WXApi registerApp:@"wx0a62a2a279da0455"];
+    
+    
        return YES;
 }
 

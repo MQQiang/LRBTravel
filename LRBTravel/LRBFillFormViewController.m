@@ -20,6 +20,7 @@
 {
     NSArray * _headTitleArray;
     NSArray *_contentTitleArray;
+    NSString *priceString;
     
 }
 - (IBAction)addPerson:(id)sender;
@@ -44,11 +45,15 @@
     self.formTableView.scrollEnabled=YES;
     //[self.formTableView.tableHeaderView setHidden:YES];
     self.formTableView.tableHeaderView.backgroundColor=[UIColor blackColor] ;
+    
 //    LRBFillFormTableHeadView *titleView=[[[NSBundle mainBundle] loadNibNamed:@"LRBFillFormTableHeadView" owner:nil options:nil] lastObject];
 //    self.formTableView.tableHeaderView=titleView;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.personInfo addObject:[[LRBFillFormPersonInfo alloc]init]];
         NSLog(@"count1=%lu",(unsigned long)self.personInfo.count);
+    
+    _priceLabel.text = priceString;
+    _titleLabel.text = _routeInfo[@"title"];
     [self resize];
 }
 		
@@ -64,6 +69,16 @@
         _personInfo = [NSMutableArray array];
     }
     return _personInfo;
+}
+-(void)setRouteInfo:(NSDictionary *)routeInfo{
+    
+   
+    _routeInfo = routeInfo;
+    
+     NSDictionary *dic = [_routeInfo[@"paths"] objectAtIndex:0];
+    
+    priceString = [dic[@"price"]stringByAppendingString:@"元"];
+    
 }
 
 -(void)resize

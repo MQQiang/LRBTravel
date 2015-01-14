@@ -94,6 +94,9 @@
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
     snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
         NSLog(@"response is %@",response);
+        
+        [self setQQOpenIddic:response.data];
+        
     });
     //设置回调对象
     [UMSocialControllerService defaultControllerService].socialUIDelegate = self;
@@ -102,6 +105,9 @@
 - (IBAction)loginWithWeiChat:(id)sender {
     
     
+    [[[UIAlertView alloc] initWithTitle:@"对不起" message:@"暂时不支持微信登入" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+    
+    return;
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
     snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
         NSLog(@"response is %@",response);
@@ -118,7 +124,11 @@
             
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
             
+            [self setweiboOpenIdNickName:snsAccount.userName openId:snsAccount.usid];
+            
             NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
+            
+            [self login:nil];
         }
         
     });
@@ -203,6 +213,79 @@
 }
 
 
+-(void)setQQOpenIddic:(NSDictionary *)dic{
+    
+    
+    //http://121.40.173.195//lvrenbang/php/api/UserApi.php?type=setQQOpenId&open_id=654321&nick_name=werwerew
+    
+    NSDictionary *dic2 = dic[@"qq"];
+    NSString *nickName =dic2[@"username"];
+    
+    NSString *openId =  dic2[@"usid"];
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"setQQOpenId",@"open_id":openId,@"nick_name":nickName};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+         NSDictionary *dic = (NSDictionary *)responseObject;
+        
+        if([[dic objectForKey:@"status"] isEqual:@1]){
+            
+            [self userLoginSuccess];
+            [[LRBUserInfo shareUserInfo] setupUserInfo:[dic objectForKey:@"user"]];
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
+            [LRBUtil requestImagePrefix];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+    
+}
+
+
+-(void)setweiboOpenIdNickName:(NSString *)name openId:(NSString *)openId{
+    
+    
+    //http://121.40.173.195//lvrenbang/php/api/UserApi.php?type=
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"setWeiboOpenId",@"open_id":openId,@"nick_name":name};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        
+        if([[dic objectForKey:@"status"] isEqual:@1]){
+            
+            [self userLoginSuccess];
+            [[LRBUserInfo shareUserInfo] setupUserInfo:[dic objectForKey:@"user"]];
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
+            [LRBUtil requestImagePrefix];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+    }];
+    
+    
+}
 
 /**
  自定义关闭授权页面事件

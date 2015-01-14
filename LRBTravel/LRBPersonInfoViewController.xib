@@ -32,7 +32,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qiaowei" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q0R-nJ-C9P">
-                            <rect key="frame" x="123" y="103" width="60" height="21"/>
+                            <rect key="frame" x="123" y="103" width="300" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,10 +99,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="23J-Wo-kJ5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leader" id="23J-Wo-kJ5">
                     <rect key="frame" x="39" y="100" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="80" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="1A9-qP-ByS">
                     <rect key="frame" x="0.0" y="240" width="320" height="61"/>
@@ -140,6 +140,7 @@
         <image name="Profilebg" width="640" height="410"/>
         <image name="favorite" width="22" height="22"/>
         <image name="info" width="22" height="22"/>
+        <image name="leader" width="120" height="120"/>
         <image name="like" width="44" height="44"/>
         <image name="messages" width="44" height="44"/>
         <image name="nav_back" width="22" height="22"/>

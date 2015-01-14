@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E007E091A66BD2900E365E4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E007E051A66BD2900E365E4 /* libWeChatSDK.a */; };
+		0E007E0A1A66BD2900E365E4 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E007E061A66BD2900E365E4 /* read_me.txt */; };
 		0E272A8D1A56FE380046D293 /* UIImageView+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */; };
 		0E36253B1A0D394500B53C0C /* LRBJourneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3625391A0D394500B53C0C /* LRBJourneyViewController.m */; };
 		0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E36253A1A0D394500B53C0C /* LRBJourneyViewController.xib */; };
@@ -149,6 +151,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E007E051A66BD2900E365E4 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		0E007E061A66BD2900E365E4 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		0E007E071A66BD2900E365E4 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		0E007E081A66BD2900E365E4 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		0E272A8B1A56FE380046D293 /* UIImageView+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Circle.h"; sourceTree = "<group>"; };
 		0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Circle.m"; sourceTree = "<group>"; };
 		0E3625381A0D394500B53C0C /* LRBJourneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBJourneyViewController.h; sourceTree = "<group>"; };
@@ -377,6 +383,7 @@
 				0EB465671A583BEF002B240E /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				0E97BBA61A0F52B300A35F45 /* Accelerate.framework in Frameworks */,
 				0EB465761A583BEF002B240E /* libWeChatSDK.a in Frameworks */,
+				0E007E091A66BD2900E365E4 /* libWeChatSDK.a in Frameworks */,
 				0E943D1F19E6DB2B0085B1E2 /* CoreGraphics.framework in Frameworks */,
 				F5FC73BBDEAE4B81AD2D80D8 /* libPods.a in Frameworks */,
 				0EB465721A583BEF002B240E /* libSocialQQ.a in Frameworks */,
@@ -395,6 +402,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E007E041A66BD2900E365E4 /* WeChatSDK_1.5_OnlyIphone */ = {
+			isa = PBXGroup;
+			children = (
+				0E007E051A66BD2900E365E4 /* libWeChatSDK.a */,
+				0E007E061A66BD2900E365E4 /* read_me.txt */,
+				0E007E071A66BD2900E365E4 /* WXApi.h */,
+				0E007E081A66BD2900E365E4 /* WXApiObject.h */,
+			);
+			path = WeChatSDK_1.5_OnlyIphone;
+			sourceTree = "<group>";
+		};
 		0E39EDAD1A22480C00A384C3 /* PersonInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +670,7 @@
 		0EB4653E1A583BEF002B240E /* UMSocial_Sdk_4.2.1 */ = {
 			isa = PBXGroup;
 			children = (
+				0E007E041A66BD2900E365E4 /* WeChatSDK_1.5_OnlyIphone */,
 				0EB4653F1A583BEF002B240E /* UMSocialLocalizable.strings */,
 				0EB465411A583BEF002B240E /* Header */,
 				0EB4654D1A583BEF002B240E /* libUMSocial_Sdk_4.2.1.a */,
@@ -918,6 +937,7 @@
 				0EB4656E1A583BEF002B240E /* UMSLoginViewController.xib in Resources */,
 				0EB465741A583BEF002B240E /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0E600DFF1A2C083A003920D3 /* LRBRegisterViewController.xib in Resources */,
+				0E007E0A1A66BD2900E365E4 /* read_me.txt in Resources */,
 				0E363BFB1A0905770075A38C /* LRBTestViewController.xib in Resources */,
 				0E86CC991A55379400F8998B /* LRBThemeTabelViewCell.xib in Resources */,
 				0E6D696419E6BC9A007C63F4 /* LRBPictureShareViewController.xib in Resources */,
@@ -1213,6 +1233,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Sina",
+					"$(PROJECT_DIR)/UMSocial_Sdk_4.2.1/WeChatSDK_1.5_OnlyIphone",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1241,6 +1262,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Sina",
+					"$(PROJECT_DIR)/UMSocial_Sdk_4.2.1/WeChatSDK_1.5_OnlyIphone",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
