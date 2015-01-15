@@ -59,10 +59,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 //    [self RequestUserMessageCount];
-<<<<<<< HEAD
-=======
-    
->>>>>>> FETCH_HEAD
     if ([LRBUserInfo shareUserInfo].profile) {
         
         [_headImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[LRBUserInfo shareUserInfo].profile ]]];
