@@ -393,7 +393,7 @@
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Error: %@", error);
         
     }];}
@@ -421,7 +421,7 @@
         [_collectionView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Error: %@", error);
         
     }];
@@ -448,7 +448,7 @@
         [_collectionView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+          [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSLog(@"Error: %@", error);
         
     }];
@@ -491,7 +491,7 @@
         _notifiacationNumberLabel.text =[dic objectForKeyNotNSNULL:@"count"];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+          [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSLog(@"Error: %@", error);
         
     }];

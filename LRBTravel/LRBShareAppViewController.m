@@ -61,6 +61,8 @@
     [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatTimeline] content:@"我在使用旅人帮，你也来试试吧" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
         if (response.responseCode == UMSResponseCodeSuccess) {
             NSLog(@"分享成功！");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
         }
     }];
     
@@ -76,6 +78,8 @@
     [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:@"我在使用旅人帮，你也来试试吧" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
         if (response.responseCode == UMSResponseCodeSuccess) {
             NSLog(@"分享成功！");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
         }
     }];
     
@@ -84,9 +88,11 @@
 
 - (IBAction)shareTecentWeibo:(id)sender {
     
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToTencent] content:@"分享内嵌文字" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToTencent] content:@"正在使用旅人帮，你也来试试吧" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
         if (shareResponse.responseCode == UMSResponseCodeSuccess) {
             NSLog(@"分享成功！");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
         }
     }];
     
@@ -94,11 +100,13 @@
 
 - (IBAction)shareQQZone:(id)sender {
     
-     [UMSocialData defaultData].extConfig.qzoneData.title = @"Qzone分享title";
+     [UMSocialData defaultData].extConfig.qzoneData.title = @"旅人帮";
     
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToQzone] content:@"分享文字" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToQzone] content:@"我正在使用旅人帮，你也来试试吧" image:[UIImage imageNamed:@"APP_logo"] location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
         if (response.responseCode == UMSResponseCodeSuccess) {
             NSLog(@"分享成功！");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
         }
     }];
 }
