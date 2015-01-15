@@ -88,7 +88,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"login",@"name":_userNameTextField.text,@"email":_emailTextField.text,@"password":_passwordTextField.text};
+    NSDictionary *parameters = @{@"type":@"register",@"name":_userNameTextField.text,@"email":_emailTextField.text,@"password":_passwordTextField.text};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self refreshView:responseObject];
@@ -98,8 +98,10 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
+         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-
+        
+        [[[UIAlertView alloc] initWithTitle:@"注册失败" message:@"请检查网络" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show ];
         
     }];
 
@@ -110,7 +112,7 @@
     
     if ([[sender objectForKey:@"status"] isEqual:@1]) {
 
-        UIAlertController *aleryView = [UIAlertController alertControllerWithTitle:@"注册成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *aleryView = [UIAlertController alertControllerWithTitle:@"注册成功" message:@"返回登入界面登入" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
             
@@ -121,10 +123,12 @@
         [aleryView addAction:action];
         
         [self presentViewController:aleryView animated:YES completion:nil];
+//        [self.navigationController  popViewControllerAnimated:YES];
     }
     else
     {
         
+        [[[UIAlertView alloc] initWithTitle:@"注册失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show ];
         
     }
     

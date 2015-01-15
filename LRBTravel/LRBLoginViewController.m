@@ -45,15 +45,33 @@
 
 - (IBAction)login:(id)sender {
     
+    
+    if ([_userName.text isEqualToString:@""]) {
+        
+        [[[UIAlertView alloc] initWithTitle:@"填写用户名" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show ];
+        
+        return;
+    }
+    
+    
+    if([_password.text isEqualToString:@""]){
+        
+            [[[UIAlertView alloc] initWithTitle:@"填写密码" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show ];
+        return;
+        
+    }
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"type":@"login",@"name":@"fpc",@"password":@"123456"};
+    NSDictionary *parameters = @{@"type":@"login",@"name":_userName.text,@"password":_password.text};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
         NSDictionary *dic = (NSDictionary *)responseObject;
         if([[dic objectForKey:@"status"] isEqual:@1]){
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             
                     [self userLoginSuccess];
             [[LRBUserInfo shareUserInfo] setupUserInfo:[dic objectForKey:@"user"]];
@@ -64,6 +82,8 @@
         }
         else{
             
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
             [[[UIAlertView alloc] initWithTitle:@"登入失败" message:@"检查用户名和密码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
 
@@ -71,7 +91,7 @@
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         NSLog(@"Error: %@", error);
         
