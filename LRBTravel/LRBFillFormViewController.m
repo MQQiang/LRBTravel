@@ -1,4 +1,4 @@
-//
+		//
 //  LRBFillFromViewController.m
 //  LRBTravel
 //
@@ -144,11 +144,23 @@
     cell.delegate=self;
     if (indexPath.section==0) {
         cell.titleLabel.text = [[_contentTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-        cell.textField.text=[_orderInfo InfoAt:indexPath.row];
+        if (indexPath.row==0) {
+            cell.textField.text=[self.routeInfo objectForKey:@"start_time"];
+        }
+        if (indexPath.row==1) {
+            cell.textField.text=[ NSString stringWithFormat:@"%lu",(unsigned long)self.personInfo.count];
+        }
+        if (indexPath.row==2) {
+            NSString *price=[self.routeInfo objectForKey:@"price"];
+            cell.textField.text=[NSString stringWithFormat:@"%lu",price.intValue*self.personInfo.count];
+        }
+        cell.textField.userInteractionEnabled=NO;
+       // cell.textField.text=[_orderInfo InfoAt:indexPath.row];
     }
     else{
         cell.titleLabel.text = [[_contentTitleArray objectAtIndex:1] objectAtIndex:indexPath.row];
         LRBFillFormPersonInfo *pinfo=self.personInfo[indexPath.section-1];
+         cell.textField.userInteractionEnabled=YES;
         cell.textField.text=[pinfo InfoAt:indexPath.row];
     }
 
@@ -291,6 +303,7 @@
     }
     
     
+    MBProgressHUD *hub=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *parameters = @{@"type":@"join",@"user_id":userInfo.userId,@"path_id":[_routeInfo objectForKey:@"id"],@"name":keyPerson.userName,@"phone":keyPerson.phoneNumber,@"email":keyPerson.email};
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
@@ -302,11 +315,11 @@
         if([returnInfo objectForKey:@"status"]){
         LRBAcceptedOrderViewController* pushView= [[LRBAcceptedOrderViewController alloc]init];
             pushView.orderInfo=[returnInfo objectForKey:@"order"];
-            
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.navigationController pushViewController:pushView animated:YES];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Error: %@", error);
         
     }];

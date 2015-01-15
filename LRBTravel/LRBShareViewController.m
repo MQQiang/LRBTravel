@@ -117,16 +117,18 @@
 
 -(void)successShareAlert{
     UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"照片分享成功" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    alert.tag=233;
     alert.delegate=self;
     [alert show];
     
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    if (alertView.tag==233) {
+        [self.navigationController popViewControllerAnimated:YES];
 
-    [self.navigationController popViewControllerAnimated:YES];
-
-
+    }
+    
 }
 
 
@@ -172,7 +174,7 @@
         return;
     }
     
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *dic =@{};
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     
@@ -192,7 +194,7 @@
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData: [str dataUsingEncoding:NSUTF8StringEncoding]  options: NSJSONReadingMutableContainers  error: &error];
                 NSLog(@"%@",result);
        [ self sharePicWithURL:[result objectForKey:@"pic_path"]];
-        
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"%@",result);
         
     }failure:^(AFHTTPRequestOperation *operation,NSError *error) {

@@ -32,6 +32,9 @@
         //
         NSLog(@"%@",responseObject);
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"点赞成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        
         [self.upButton setEnabled:false];
         
         
@@ -50,7 +53,7 @@
     
     _dataDic = dic;
     
-    
+    [LRBUtil drawCircleImage:_headImage];
     _titleLabel.text = dic[@"share_title"];
     [_sharedPictureView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"share_image"]]]];
     

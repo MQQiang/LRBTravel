@@ -8,7 +8,7 @@
 
 #import "LRBPortraitChangeViewController.h"
 #import "LRBUserInfo.h"
-@interface LRBPortraitChangeViewController ()
+@interface LRBPortraitChangeViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -219,6 +219,16 @@
     UIAlertView* alertView=[[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
     [alertView show];
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag==402) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+
+}
+
+
 -(void)updateImageWithUrl:(NSString*)imageURL
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -236,16 +246,25 @@
            
             
              [[LRBUserInfo shareUserInfo] uploadPrefix: imageURL];
-            [self updateImageView];
             
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            
+            [self updateImageView];
+            UIAlertView* alertView=[[UIAlertView alloc] initWithTitle:@"" message:@"头像上传成功" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            alertView.tag=402;
+            [alertView show];
             
             
         }else
         {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+
            [self failUpload:@"user info error"];
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+
                 [self failUpload:@"requeset error"];
         NSLog(@"Error: %@", error);
            }];
@@ -255,6 +274,7 @@
 
 -(void)sharePic:(UIImage*)image
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *dic =@{};
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     CGSize size= image.size;

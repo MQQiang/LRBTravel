@@ -11,20 +11,20 @@
 @interface LRBUserInfo : NSObject
 
 +(LRBUserInfo *)shareUserInfo;
-@property (nonatomic,strong,readonly)NSString * userName;
-@property (nonatomic,strong,readonly)NSString *profile;
-@property (nonatomic,strong,readonly)NSString *nickName;
-@property (nonatomic,strong,readonly)NSString *phoneNumber;
-@property (nonatomic,strong,readonly)NSString *nickWeiXin;
-@property (nonatomic,strong,readonly)NSString *nickWeiBo;
-@property (nonatomic,strong,readonly)NSString *updateTime;
-@property (nonatomic,strong,readonly)NSString *createTime;
-@property (nonatomic,assign,readonly)NSUInteger cash;
-@property (nonatomic,strong,readonly)NSString *selfDescription;
-@property (nonatomic,strong,readonly)NSString *qqNumber;
-@property (nonatomic,assign,readonly)NSUInteger userLevel;
-@property (nonatomic,strong,readonly)NSString *email;
-@property (nonatomic,strong,readonly)NSNumber *userId;
+@property (nonatomic,strong)NSString * userName;
+@property (nonatomic,strong)NSString *profile;
+@property (nonatomic,strong)NSString *nickName;
+@property (nonatomic,strong)NSString *phoneNumber;
+@property (nonatomic,strong)NSString *nickWeiXin;
+@property (nonatomic,strong)NSString *nickWeiBo;
+@property (nonatomic,strong)NSString *updateTime;
+@property (nonatomic,strong)NSString *createTime;
+@property (nonatomic,assign)NSUInteger cash;
+@property (nonatomic,strong)NSString *selfDescription;
+@property (nonatomic,strong)NSString *qqNumber;
+@property (nonatomic,assign)NSUInteger userLevel;
+@property (nonatomic,strong)NSString *email;
+@property (nonatomic,strong)NSNumber *userId;
 -(void)setupUserInfo:(NSDictionary *)indoDic;
 -(void)setImagePrefix:(NSDictionary *)dic;
 #warning ?????????用户信息改变如何修改这保存都信息
