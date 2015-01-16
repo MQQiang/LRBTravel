@@ -75,9 +75,9 @@
    
     _routeInfo = routeInfo;
     
-     NSDictionary *dic = [_routeInfo[@"paths"] objectAtIndex:0];
+//     NSDictionary *dic = [_routeInfo[@"paths"] objectAtIndex:0];
     
-    priceString = [dic[@"price"]stringByAppendingString:@"元"];
+    priceString = [_routeInfo[@"price"] stringByAppendingString:@"元"];
     
 }
 
@@ -303,7 +303,7 @@
     }
     
     
-    MBProgressHUD *hub=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *parameters = @{@"type":@"join",@"user_id":userInfo.userId,@"path_id":[_routeInfo objectForKey:@"id"],@"name":keyPerson.userName,@"phone":keyPerson.phoneNumber,@"email":keyPerson.email};
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];

@@ -22,7 +22,7 @@
 
 @property (strong,nonatomic) NSMutableArray* personInfo;
 @property (strong,nonatomic) LRBFillFormOrderInfo* orderInfo;
-@property(nonatomic,assign) NSDictionary* routeInfo;
+@property(nonatomic,strong) NSDictionary* routeInfo;
 - (IBAction)submit:(id)sender;
 
 @end

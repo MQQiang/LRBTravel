@@ -140,7 +140,7 @@
 - (IBAction)enrollForJourney:(id)sender {
     //Tuotuo
     LRBFillFormViewController *fillFormVC=[[LRBFillFormViewController alloc]init];
-    fillFormVC.routeInfo=self.routeInfo;
+    fillFormVC.routeInfo=_infoDic;
     [self.navigationController pushViewController:fillFormVC animated:nil];
 }
 

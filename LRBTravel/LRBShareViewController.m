@@ -348,9 +348,9 @@
         CGSize frameSize=[self getImageViewSizeFrom:_image maxSize:CGSizeMake(self.imageTitle.frame.size.width, 300.0f)];
         NSLog(@"%f,%f",frameSize.width,frameSize.height);
         
-        self.imageView.frame=CGRectMake(self.uploadBtm.frame.origin.x,self.uploadBtm.frame.origin.y+self.uploadBtm.frame.size.height+10.0f, frameSize.width, frameSize.height);
+        self.imageView.frame=CGRectMake(self.uploadBtm.frame.origin.x,self.uploadBtm.frame.origin.y+self.uploadBtm.frame.size.height+10.0f, frameSize.width, 200);
         self.imageView.backgroundColor=[UIColor blackColor];
-        self.imageView.contentMode=UIViewContentModeScaleAspectFit;
+        self.imageView.contentMode=UIViewContentModeScaleToFill;
         
         CGRect tframe= self.bottomView.frame;
         tframe.origin.y= self.imageView.frame.origin.y+ self.imageView.frame.size.height+10.0f;
@@ -390,18 +390,25 @@
 {
 //    responderId=1;
 //    [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillChangeFrameNotification object:self];    //[self.descriptionField becomeFirstResponder];
-    
+    if (self.view.frame.origin.y ==0) {
         [UIView animateWithDuration:0.5 animations:^{
-            self.view.transform = CGAffineTransformMakeTranslation(0, -90);
+            self.view.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/5);
         }];
-    return YES;
+       
+    }
+     return YES;
+    
 }
+ 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
 
+    if(self.view.frame.origin.y <0){
+    
     [UIView animateWithDuration:0.5 animations:^{
         self.view.transform = CGAffineTransformMakeTranslation(0, 0);
     }];
+}
 //    [textView resignFirstResponder];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillChangeFrameNotification object:self];
     return YES;
