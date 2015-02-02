@@ -296,6 +296,9 @@
 
 -(void)addBannerViewWithUrlArray:(NSArray *)image{
     
+    if(image.count == 0)
+        return;
+    
     EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 64, self.view.frame.size.width,140)
                                                           ImageArray:image
                                                           TitleArray:nil];

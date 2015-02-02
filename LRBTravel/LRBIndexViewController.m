@@ -66,6 +66,9 @@
 
 -(void)addBannerViewWithUrlArray:(NSArray *)image{
     
+    if(image.count ==0)
+        return;
+    
     EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height/4)
                                                           ImageArray:image
                                                           TitleArray:nil];
@@ -175,12 +178,28 @@
     return [_guideImageArray count]+[_pathImageArray count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
-
-    LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
-
-    routeInfoVC.journeyId = [[_dataArray objectAtIndex:indexPath.row][@"id"] intValue];
+   LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
+    
+    if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Theme"]) {
+        
+        NSArray *array = _dataArray[indexPath.row][@"paths"];
+        if([array count] == 0){
+            
+            return;
+        }
+         routeInfoVC.journeyId = [[array objectAtIndex:0][@"id"] intValue];
+        
+        
+        
+    }else{
+        
+        routeInfoVC.journeyId = [[_dataArray objectAtIndex:indexPath.row][@"id"] intValue];
         routeInfoVC.routeInfo = [_dataArray objectAtIndex:indexPath.row];
+        
+    }
+
+
+    
     [self.navigationController pushViewController:routeInfoVC animated:YES];
     
     
@@ -254,11 +273,11 @@
     NSDictionary *dataDic = [sender objectForKey:@"result"];
     NSArray *banner = [dataDic objectForKey:@"banner"];
     NSArray *path = [dataDic objectForKey:@"path"];
-#warning NSDICTIONARY??为什么dic  array
+
 //    NSDictionary *theme = [dataDic objectForKey:@"theme"];
     NSArray *theme = [dataDic objectForKey:@"theme"];
     [self setBanner:banner];
-#warning theme????
+
     [self setPath:path];
     [self setTheme:theme];
 }

@@ -98,7 +98,6 @@
 		0EB4657E1A583D7F002B240E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB4657D1A583D7F002B240E /* libsqlite3.dylib */; };
 		0EB465801A583D88002B240E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB4657F1A583D88002B240E /* CoreTelephony.framework */; };
 		0EB465821A583D95002B240E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB465811A583D95002B240E /* libstdc++.dylib */; };
-		0EB465841A583DAD002B240E /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB465831A583DAD002B240E /* dylib1.o */; };
 		0EB465861A583DC2002B240E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB465851A583DC2002B240E /* libz.dylib */; };
 		0EB4658A1A584381002B240E /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB465881A584381002B240E /* libSocialSina.a */; };
 		0EBD7F9F1A01CAEC00802544 /* LRBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD7F9E1A01CAEC00802544 /* LRBUtil.m */; };
@@ -125,7 +124,6 @@
 		F22A7A8A1A55BE41008B587A /* LRBEditPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7A881A55BE41008B587A /* LRBEditPersonInfoViewController.xib */; };
 		F22A7A8E1A55DCF3008B587A /* LRBAlterPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22A7A8C1A55DCF3008B587A /* LRBAlterPersonInfoViewController.m */; };
 		F22A7A8F1A55DCF3008B587A /* LRBAlterPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7A8D1A55DCF3008B587A /* LRBAlterPersonInfoViewController.xib */; };
-		F22A7A931A55EC4E008B587A /* LRBAlterInfoViewModel.h in Sources */ = {isa = PBXBuildFile; fileRef = F22A7A901A55E3D1008B587A /* LRBAlterInfoViewModel.h */; };
 		F22A7A941A55ECCE008B587A /* LRBAlterInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F22A7A911A55E3D1008B587A /* LRBAlterInfoViewModel.m */; };
 		F29A992A1A4DE08300288FC9 /* LRBFillFormPersonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A99291A4DE08300288FC9 /* LRBFillFormPersonInfo.m */; };
 		F29A992D1A4E79E700288FC9 /* LRBCommonTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */; };
@@ -370,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB465861A583DC2002B240E /* libz.dylib in Frameworks */,
-				0EB465841A583DAD002B240E /* dylib1.o in Frameworks */,
 				0EB465821A583D95002B240E /* libstdc++.dylib in Frameworks */,
 				0EB465801A583D88002B240E /* CoreTelephony.framework in Frameworks */,
 				0EB4657E1A583D7F002B240E /* libsqlite3.dylib in Frameworks */,
@@ -901,6 +898,7 @@
 				TargetAttributes = {
 					0E71CA5D19E4CC9C003C9F2D = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 33NETD757U;
 					};
 					0E71CA7619E4CC9C003C9F2D = {
 						CreatedOnToolsVersion = 6.0;
@@ -1035,7 +1033,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F22A7A941A55ECCE008B587A /* LRBAlterInfoViewModel.m in Sources */,
-				F22A7A931A55EC4E008B587A /* LRBAlterInfoViewModel.h in Sources */,
 				F22A7A851A547A05008B587A /* LRBAcceptedOrderViewController.m in Sources */,
 				0ECCE7811A5AEE45001ECBD9 /* LRBNoticeViewController.m in Sources */,
 				0E9211121A0D10AF00D3BDFB /* EScrollerView.m in Sources */,
@@ -1218,6 +1215,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1225,7 +1224,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LRBTravel/PrefixHeader.pch;
 				INFOPLIST_FILE = LRBTravel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1235,7 +1234,9 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Sina",
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.2.1/WeChatSDK_1.5_OnlyIphone",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a8921769-b785-43be-82a6-c652036fc2a0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1247,6 +1248,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1254,7 +1257,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LRBTravel/PrefixHeader.pch;
 				INFOPLIST_FILE = LRBTravel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1264,8 +1267,9 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Sina",
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.2.1/WeChatSDK_1.5_OnlyIphone",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a8921769-b785-43be-82a6-c652036fc2a0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

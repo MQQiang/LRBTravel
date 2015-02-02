@@ -21,7 +21,21 @@
 }
 -(void)setupViewWithDic:(NSDictionary *)dic{
     
-    _pathNumLabel.text = @"2条线路";
+    NSArray *pathArray = dic[@"paths"];
+    
+    _pathNumLabel.text = [NSString stringWithFormat:@"%lu条线路",(unsigned long)[pathArray count]];
+    if([dic[@"image"] containsString:@"|"]){
+        
+        NSArray *array = [dic[@"image"] componentsSeparatedByString:@"|"];
+        
+         [_picView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[array objectAtIndex:0]]]];
+        
+        return;
+        
+    }
+    
+    
+    
     [_picView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"image"]]]];
 
 
