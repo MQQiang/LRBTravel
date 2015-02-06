@@ -87,6 +87,8 @@
     [super viewDidLoad];
     
     [self sharePic];
+    
+    self.title = @"旅图分享";
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(sharePic:)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit"] style:UIBarButtonItemStylePlain target:self action:@selector(sharePic:)];

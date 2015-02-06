@@ -29,6 +29,7 @@
     NSDictionary *parameters = @{@"type":@"addShareFavor",@"share_id":_dataDic[@"share_id"],@"user_id":[LRBUserInfo shareUserInfo].userId};
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        [self.upButton setImage:[UIImage imageNamed:@"like_r"] forState:UIControlStateNormal];
         //
         NSLog(@"%@",responseObject);
         

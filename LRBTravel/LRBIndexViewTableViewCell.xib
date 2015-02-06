@@ -17,17 +17,20 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljn-Od-QDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-K9-vmC">
-                        <rect key="frame" x="3" y="113" width="77" height="27"/>
-                        <color key="backgroundColor" red="0.91180294750000002" green="0.77901237099999998" blue="0.42109172569999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0m-qA-B9b">
                         <rect key="frame" x="4" y="176" width="300" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <color key="textColor" white="0.75489004630000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="price-1" translatesAutoresizingMaskIntoConstraints="NO" id="7eg-RB-oSE">
+                        <rect key="frame" x="0.0" y="113" width="80" height="25"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-K9-vmC">
+                        <rect key="frame" x="3" y="113" width="80" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -37,7 +40,10 @@
                 <outlet property="priceLabel" destination="UnT-K9-vmC" id="viL-3j-EWl"/>
                 <outlet property="titleLabel" destination="g0m-qA-B9b" id="ceS-cc-OkC"/>
             </connections>
-            <point key="canvasLocation" x="439" y="318"/>
+            <point key="canvasLocation" x="439" y="416"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="price-1" width="60" height="60"/>
+    </resources>
 </document>

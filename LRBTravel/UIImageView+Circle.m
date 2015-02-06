@@ -17,7 +17,7 @@
     self.layer.cornerRadius = self.frame.size.height/2.0f;
     NSLog(@"%f",self.layer.cornerRadius);
     self.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.layer.borderWidth = 3.0f;
+    self.layer.borderWidth = 2.0f;
 }
 
 

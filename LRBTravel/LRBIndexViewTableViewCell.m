@@ -32,7 +32,9 @@
     
     [self.guideImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix]stringByAppendingString:[dic objectForKey:@"image"] ]]];
     _titleLabel.text = [dic objectForKey:@"address"];
-    _priceLabel.text =[dic objectForKey:@"price"];
+    NSString * price =[dic objectForKey:@"price"];
+    
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@",price];
 }
 
 @end
