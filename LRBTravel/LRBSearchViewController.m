@@ -26,6 +26,12 @@
     _guideImageArray = [[NSMutableArray  alloc] init];
     
     [_resultTableView registerNib:[UINib nibWithNibName:@"LRBIndexViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kResultTableViewCellID];
+    
+    self.title = @"搜索";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    
+    
     [self requestHotPathTags];
     // Do any additional setup after loading the view from its nib.
 }
@@ -33,6 +39,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)back:(id)sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 -(void)search {

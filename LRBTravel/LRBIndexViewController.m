@@ -239,6 +239,9 @@
 -(void)showSearchViewController:(id)sender{
     
     LRBSearchViewController *searchVC = [[LRBSearchViewController alloc] init];
+//     UINavigationController *nav =   [[UINavigationController alloc] initWithRootViewController:self];
+    
+//    [nav pushViewController:searchVC animated:YES];
     
     [self.navigationController pushViewController:searchVC animated:YES];
     

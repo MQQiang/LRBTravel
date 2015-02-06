@@ -16,6 +16,8 @@
     self.layer.masksToBounds = YES;// 这个必须设置为
     self.layer.cornerRadius = self.frame.size.height/2.0f;
     NSLog(@"%f",self.layer.cornerRadius);
+    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.layer.borderWidth = 3.0f;
 }
 
 
