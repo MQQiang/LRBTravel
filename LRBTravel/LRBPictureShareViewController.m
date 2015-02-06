@@ -46,7 +46,7 @@
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.backgroundColor = [UIColor lightGrayColor];
+        _collectionView.backgroundColor = [UIColor whiteColor];
 //        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
 //            forCellWithReuseIdentifier:CELL_IDENTIFIER];
         
@@ -87,7 +87,10 @@
     [super viewDidLoad];
     
     [self sharePic];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(sharePic:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(sharePic:)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit"] style:UIBarButtonItemStylePlain target:self action:@selector(sharePic:)];
+    
     _dataArray = [[NSMutableArray alloc] init];
     
    
