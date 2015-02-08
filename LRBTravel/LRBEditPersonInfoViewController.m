@@ -11,6 +11,7 @@
 #import "LRBUserInfo.h"
 #import "LRBAlterPersonInfoViewController.h"
 #import "LRBPortraitChangeViewController.h"
+#import "LRBNavigationController.h"
 
 @interface LRBEditPersonInfoViewController ()
 
@@ -32,9 +33,20 @@
     self.alterViewModels=[[NSMutableArray alloc]init];
     [self setAlterViewModels];
     
+    self.title = @"设置";
     
     [self.tableView registerNib:[UINib  nibWithNibName:@"LRBEditPersonInforViewCell"  bundle:[NSBundle mainBundle ]] forCellReuseIdentifier:@"LRBEditPersonInforViewCellId"];
     
+    if ([[self.navigationController class] instancesRespondToSelector:@selector(showMenu)]) {
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"]
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:(LRBNavigationController *)self.navigationController
+                                                                                action:@selector(showMenu)];
+        
+    }
+    
+   
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

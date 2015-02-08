@@ -23,7 +23,7 @@
     self.feedBackTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.feedBackTextView.layer.cornerRadius = 1.0f;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(feedBack:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Share"] style:UIBarButtonItemStylePlain target:self action:@selector(feedBack:)];
     // Do any additional setup after loading the view from its nib.
 }
 

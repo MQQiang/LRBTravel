@@ -14,6 +14,7 @@
 - (void)awakeFromNib {
     [_promptButton  setEnabled:false];
     // Initialization code
+    _picImageView.layer.cornerRadius = 2.0f;
 
 }
 

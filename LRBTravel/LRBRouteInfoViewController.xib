@@ -19,11 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="Yeu-O8-965">
-                    <rect key="frame" x="-56" y="-54" width="55" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <view contentMode="scaleToFill" id="C4x-Ts-7Kd">
                     <rect key="frame" x="0.0" y="500" width="320" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -213,6 +208,11 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.61376115500567086" green="0.82171942659421748" blue="0.83654510974884033" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" id="Yeu-O8-965">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.91617476851851853" alpha="1" colorSpace="calibratedWhite"/>

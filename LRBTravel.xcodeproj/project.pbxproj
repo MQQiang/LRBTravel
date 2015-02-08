@@ -104,6 +104,7 @@
 		0EC248D21A4C5A6F003E79E5 /* LRBBannerPathModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC248D11A4C5A6F003E79E5 /* LRBBannerPathModel.m */; };
 		0ECCE7811A5AEE45001ECBD9 /* LRBNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE77F1A5AEE45001ECBD9 /* LRBNoticeViewController.m */; };
 		0ECCE7821A5AEE45001ECBD9 /* LRBNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECCE7801A5AEE45001ECBD9 /* LRBNoticeViewController.xib */; };
+		0ED02F671A8545AA00FE0576 /* LRBRectUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED02F661A8545AA00FE0576 /* LRBRectUIView.m */; };
 		0EE363AF1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */; };
 		0EE363B01A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */; };
 		0EE7C5711A0E68C70064F315 /* LRBIndexViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C56F1A0E68C70064F315 /* LRBIndexViewTableViewCell.m */; };
@@ -308,6 +309,8 @@
 		0ECCE77E1A5AEE45001ECBD9 /* LRBNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBNoticeViewController.h; sourceTree = "<group>"; };
 		0ECCE77F1A5AEE45001ECBD9 /* LRBNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBNoticeViewController.m; sourceTree = "<group>"; };
 		0ECCE7801A5AEE45001ECBD9 /* LRBNoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBNoticeViewController.xib; sourceTree = "<group>"; };
+		0ED02F651A8545AA00FE0576 /* LRBRectUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBRectUIView.h; sourceTree = "<group>"; };
+		0ED02F661A8545AA00FE0576 /* LRBRectUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBRectUIView.m; sourceTree = "<group>"; };
 		0EE363AC1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBFillFormTableViewCell.h; sourceTree = "<group>"; };
 		0EE363AD1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBFillFormTableViewCell.m; sourceTree = "<group>"; };
 		0EE363AE1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBFillFormTableViewCell.xib; sourceTree = "<group>"; };
@@ -548,6 +551,8 @@
 				0E71CA6519E4CC9C003C9F2D /* AppDelegate.h */,
 				0E71CA6619E4CC9C003C9F2D /* AppDelegate.m */,
 				0E71CA6E19E4CC9C003C9F2D /* Main.storyboard */,
+				0ED02F651A8545AA00FE0576 /* LRBRectUIView.h */,
+				0ED02F661A8545AA00FE0576 /* LRBRectUIView.m */,
 				0E71CA7119E4CC9C003C9F2D /* Images.xcassets */,
 				0E71CA6819E4CC9C003C9F2D /* LRBTravel.xcdatamodeld */,
 				0E71CA6119E4CC9C003C9F2D /* Supporting Files */,
@@ -1045,6 +1050,7 @@
 				0E39EDAC1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.m in Sources */,
 				0E9211091A0CB4B200D3BDFB /* LRBSliderMenuViewController.m in Sources */,
 				0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */,
+				0ED02F671A8545AA00FE0576 /* LRBRectUIView.m in Sources */,
 				0E4BBF7E1A642AF100D20F62 /* PathDetailTableViewCell.m in Sources */,
 				0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */,
 				0E39EDA31A22428A00A384C3 /* LRBCostViewController.m in Sources */,

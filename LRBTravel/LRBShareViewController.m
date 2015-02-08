@@ -26,12 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"分享";
+    self.title = @"发布";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sharePic:)];
     self.descriptionField.delegate=self;
     self.imageTitle.delegate=self;
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Share"] style:UIBarButtonItemStylePlain target:self action:@selector(sharePic:)];
     
     self.imageView=[[UIImageView alloc] init];
     [self.view addSubview:self.imageView];
@@ -364,7 +364,8 @@
         
     }
     
-    
+    [_uploadBtm setTitle:@"重新上传" forState:UIControlStateNormal];
+
     //[picker dismissModalViewControllerAnimated:YES];
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

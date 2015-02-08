@@ -35,6 +35,8 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registerMethod:)];
     // Do any additional setup after loading the view from its nib.
+    _userName.text = @"fpc";
+    _password.text =@"123456";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -35,6 +35,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"旅人帮";
+    
     _bannerDataArray = [[NSMutableArray alloc] init];
     _dataArray = [NSMutableArray new];
     _pathImageArray  = [[NSMutableArray alloc] init];

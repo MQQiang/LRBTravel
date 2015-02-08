@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"上传图片";
+    self.view.backgroundColor =  UIColorFromRGB(0x009EE5);
+    _imageView.layer.masksToBounds  = YES;
+    _imageView.layer.cornerRadius = _imageView.frame.size.height/2;
     
     [self updateImageView];
     

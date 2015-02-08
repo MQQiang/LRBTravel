@@ -141,7 +141,7 @@
     //Tuotuo
     LRBFillFormViewController *fillFormVC=[[LRBFillFormViewController alloc]init];
     fillFormVC.routeInfo=_infoDic;
-    [self.navigationController pushViewController:fillFormVC animated:nil];
+    [self.navigationController pushViewController:fillFormVC animated:YES];
 }
 
 - (IBAction)presentLeaderInfo:(id)sender {

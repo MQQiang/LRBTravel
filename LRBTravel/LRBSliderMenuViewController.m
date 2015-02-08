@@ -18,6 +18,8 @@
 #import "LRBPersonInfoViewController.h"
 #import "LRBUserInfo.h"
 #import "UIImageView+Circle.h"
+#import "LRBEditPersonInfoViewController.h"
+
 @interface LRBSliderMenuViewController ()
 {
     NSArray* _menuNameArray ;
@@ -145,7 +147,7 @@
                 contentVc = [[LRBAboutUsViewController alloc] init];
                 break;
             case 5:
-                contentVc = [[LRBSetupViewController alloc] init];
+                contentVc = [[LRBEditPersonInfoViewController alloc] init];
                 break;
             default:
                 break;
