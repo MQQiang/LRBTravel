@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [LRBUtil drawCircleImage:_headImage];
     
     self.view.backgroundColor = UIColorFromRGB(0x009EE5);
@@ -37,6 +38,16 @@
     // Do any additional setup after loading the view from its nib.
     _userName.text = @"fpc";
     _password.text =@"123456";
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    if (!_NOAutoLogin) {
+        
+        NSString *userName = [[NSUserDefaults standardUserDefaults] valueForKey:@"user_name"];
+        NSString *password = [NSUserDefaults standardUserDefaults] valueForKey:@"password"
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {

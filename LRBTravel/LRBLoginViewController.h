@@ -19,5 +19,5 @@
 @property (strong, nonatomic) IBOutlet UITextField *userName;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 - (IBAction)forgetPassword:(id)sender;
-
+@property(nonatomic,assign)BOOL NOAutoLogin;
 @end
