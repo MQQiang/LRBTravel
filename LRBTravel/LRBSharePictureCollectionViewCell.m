@@ -8,13 +8,14 @@
 
 #import "LRBSharePictureCollectionViewCell.h"
 #import "LRBUserInfo.h"
-
+#import "XHImageViewer.h"
 @implementation LRBSharePictureCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
     self.layer.cornerRadius = 5.0f;
+   [ self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
     
 }
 
@@ -50,8 +51,8 @@
     
 }
 
--(void)setupCellWithDic:(NSDictionary *)dic{
-    
+-(void)setupCellWithDic:(NSDictionary *)dic superVc:(UIViewController *)vc{
+    _superVC = vc;
     _dataDic = dic;
     
     [LRBUtil drawCircleImage:_headImage];
@@ -76,6 +77,59 @@
     
     NSLog(@"%f",self.bounds.size.height);
     [self setNeedsDisplay ];
+}
+-(void)panGestureRecognized:(id)sender{
+    
+    // Create array of MWPhoto objects
+    self.photos = [NSMutableArray array];
+
+   
+    MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:_dataDic[@"share_image"]]]];
+    photo.caption = _dataDic[@"share_title"];
+    
+     [_photos addObject:photo];
+    // Create browser (must be done each time photo browser is
+    // displayed. Photo browser objects cannot be re-used)
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    
+    // Set options
+    browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+    browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+    browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+    browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+    browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+//    browser.wantsFullScreenLayout = YES; // iOS 5 & 6 only: Decide if you want the photo browser full screen, i.e. whether the status bar is affected (defaults to YES)
+    
+    // Optionally set the current visible photo before displaying
+    [browser setCurrentPhotoIndex:0];
+    
+    // Present
+    [self.superVC.navigationController pushViewController:browser animated:YES];
+    
+    // Manipulate
+//    [browser showNextPhotoAnimated:YES];
+//    [browser showPreviousPhotoAnimated:YES];
+//    [browser setCurrentPhotoIndex:10];
+    
+}
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return self.photos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
+
+- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser actionButtonPressedForPhotoAtIndex:(NSUInteger)index {
+    // Do your thing!
+    
+   UIActionSheet *sheet =[ [UIActionSheet alloc] initWithTitle:@"详情" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"评论" otherButtonTitles:@"分享", nil];
+    [sheet showFromBarButtonItem:photoBrowser.actionButton animated:YES];
+    
 }
 
 @end

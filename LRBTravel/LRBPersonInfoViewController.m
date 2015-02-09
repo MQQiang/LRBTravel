@@ -114,7 +114,7 @@
     LRBSharePictureCollectionViewCell  *cell = (LRBSharePictureCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
     //    cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
-    [cell setupCellWithDic:[_myShareArray objectAtIndex:indexPath.row]];
+    [cell setupCellWithDic:[_myShareArray objectAtIndex:indexPath.row] superVc:self];
     return cell;
 }
 

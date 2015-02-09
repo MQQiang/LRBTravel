@@ -144,7 +144,7 @@
     LRBSharePictureCollectionViewCell  *cell = (LRBSharePictureCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
 //    cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
-    [cell setupCellWithDic:[_dataArray objectAtIndex:indexPath.row]];
+    [cell setupCellWithDic:[_dataArray objectAtIndex:indexPath.row] superVc:self];
     return cell;
 }
 
@@ -162,6 +162,9 @@
     }
     
     return reusableView;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout

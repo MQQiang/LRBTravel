@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWPhotoBrowser.h"
+#import "MWPhotoBrowserPrivate.h"
 
-@interface LRBSharePictureCollectionViewCell : UICollectionViewCell
+@interface LRBSharePictureCollectionViewCell : UICollectionViewCell<MWPhotoBrowserDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *headImage;
@@ -18,5 +20,8 @@
 @property (strong,nonatomic) NSDictionary *dataDic;
 - (IBAction)upThisPicture:(id)sender;
 
--(void)setupCellWithDic:(NSDictionary *)dic;
+-(void)setupCellWithDic:(NSDictionary *)dic superVc:(UIViewController*)vc;
+
+@property(nonatomic,strong)NSMutableArray *photos;
+@property(nonatomic,weak)UIViewController *superVC;
 @end
