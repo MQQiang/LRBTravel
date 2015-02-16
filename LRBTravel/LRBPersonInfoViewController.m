@@ -17,7 +17,7 @@
 #import "CHTCollectionViewWaterfallHeader.h"
 #import "CHTCollectionViewWaterfallFooter.h"
 #import "LRBSharePictureCollectionViewCell.h"
-
+#import "LRBRouteInfoViewController.h"
 #define CELL_COUNT 30
 #define CELL_IDENTIFIER @"WaterfallCell"
 #define HEADER_IDENTIFIER @"WaterfallHeader"
@@ -53,7 +53,7 @@
         layout.minimumColumnSpacing = 20;
         layout.minimumInteritemSpacing = 30;
 
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+330, self.view.frame.size.width, self.view.frame.size.height-330)collectionViewLayout:layout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+325, self.view.frame.size.width, self.view.frame.size.height-325)collectionViewLayout:layout];
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
@@ -163,7 +163,7 @@
     _infoTabelView.delegate = self;
     _infoTabelView.dataSource = self;
     _infoTabelView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
-    
+    _infoTabelView.tableFooterView =[[UIView alloc] initWithFrame:CGRectZero];
     [self.navigationController setToolbarHidden:YES];
     [self.navigationController setNavigationBarHidden:YES];
     
@@ -226,12 +226,14 @@
             _shareTabBar.hidden = YES;
             _collectionView.hidden = YES;
              _infoTabelView.hidden = NO ;
+            _infoTabelView.allowsSelection=YES;
             [self requestOrderData];
             break;
         case 2:
             _shareTabBar.hidden = YES;
             _collectionView.hidden = YES;
             _infoTabelView.hidden = NO ;
+            _infoTabelView.allowsSelection=YES;
             [self requestPathData];
             break;
         case 3:
@@ -240,6 +242,7 @@
             _infoTabelView.hidden = YES;
             [self requestShareData];
         default:
+            _infoTabelView.allowsSelection=NO;
             break;
     }
     
@@ -313,17 +316,18 @@
     
     switch (indexPath.row) {
         case 0:
-            text = [NSString stringWithFormat:@"姓名:%@",[LRBUserInfo shareUserInfo].nickName];
+            text = [NSString stringWithFormat:@" 姓名:  %@",[LRBUserInfo shareUserInfo].nickName];
             break;
         case 1:
-             text = [NSString stringWithFormat:@"邮箱:%@",[LRBUserInfo shareUserInfo].email ];
+             text = [NSString stringWithFormat:@" 邮箱:  %@",[LRBUserInfo shareUserInfo].email ];
             break;
         case 2:
-             text = [NSString stringWithFormat:@"电话:%@",[LRBUserInfo shareUserInfo].phoneNumber];
+             text = [NSString stringWithFormat:@" 电话:  %@",[LRBUserInfo shareUserInfo].phoneNumber];
         default:
             break;
     }
     cell.textLabel.text = text;
+    cell.textLabel.textColor=[UIColor colorWithWhite:0.2 alpha:1];
     return cell;
     
 }
@@ -336,6 +340,22 @@
     
     
     return 60.0f;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_segmentedControl.selectedSegmentIndex) {
+        
+        NSDictionary *dic=[_dataArray[_segmentedControl.selectedSegmentIndex-1] objectAtIndex:indexPath.row];
+        LRBRouteInfoViewController *pushView=[[LRBRouteInfoViewController alloc] init];
+        NSString* journeyId=[dic objectForKey:@"id"];
+        pushView.journeyId=[journeyId integerValue];
+    
+        NSLog(@"%ld",(long)indexPath.row);
+        [self.navigationController pushViewController:pushView animated:YES];
+    }
+    
 }
 
 - (IBAction)backtoForward:(id)sender {

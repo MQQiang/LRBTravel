@@ -12,7 +12,7 @@
 #import "CHTCollectionViewWaterfallFooter.h"
 #import "LRBShareViewController.h"
 #import "LRBSharePictureCollectionViewCell.h"
-
+#import "LRBPhotoBrowserViewController.h"
 
 #define CELL_COUNT 30
 #define CELL_IDENTIFIER @"WaterfallCell"

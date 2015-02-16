@@ -7,6 +7,7 @@
 //
 
 #import "LRBSharePictureCollectionViewCell.h"
+#import "LRBPhotoBrowserViewController.h"
 #import "LRBUserInfo.h"
 #import "XHImageViewer.h"
 @implementation LRBSharePictureCollectionViewCell
@@ -82,7 +83,7 @@
     
     // Create array of MWPhoto objects
     self.photos = [NSMutableArray array];
-
+    LRBPhotoBrowserViewController *pushView=[[LRBPhotoBrowserViewController alloc] init];
    
     MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:_dataDic[@"share_image"]]]];
     photo.caption = _dataDic[@"share_title"];
@@ -106,7 +107,9 @@
     [browser setCurrentPhotoIndex:0];
     
     // Present
-    [self.superVC.navigationController pushViewController:browser animated:YES];
+    self.superVC.navigationController.navigationBar.tintColor=[UIColor blackColor];
+
+    [self.superVC.navigationController pushViewController:pushView animated:YES];
     
     // Manipulate
 //    [browser showNextPhotoAnimated:YES];

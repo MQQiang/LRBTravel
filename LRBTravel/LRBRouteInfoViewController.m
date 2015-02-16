@@ -37,7 +37,8 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-
+    
+    [self.navigationController setNavigationBarHidden:NO];
     
     self.title = @"路线详情";
     

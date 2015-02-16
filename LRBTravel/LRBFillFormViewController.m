@@ -143,18 +143,20 @@
     LRBFillFormTableViewCell * cell = [_formTableView dequeueReusableCellWithIdentifier:kFillFormTableViewCellID];
     cell.delegate=self;
     if (indexPath.section==0) {
+        cell.textField.userInteractionEnabled=NO;
         cell.titleLabel.text = [[_contentTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         if (indexPath.row==0) {
             cell.textField.text=[self.routeInfo objectForKey:@"start_time"];
         }
         if (indexPath.row==1) {
-            cell.textField.text=[ NSString stringWithFormat:@"%lu",(unsigned long)self.personInfo.count];
+            cell.textField.placeholder=@"请填写报名人数";
+            cell.textField.userInteractionEnabled=YES;
         }
         if (indexPath.row==2) {
             NSString *price=[self.routeInfo objectForKey:@"price"];
             cell.textField.text=[NSString stringWithFormat:@"%lu",price.intValue*self.personInfo.count];
         }
-        cell.textField.userInteractionEnabled=NO;
+        
        // cell.textField.text=[_orderInfo InfoAt:indexPath.row];
     }
     else{

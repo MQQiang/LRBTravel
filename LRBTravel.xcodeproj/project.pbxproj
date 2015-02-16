@@ -120,6 +120,8 @@
 		0EE7C5891A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C5881A0E7CCA0064F315 /* LRBFirstLayerBaseViewController.m */; };
 		0EE7C58F1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C58D1A0E8B2C0064F315 /* LRBLeaderinfoViewController.m */; };
 		0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */; };
+		E29FB1511A92921A00FC4A85 /* LRBPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */; };
+		E29FB1521A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */; };
 		F22A7A851A547A05008B587A /* LRBAcceptedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */; };
 		F22A7A891A55BE41008B587A /* LRBEditPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22A7A871A55BE41008B587A /* LRBEditPersonInfoViewController.m */; };
 		F22A7A8A1A55BE41008B587A /* LRBEditPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7A881A55BE41008B587A /* LRBEditPersonInfoViewController.xib */; };
@@ -337,6 +339,9 @@
 		0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBLeaderinfoViewController.xib; sourceTree = "<group>"; };
 		94DB49EC29E1272070966B20 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C3AE625E1B7E276EF887FA6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E29FB14E1A92921A00FC4A85 /* LRBPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPhotoBrowserViewController.xib; sourceTree = "<group>"; };
 		F22A7A861A55BE41008B587A /* LRBEditPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBEditPersonInfoViewController.h; sourceTree = "<group>"; };
 		F22A7A871A55BE41008B587A /* LRBEditPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBEditPersonInfoViewController.m; sourceTree = "<group>"; };
 		F22A7A881A55BE41008B587A /* LRBEditPersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBEditPersonInfoViewController.xib; sourceTree = "<group>"; };
@@ -454,6 +459,9 @@
 				0E7204A11A50494F0049598B /* LRBSharePictureCollectionViewCell.h */,
 				0E7204A21A50494F0049598B /* LRBSharePictureCollectionViewCell.m */,
 				0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */,
+				E29FB14E1A92921A00FC4A85 /* LRBPhotoBrowserViewController.h */,
+				E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */,
+				E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */,
 			);
 			name = SharePic;
 			sourceTree = "<group>";
@@ -913,10 +921,11 @@
 				TargetAttributes = {
 					0E71CA5D19E4CC9C003C9F2D = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 33NETD757U;
+						DevelopmentTeam = 93R557RJL3;
 					};
 					0E71CA7619E4CC9C003C9F2D = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 93R557RJL3;
 						TestTargetID = 0E71CA5D19E4CC9C003C9F2D;
 					};
 				};
@@ -991,6 +1000,7 @@
 				0E39EDA41A22428A00A384C3 /* LRBCostViewController.xib in Resources */,
 				0EB465711A583BEF002B240E /* UMSocialSDKResourcesNew.bundle in Resources */,
 				0E6D695F19E6BC34007C63F4 /* LRBRouteInfoViewController.xib in Resources */,
+				E29FB1521A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib in Resources */,
 				0E39EDA91A2243BB00A384C3 /* LRBJourneyNoticeViewController.xib in Resources */,
 				0E39EDB31A224BC600A384C3 /* LRBPictureDetailViewController.xib in Resources */,
 				0EB465691A583BEF002B240E /* UMSCommentDetailController.xib in Resources */,
@@ -1102,6 +1112,7 @@
 				0E5B6E671A1111AD00B12C59 /* UIViewController+Blur.m in Sources */,
 				0E86CC981A55379400F8998B /* LRBThemeTabelViewCell.m in Sources */,
 				0E363BFA1A0905770075A38C /* LRBTestViewController.m in Sources */,
+				E29FB1511A92921A00FC4A85 /* LRBPhotoBrowserViewController.m in Sources */,
 				0E39EDA81A2243BB00A384C3 /* LRBJourneyNoticeViewController.m in Sources */,
 				0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */,
 				0E36253B1A0D394500B53C0C /* LRBJourneyViewController.m in Sources */,
@@ -1252,7 +1263,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8921769-b785-43be-82a6-c652036fc2a0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1285,7 +1296,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8921769-b785-43be-82a6-c652036fc2a0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
