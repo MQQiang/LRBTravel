@@ -7,8 +7,18 @@
 //
 
 #import "LRBPhotoBrowserViewController.h"
+#import "LRBUserInfo.h"
 
 @interface LRBPhotoBrowserViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView_sharePic;
+@property (weak, nonatomic) IBOutlet UIButton *buttom_like;
+@property (weak, nonatomic) IBOutlet UILabel *lable_description;
+@property (weak, nonatomic) IBOutlet UILabel *lable_comment;
+@property (weak, nonatomic) IBOutlet UILabel *lable_like;
+@property (weak, nonatomic) IBOutlet UILabel *lable_time;
+- (IBAction)like:(id)sender;
+- (IBAction)addComment:(id)sender;
+- (IBAction)viewComment:(id)sender;
 
 @end
 
@@ -16,16 +26,92 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
+    
+    self.title=[self.shareData objectForKey:@"share_title"] ;
+    
+    self.imageView_sharePic.image=self.imageShared;
+    self.lable_comment.text=[self.shareData objectForKey:@"collect_num"];
+    //121.40.173.195/lvrenbang/php/api/ShareApi.php?type=getShareById&id=1&user_id=1
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    NSDictionary *parameters = @{@"type":@"getShareById",@"id":self.shareId,@"user_id":[LRBUserInfo shareUserInfo].userId};
+    NSDictionary *parameters = @{@"type":@"getShareById",@"id":@"1",@"user_id":@"1"};
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    
+    
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/ShareApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        self.shareData= (NSDictionary *)responseObject;
+        
+        NSLog(@"JSON: %@", responseObject);
+        
+        if([[self.shareData objectForKey:@"status"] isEqual:@1]){
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [self changeData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+        }
+        else{
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            [[[UIAlertView alloc] initWithTitle:@"登入失败" message:@"检查用户名和密码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+        
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSLog(@"Error: %@", error);
+        
+        
+    }];
+    
+    
+    
+    
+    
+    
+    
+    [self.navigationController setNavigationBarHidden:NO];
+    // self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
+   // [self.navigationController.navigationBar clearsContextBeforeDrawing];
    // [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    NSArray *navigationBarViews=self.navigationController.navigationBar.subviews;
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
     // Do any additional setup after loading the view from its nib.
 }
+-(void)changeData
+{
+    self.lable_comment.text=[[self.shareData objectForKey:@"share"] objectForKey:@"reply_count"];
+    self.lable_like.text=[[self.shareData objectForKey:@"share"] objectForKey:@"favor_count"];
+    self.title=[[self.shareData objectForKey:@"share"] objectForKey:@"title"];
+    self.lable_description.text=[[self.shareData objectForKey:@"share"] objectForKey:@"content"];
+    self.lable_time.text=[[self.shareData objectForKey:@"share"] objectForKey:@"create_time"];
+    if ([[[self.shareData objectForKey:@"share"] objectForKey:@"self_favor"] isEqual:@"1"]) {
+        self.buttom_like.selected=YES;
+    }
+    
+    
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
-    
+//    
     UINavigationBar* navigationBar=self.navigationController.navigationBar;
     navigationBar.tintColor=[UIColor blackColor];
-    [navigationBar setBackgroundColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    //self.navigationController.navigationBar.translucent = NO;
+    
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nvb"] forBarMetrics:UIBarMetricsDefault];
+    
+   // self.navigationController.navigationBar.alpha=1;
 
 }
 - (void)didReceiveMemoryWarning {
@@ -43,4 +129,35 @@
 }
 */
 
+- (IBAction)like:(id)sender {
+    
+    if (self.buttom_like.selected==YES) {
+        return;
+    }
+    [self.buttom_like setEnabled:false];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    
+    NSDictionary *parameters = @{@"type":@"addShareFavor",@"share_id":@"1",@"user_id":[LRBUserInfo shareUserInfo].userId};
+    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self.buttom_like setImage:[UIImage imageNamed:@"like_r"] forState:UIControlStateNormal];
+        //
+        NSLog(@"%@",responseObject);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"点赞成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        [self.buttom_like setEnabled:false];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+}
+
+- (IBAction)comment:(id)sender {
+}
+- (IBAction)viewComment:(id)sender {
+}
 @end

@@ -34,22 +34,13 @@
         [self.upButton setImage:[UIImage imageNamed:@"like_r"] forState:UIControlStateNormal];
         //
         NSLog(@"%@",responseObject);
-        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"点赞成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
         [alert show];
-        
         [self.upButton setEnabled:false];
         
-        
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
         NSLog(@"Error: %@", error);
-        
     }];
-
-    
-    
 }
 
 -(void)setupCellWithDic:(NSDictionary *)dic superVc:(UIViewController *)vc{
@@ -84,7 +75,21 @@
     // Create array of MWPhoto objects
     self.photos = [NSMutableArray array];
     LRBPhotoBrowserViewController *pushView=[[LRBPhotoBrowserViewController alloc] init];
-   
+    pushView.imageShared=self.headImage.image;
+    pushView.shareId=_dataDic[@"collect_num"] ;
+    pushView.shareData=_dataDic;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:_dataDic[@"share_image"]]]];
     photo.caption = _dataDic[@"share_title"];
     
@@ -107,7 +112,7 @@
     [browser setCurrentPhotoIndex:0];
     
     // Present
-    self.superVC.navigationController.navigationBar.tintColor=[UIColor blackColor];
+    //self.superVC.navigationController.navigationBar.tintColor=[UIColor blackColor];
 
     [self.superVC.navigationController pushViewController:pushView animated:YES];
     

@@ -10,4 +10,9 @@
 
 @interface LRBPhotoBrowserViewController : UIViewController
 
+@property(assign,nonatomic)NSString *shareId;
+@property(strong,nonatomic)NSDictionary *shareData;
+@property(strong,nonatomic)UIImage * imageShared;
+
+
 @end

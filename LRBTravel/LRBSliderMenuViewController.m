@@ -213,6 +213,10 @@
     }
     
 }
+-(void)dealloc
+{
+    NSLog(@"aa");
+}
 -(void)setMessageCountWith:(NSNumber *)number{
     
     if ([number isEqualToNumber:@0]) {
