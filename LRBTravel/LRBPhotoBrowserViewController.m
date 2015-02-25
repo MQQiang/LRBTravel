@@ -38,7 +38,7 @@
     //121.40.173.195/lvrenbang/php/api/ShareApi.php?type=getShareById&id=1&user_id=1
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    NSDictionary *parameters = @{@"type":@"getShareById",@"id":self.shareId,@"user_id":[LRBUserInfo shareUserInfo].userId};
-    NSDictionary *parameters = @{@"type":@"getShareById",@"id":@"1",@"user_id":@"1"};
+    NSDictionary *parameters = @{@"type":@"getShareById",@"id":self.shareId,@"user_id":@"1"};
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
     
@@ -178,7 +178,7 @@
 - (IBAction)editComment:(id)sender {
     
     LRBEditCommentViewController *pushView=[[LRBEditCommentViewController alloc] init];
-    
+    pushView.shareId=self.shareId;
     [self.navigationController pushViewController:pushView animated:YES];
     
     

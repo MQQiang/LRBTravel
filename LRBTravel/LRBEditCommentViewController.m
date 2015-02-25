@@ -59,7 +59,7 @@
         return;
     }
     
-    NSDictionary *parameters = @{@"type":@"postReply",@"share_id":@"1",@"user_id":[LRBUserInfo shareUserInfo].userId,@"title":@"香格里拉旅行",@"content":self.textView_comment.text};
+    NSDictionary *parameters = @{@"type":@"postReply",@"share_id":self.shareId,@"user_id":[LRBUserInfo shareUserInfo].userId,@"title":@"香格里拉旅行",@"content":self.textView_comment.text};
     
     
     

@@ -59,7 +59,7 @@
     
     
 
-    NSDictionary *parameters = @{@"type":@"getReply",@"share_id":@"1",@"limit":@"10",@"offset":@"0"};
+    NSDictionary *parameters = @{@"type":@"getReply",@"share_id":self.shareId,@"limit":@"1000",@"offset":@"0"};
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 
@@ -77,8 +77,7 @@
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             
             self.data_Comments= [dic objectForKey:@"reply"];
-            NSDictionary *tempDic=self.data_Comments[0];
-            
+
             [self.tableView_comments reloadData];
             
             

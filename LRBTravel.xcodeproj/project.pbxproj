@@ -472,9 +472,6 @@
 				0E39EDAF1A224BC600A384C3 /* LRBPictureDetailViewController.h */,
 				0E39EDB01A224BC600A384C3 /* LRBPictureDetailViewController.m */,
 				0E39EDB11A224BC600A384C3 /* LRBPictureDetailViewController.xib */,
-				0E7204A11A50494F0049598B /* LRBSharePictureCollectionViewCell.h */,
-				0E7204A21A50494F0049598B /* LRBSharePictureCollectionViewCell.m */,
-				0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */,
 				E29FB14E1A92921A00FC4A85 /* LRBPhotoBrowserViewController.h */,
 				E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */,
 				E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */,
@@ -885,6 +882,9 @@
 		E2A0DFA61A9DCD08004E03F0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				0E7204A11A50494F0049598B /* LRBSharePictureCollectionViewCell.h */,
+				0E7204A21A50494F0049598B /* LRBSharePictureCollectionViewCell.m */,
+				0E7204A31A50494F0049598B /* LRBSharePictureCollectionViewCell.xib */,
 				E2A0DFA71A9DCD32004E03F0 /* LRBCommentListTableViewCell.h */,
 				E2A0DFA81A9DCD32004E03F0 /* LRBCommentListTableViewCell.m */,
 				E2A0DFA91A9DCD32004E03F0 /* LRBCommentListTableViewCell.xib */,

@@ -76,13 +76,11 @@
     self.photos = [NSMutableArray array];
     LRBPhotoBrowserViewController *pushView=[[LRBPhotoBrowserViewController alloc] init];
     pushView.imageShared=self.headImage.image;
-    pushView.shareId=_dataDic[@"collect_num"] ;
+    pushView.shareId=_dataDic[@"share_id"] ;
     pushView.shareData=_dataDic;
     
     
-    
-    
-    
+
     
     
     
