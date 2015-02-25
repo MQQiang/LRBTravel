@@ -8,6 +8,10 @@
 
 #import "LRBPhotoBrowserViewController.h"
 #import "LRBUserInfo.h"
+#import "LRBEditCommentViewController.h"
+#import "LRBCommentListViewController.h"
+
+
 
 @interface LRBPhotoBrowserViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView_sharePic;
@@ -17,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lable_like;
 @property (weak, nonatomic) IBOutlet UILabel *lable_time;
 - (IBAction)like:(id)sender;
-- (IBAction)addComment:(id)sender;
+- (IBAction)editComment:(id)sender;
 - (IBAction)viewComment:(id)sender;
 
 @end
@@ -77,11 +81,7 @@
     
     
     [self.navigationController setNavigationBarHidden:NO];
-    // self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
-   // [self.navigationController.navigationBar clearsContextBeforeDrawing];
-   // [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
-    NSArray *navigationBarViews=self.navigationController.navigationBar.subviews;
-    
+
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
     // Do any additional setup after loading the view from its nib.
 }
@@ -102,17 +102,23 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-//    
+//
+    
     UINavigationBar* navigationBar=self.navigationController.navigationBar;
-    navigationBar.tintColor=[UIColor blackColor];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    //navigationBar.tintColor=[UIColor blackColor];
+    navigationBar.barTintColor =[UIColor blackColor] ;
+    //[self.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];
     //self.navigationController.navigationBar.translucent = NO;
     
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nvb"] forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nvb"] forBarMetrics:UIBarMetricsDefault];
     
    // self.navigationController.navigationBar.alpha=1;
 
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:0.0/255.0 green:128.0/255.0 blue:1 alpha:1];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -156,8 +162,25 @@
 
 }
 
-- (IBAction)comment:(id)sender {
-}
 - (IBAction)viewComment:(id)sender {
+    
+    LRBCommentListViewController *pushView=[[LRBCommentListViewController alloc] init];
+    pushView.shareData=self.shareData;
+    pushView.shareId=self.shareId;
+    pushView.imageShared=self.imageShared;
+    
+    
+    
+    [self.navigationController pushViewController:pushView animated:YES];
+    
+    
+}
+- (IBAction)editComment:(id)sender {
+    
+    LRBEditCommentViewController *pushView=[[LRBEditCommentViewController alloc] init];
+    
+    [self.navigationController pushViewController:pushView animated:YES];
+    
+    
 }
 @end

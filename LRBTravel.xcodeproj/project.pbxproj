@@ -122,6 +122,12 @@
 		0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE7C58E1A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib */; };
 		E29FB1511A92921A00FC4A85 /* LRBPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */; };
 		E29FB1521A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */; };
+		E2A0DF9F1A9CBD2B004E03F0 /* LRBEditCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0DF9D1A9CBD2B004E03F0 /* LRBEditCommentViewController.m */; };
+		E2A0DFA01A9CBD2B004E03F0 /* LRBEditCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A0DF9E1A9CBD2B004E03F0 /* LRBEditCommentViewController.xib */; };
+		E2A0DFA41A9CC289004E03F0 /* LRBCommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0DFA21A9CC289004E03F0 /* LRBCommentListViewController.m */; };
+		E2A0DFA51A9CC289004E03F0 /* LRBCommentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A0DFA31A9CC289004E03F0 /* LRBCommentListViewController.xib */; };
+		E2A0DFAA1A9DCD32004E03F0 /* LRBCommentListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0DFA81A9DCD32004E03F0 /* LRBCommentListTableViewCell.m */; };
+		E2A0DFAB1A9DCD32004E03F0 /* LRBCommentListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A0DFA91A9DCD32004E03F0 /* LRBCommentListTableViewCell.xib */; };
 		F22A7A851A547A05008B587A /* LRBAcceptedOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE687A1A51CCAE0062F461 /* LRBAcceptedOrderViewController.m */; };
 		F22A7A891A55BE41008B587A /* LRBEditPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22A7A871A55BE41008B587A /* LRBEditPersonInfoViewController.m */; };
 		F22A7A8A1A55BE41008B587A /* LRBEditPersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22A7A881A55BE41008B587A /* LRBEditPersonInfoViewController.xib */; };
@@ -342,6 +348,15 @@
 		E29FB14E1A92921A00FC4A85 /* LRBPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBPhotoBrowserViewController.h; sourceTree = "<group>"; };
 		E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBPhotoBrowserViewController.xib; sourceTree = "<group>"; };
+		E2A0DF9C1A9CBD2B004E03F0 /* LRBEditCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBEditCommentViewController.h; sourceTree = "<group>"; };
+		E2A0DF9D1A9CBD2B004E03F0 /* LRBEditCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBEditCommentViewController.m; sourceTree = "<group>"; };
+		E2A0DF9E1A9CBD2B004E03F0 /* LRBEditCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBEditCommentViewController.xib; sourceTree = "<group>"; };
+		E2A0DFA11A9CC289004E03F0 /* LRBCommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBCommentListViewController.h; sourceTree = "<group>"; };
+		E2A0DFA21A9CC289004E03F0 /* LRBCommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBCommentListViewController.m; sourceTree = "<group>"; };
+		E2A0DFA31A9CC289004E03F0 /* LRBCommentListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBCommentListViewController.xib; sourceTree = "<group>"; };
+		E2A0DFA71A9DCD32004E03F0 /* LRBCommentListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBCommentListTableViewCell.h; sourceTree = "<group>"; };
+		E2A0DFA81A9DCD32004E03F0 /* LRBCommentListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBCommentListTableViewCell.m; sourceTree = "<group>"; };
+		E2A0DFA91A9DCD32004E03F0 /* LRBCommentListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBCommentListTableViewCell.xib; sourceTree = "<group>"; };
 		F22A7A861A55BE41008B587A /* LRBEditPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBEditPersonInfoViewController.h; sourceTree = "<group>"; };
 		F22A7A871A55BE41008B587A /* LRBEditPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBEditPersonInfoViewController.m; sourceTree = "<group>"; };
 		F22A7A881A55BE41008B587A /* LRBEditPersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBEditPersonInfoViewController.xib; sourceTree = "<group>"; };
@@ -447,6 +462,7 @@
 		0E39EDAE1A224B6200A384C3 /* SharePic */ = {
 			isa = PBXGroup;
 			children = (
+				E2A0DFA61A9DCD08004E03F0 /* view */,
 				0E6D696019E6BC9A007C63F4 /* LRBPictureShareViewController.h */,
 				0E6D696119E6BC9A007C63F4 /* LRBPictureShareViewController.m */,
 				0E6D696219E6BC9A007C63F4 /* LRBPictureShareViewController.xib */,
@@ -462,6 +478,12 @@
 				E29FB14E1A92921A00FC4A85 /* LRBPhotoBrowserViewController.h */,
 				E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */,
 				E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */,
+				E2A0DF9C1A9CBD2B004E03F0 /* LRBEditCommentViewController.h */,
+				E2A0DF9D1A9CBD2B004E03F0 /* LRBEditCommentViewController.m */,
+				E2A0DF9E1A9CBD2B004E03F0 /* LRBEditCommentViewController.xib */,
+				E2A0DFA11A9CC289004E03F0 /* LRBCommentListViewController.h */,
+				E2A0DFA21A9CC289004E03F0 /* LRBCommentListViewController.m */,
+				E2A0DFA31A9CC289004E03F0 /* LRBCommentListViewController.xib */,
 			);
 			name = SharePic;
 			sourceTree = "<group>";
@@ -860,6 +882,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E2A0DFA61A9DCD08004E03F0 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E2A0DFA71A9DCD32004E03F0 /* LRBCommentListTableViewCell.h */,
+				E2A0DFA81A9DCD32004E03F0 /* LRBCommentListTableViewCell.m */,
+				E2A0DFA91A9DCD32004E03F0 /* LRBCommentListTableViewCell.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		F2C3C8DB1A59BBD20021236C /* LRBEditPersonInfoViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -956,6 +988,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2FE687D1A51CCAE0062F461 /* LRBAcceptedOrderViewController.xib in Resources */,
+				E2A0DFA01A9CBD2B004E03F0 /* LRBEditCommentViewController.xib in Resources */,
+				E2A0DFAB1A9DCD32004E03F0 /* LRBCommentListTableViewCell.xib in Resources */,
 				0EB4656E1A583BEF002B240E /* UMSLoginViewController.xib in Resources */,
 				0EB465741A583BEF002B240E /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0E600DFF1A2C083A003920D3 /* LRBRegisterViewController.xib in Resources */,
@@ -988,6 +1022,7 @@
 				0EB465661A583BEF002B240E /* UMSocialLocalizable.strings in Resources */,
 				0E6D694D19E6BAB6007C63F4 /* LRBShareViewController.xib in Resources */,
 				F22A7A8F1A55DCF3008B587A /* LRBAlterPersonInfoViewController.xib in Resources */,
+				E2A0DFA51A9CC289004E03F0 /* LRBCommentListViewController.xib in Resources */,
 				0EE7C5901A0E8B2C0064F315 /* LRBLeaderinfoViewController.xib in Resources */,
 				0E71CA7019E4CC9C003C9F2D /* Main.storyboard in Resources */,
 				0EB4656B1A583BEF002B240E /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -1069,11 +1104,13 @@
 				F22A7A891A55BE41008B587A /* LRBEditPersonInfoViewController.m in Sources */,
 				0E39EDAC1A2247FF00A384C3 /* LRBPersonInfoViewControllerDelegate.m in Sources */,
 				0E9211091A0CB4B200D3BDFB /* LRBSliderMenuViewController.m in Sources */,
+				E2A0DFAA1A9DCD32004E03F0 /* LRBCommentListTableViewCell.m in Sources */,
 				0E6D695E19E6BC34007C63F4 /* LRBRouteInfoViewController.m in Sources */,
 				0ED02F671A8545AA00FE0576 /* LRBRectUIView.m in Sources */,
 				0E4BBF7E1A642AF100D20F62 /* PathDetailTableViewCell.m in Sources */,
 				0E6D696819E6BCE2007C63F4 /* LRBIndexViewController.m in Sources */,
 				0E39EDA31A22428A00A384C3 /* LRBCostViewController.m in Sources */,
+				E2A0DF9F1A9CBD2B004E03F0 /* LRBEditCommentViewController.m in Sources */,
 				F2C3C8DF1A59BC350021236C /* LRBEditPersonInforViewCell.m in Sources */,
 				0E39ED9E1A22417D00A384C3 /* LRBCostExplainViewController.m in Sources */,
 				0E7AA2D219FBCBBF00B59782 /* LRBNotificationCellTableViewCell.m in Sources */,
@@ -1091,6 +1128,7 @@
 				F2DE2DF71A51B869009725C8 /* LRBRouteInfo.m in Sources */,
 				0E5836FE1A18E1B700C3035B /* LRBUserInfo.m in Sources */,
 				0E39EDB21A224BC600A384C3 /* LRBPictureDetailViewController.m in Sources */,
+				E2A0DFA41A9CC289004E03F0 /* LRBCommentListViewController.m in Sources */,
 				0EE7C57B1A0E7AE70064F315 /* LRBFeedbackViewController.m in Sources */,
 				0E97BBB41A0F94B200A35F45 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				0E600DFE1A2C083A003920D3 /* LRBRegisterViewController.m in Sources */,

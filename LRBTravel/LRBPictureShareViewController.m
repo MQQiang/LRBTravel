@@ -107,9 +107,13 @@
     
     
 }
-
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    self.navigationController.navigationBar.barTintColor=[UIColor blueColor];
+//}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     [self updateLayoutForOrientation:[UIApplication sharedApplication].statusBarOrientation];
     
 }
