@@ -18,6 +18,7 @@
 - (IBAction)connectPhoneNumber:(id)sender;
 - (IBAction)enrollForJourney:(id)sender;
 - (IBAction)presentLeaderInfo:(id)sender;
+- (IBAction)presentDataSelector:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *blurBlackView;
 @property (strong, nonatomic) IBOutlet UIView *fillFromViewView;
 @property(nonatomic,assign) NSInteger journeyId;

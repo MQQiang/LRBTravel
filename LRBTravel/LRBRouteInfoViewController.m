@@ -23,6 +23,7 @@
     NSDictionary *_infoDic;
     NSMutableArray *_bannerDArray;
 }
+@property(nonatomic,strong)UIDatePicker *picker;
 
 @end
 
@@ -42,6 +43,7 @@
     
     self.title = @"路线详情";
     
+      self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     
     
     _favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorite_w"]style:UIBarButtonItemStylePlain target:self action:@selector(addThisToMyFavourite:)];
@@ -59,6 +61,36 @@
 }
 -(void)viewDidDisappear:(BOOL)animated{
     
+    
+}
+-(void)back:(id)sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)presentDataSelector:(id)sender{
+    
+    
+    [self.view addSubview:self.picker];
+}
+-(UIDatePicker *)picker{
+    
+    if(_picker == nil){
+        
+        _picker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0,0.0,0.0,0.0)];
+        
+        _picker.datePickerMode = UIDatePickerModeDate;
+        
+//        [self.view addSubview:_picker];
+        
+//        NSDate* minDate = [[NSDate alloc]initWithString:@"1900-01-01 00:00:00 -0500"];
+//        NSDate* maxDate = [[NSDate alloc]initWithString:@"2099-01-01 00:00:00 -0500"];
+//        
+//        _picker.minimumDate = minDate;
+//        _picker .maximumDate = maxDate;
+    }
+    
+    return _picker;
     
 }
 /*
