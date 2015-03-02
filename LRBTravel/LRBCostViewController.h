@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LRBCostViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 - (IBAction)close:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextView *costTextView;
 @property(nonatomic,assign) NSInteger costId;

@@ -23,6 +23,7 @@
     
     NSArray *pathArray = dic[@"paths"];
     
+    _titleLabel.text = dic[@"title"];
     _pathNumLabel.text = [NSString stringWithFormat:@"%lu条线路",(unsigned long)[pathArray count]];
     if([dic[@"image"] containsString:@"|"]){
         

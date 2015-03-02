@@ -25,6 +25,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    if([self.info isEqualToString: @""]){
+        
+        _costTextView.text = @"暂无此项信息";
+        
+    }
+    
+}
+
 -(void)refreshView:(NSDictionary *)dic{
     
     

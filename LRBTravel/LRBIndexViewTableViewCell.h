@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LRBIndexViewTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *descreptionLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *guideImageView;
 -(void)setupCell:(UIImage *)guideImage;
 -(void)setupCellWith:(NSDictionary*)dic;

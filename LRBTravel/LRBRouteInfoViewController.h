@@ -10,6 +10,7 @@
 #import "LRBRouteInfo.h"
 @interface LRBRouteInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *titileLabel;
+@property (strong, nonatomic) IBOutlet UILabel *routeDespretionLabel;
 - (IBAction)presentPathInfo:(id)sender;
 - (IBAction)presentArrangeMemt:(id)sender;
 - (IBAction)presentEquipmentRequire:(id)sender;

@@ -24,11 +24,18 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xa-wY-8cz">
+                        <rect key="frame" x="68" y="43" width="200" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="pathNumLabel" destination="HbA-mP-8op" id="e4t-UW-zRb"/>
                 <outlet property="picView" destination="5kx-jn-Axy" id="HsT-m0-wCk"/>
+                <outlet property="titleLabel" destination="8Xa-wY-8cz" id="8zv-wL-SKK"/>
             </connections>
             <point key="canvasLocation" x="378" y="167"/>
         </tableViewCell>

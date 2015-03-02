@@ -10,6 +10,7 @@
                 <outlet property="blurBlackView" destination="Yeu-O8-965" id="oxI-wk-cHD"/>
                 <outlet property="datanumLabel" destination="6tY-JR-dC7" id="ya7-KM-F32"/>
                 <outlet property="locationLabel" destination="s9b-pV-YjN" id="X8G-f5-ZGV"/>
+                <outlet property="routeDespretionLabel" destination="KAS-cf-Au4" id="lUs-Hy-O6f"/>
                 <outlet property="titileLabel" destination="RRu-Dw-j1b" id="sKx-7h-ci3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,11 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.0" contentMode="scaleToFill" id="Yeu-O8-965">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                <view contentMode="scaleToFill" id="sfk-Pd-YWh">
+                    <rect key="frame" x="15" y="64" width="5" height="20"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.95754120809999999" green="0.80820946800000004" blue="0.35705080090000002" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KAS-cf-Au4">
+                    <rect key="frame" x="30" y="64" width="300" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" id="C4x-Ts-7Kd">
                     <rect key="frame" x="0.0" y="500" width="320" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -253,6 +261,11 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.61376115500567086" green="0.82171942659421748" blue="0.83654510974884033" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="Yeu-O8-965">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.91617476851851853" alpha="1" colorSpace="calibratedWhite"/>

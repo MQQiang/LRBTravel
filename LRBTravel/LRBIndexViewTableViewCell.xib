@@ -33,14 +33,21 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyQ-Fi-P9N">
+                        <rect key="frame" x="20" y="13" width="280" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="descreptionLabel" destination="nyQ-Fi-P9N" id="QwS-i6-J0k"/>
                 <outlet property="guideImageView" destination="ljn-Od-QDh" id="d0A-S9-G0X"/>
                 <outlet property="priceLabel" destination="UnT-K9-vmC" id="viL-3j-EWl"/>
                 <outlet property="titleLabel" destination="g0m-qA-B9b" id="ceS-cc-OkC"/>
             </connections>
-            <point key="canvasLocation" x="439" y="416"/>
+            <point key="canvasLocation" x="443" y="388"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -51,7 +51,7 @@
     self.navigationItem.rightBarButtonItem = _favouriteButton;
     
     [self requestViewInfo];
-    [self getBannerInfo];
+//    [self getBannerInfo];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -113,6 +113,8 @@
     
     vc.info =_infoDic[@"short_intro"];
     
+    vc.title = @"路线简介";
+    
     [self loadSubView:vc];
 }
 
@@ -140,6 +142,7 @@
         vc.info =_infoDic[@"device_requirement"];
     }
     
+    vc.title = @"装备要求";
     
     [self loadSubView:vc];
     
@@ -148,8 +151,12 @@
 - (IBAction)presentCostInfo:(id)sender {
     LRBCostViewController *vc = [[LRBCostViewController alloc] init];
     vc.info =_infoDic[@"charge_announcement"];
+    
+     vc.title = @"费用说明";
+    
     [self loadSubView:vc];
     
+   
 }
 
 - (IBAction)presentNotice:(id)sender {
@@ -160,6 +167,7 @@
         vc.info =_infoDic[@"notify"];
     }
     
+    vc.title = @"预定须知";
     
     [self loadSubView:vc];
     
@@ -220,7 +228,7 @@
     _blurBlackView.alpha = 0.7;
     vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
-    [self presentViewControllerWithBlur:vc blurRedius:10 tintColor:[UIColor clearColor] saturationDeltaFactor:0.5];
+    [self presentViewControllerWithBlur:vc blurRedius:20 tintColor:[UIColor clearColor] saturationDeltaFactor:0.5];
     
     _blurBlackView.alpha = 0;
     
@@ -283,8 +291,13 @@
     _locationLabel.text = dic[@"paths"][@"address"];
     _datanumLabel.text = dic[@"paths"][@"day"];
     NSMutableString *dataString = [NSMutableString stringWithString: @"出发日期："];
-    
+    _routeDespretionLabel.text = dic[@"paths"][@"title"];
    _titileLabel.text = [dataString stringByAppendingString: [dic[@"paths"][@"start_time"] substringToIndex:10]];
+    
+   NSString * imageUrl = [[LRBUtil imageProfix] stringByAppendingString:[_infoDic objectForKey:@"image"]];
+
+    [self addBannerViewWithUrlArray:[NSArray arrayWithObject:imageUrl]];
+    
     
 }
 -(void)getBannerInfo{
@@ -339,7 +352,7 @@
     scroller.delegate=self;
     
     [self.view addSubview:scroller];
-
+    [self.view sendSubviewToBack:scroller];
 }
 
 @end

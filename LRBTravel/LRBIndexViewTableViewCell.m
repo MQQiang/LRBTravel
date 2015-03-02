@@ -29,7 +29,7 @@
 -(void)setupCellWith:(NSDictionary*)dic{
     
     
-    
+    _descreptionLabel.text = [dic objectForKey:@"short_intro"];
     [self.guideImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix]stringByAppendingString:[dic objectForKey:@"image"] ]]];
     _titleLabel.text = [dic objectForKey:@"address"];
     NSString * price =[dic objectForKey:@"price"];
