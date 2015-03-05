@@ -26,4 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *datanumLabel;
 @property(nonatomic,strong) NSDictionary* routeInfo;
+
+
+
 @end

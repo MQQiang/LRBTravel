@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *costTextView;
 @property(nonatomic,assign) NSInteger costId;
 @property(nonatomic,copy)NSString *info;
+
+@property(nonatomic,strong)NSString *titleString;
 @end

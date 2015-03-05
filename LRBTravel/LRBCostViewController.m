@@ -32,6 +32,7 @@
         _costTextView.text = @"暂无此项信息";
         
     }
+    _titleLabel.text = self.titleString;
     
 }
 

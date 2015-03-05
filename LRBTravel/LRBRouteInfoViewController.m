@@ -109,11 +109,11 @@
     
 }
 - (IBAction)presentPathInfo:(id)sender {
-    LRBJourneyViewController *vc = [[LRBJourneyViewController alloc] init];
+    LRBCostViewController *vc = [[LRBCostViewController alloc] init];
     
     vc.info =_infoDic[@"short_intro"];
     
-    vc.title = @"路线简介";
+    vc.titleString = @"路线简介";
     
     [self loadSubView:vc];
 }
@@ -142,7 +142,7 @@
         vc.info =_infoDic[@"device_requirement"];
     }
     
-    vc.title = @"装备要求";
+    vc.titleString = @"装备要求";
     
     [self loadSubView:vc];
     
@@ -152,7 +152,7 @@
     LRBCostViewController *vc = [[LRBCostViewController alloc] init];
     vc.info =_infoDic[@"charge_announcement"];
     
-     vc.title = @"费用说明";
+     vc.titleString = @"费用说明";
     
     [self loadSubView:vc];
     
@@ -167,7 +167,7 @@
         vc.info =_infoDic[@"notify"];
     }
     
-    vc.title = @"预定须知";
+    vc.titleString = @"预定须知";
     
     [self loadSubView:vc];
     
