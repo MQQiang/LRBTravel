@@ -10,5 +10,7 @@
 
 @interface LRBEditCommentViewController : UIViewController
 @property(assign,nonatomic)NSString *shareId;
+@property (strong, nonatomic) IBOutlet UILabel *numLabel;
+@property (strong, nonatomic) IBOutlet UILabel *promptLabel;
 
 @end

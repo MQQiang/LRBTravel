@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.title=[[self.shareData objectForKey:@"share"] objectForKey:@"title"];
+//     self.title=[[self.shareData objectForKey:@"share"] objectForKey:@"title"];
+    self.title = @"评论列表";
 
     [self.tableView_comments registerNib:[UINib nibWithNibName:@"LRBCommentListTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"LRBCommentListTableViewCell"];
     [self loadData];

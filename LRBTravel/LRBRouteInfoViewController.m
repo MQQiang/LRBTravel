@@ -16,15 +16,20 @@
 #import "LRBCostViewController.h"
 #import "LRBBannerPathModel.h"
 #import "LRBUserInfo.h"
+#import "MQDatePickView.h"
+#import "THDatePickerViewController.h"
 
-@interface LRBRouteInfoViewController ()<EScrollerViewDelegate>{
+@interface LRBRouteInfoViewController ()<EScrollerViewDelegate,MQDatePickViewDelegate,THDatePickerDelegate,UIAlertViewDelegate>{
     
     UIBarButtonItem *_favouriteButton;
     NSDictionary *_infoDic;
     NSMutableArray *_bannerDArray;
+    
+    NSDate *_pickDate;
 }
 @property(nonatomic,strong)UIDatePicker *picker;
-
+@property(nonatomic,strong)MQDatePickView *mqPicker;
+@property(nonatomic,strong)THDatePickerViewController *datePicker;
 @end
 
 @implementation LRBRouteInfoViewController
@@ -68,10 +73,74 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == 1) {
+        
+         [LRBUtil makePhoneCall:@"13656678405"];
+        
+    }
+    
+}
+
+
+- (IBAction)touchedButton:(id)sender {
+    if(!self.datePicker)
+        self.datePicker = [THDatePickerViewController datePicker];
+    self.datePicker.date = [NSDate new];
+    self.datePicker.delegate = self;
+    [self.datePicker setAllowClearDate:NO];
+    [self.datePicker setClearAsToday:YES];
+    [self.datePicker setAutoCloseOnSelectDate:YES];
+    [self.datePicker setAllowSelectionOfSelectedDate:YES];
+    [self.datePicker setDisableHistorySelection:YES];
+    [self.datePicker setDisableFutureSelection:NO];
+    [self.datePicker setSelectedBackgroundColor:[UIColor colorWithRed:125/255.0 green:208/255.0 blue:0/255.0 alpha:1.0]];
+    [self.datePicker setCurrentDateColor:[UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1.0]];
+    
+    [self.datePicker setDateHasItemsCallback:^BOOL(NSDate *date) {
+        int tmp = (arc4random() % 30)+1;
+        if(tmp % 5 == 0)
+            return YES;
+        return NO;
+    }];
+    //[self.datePicker slideUpInView:self.view withModalColor:[UIColor lightGrayColor]];
+    [self presentSemiViewController:self.datePicker withOptions:@{
+                                                                  KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                                                                  KNSemiModalOptionKeys.animationDuration : @(1.0),
+                                                                  KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                                                                  }];
+}
+
 -(void)presentDataSelector:(id)sender{
     
+//      [self.mqPicker show];
+    if(!self.datePicker)
+        self.datePicker = [THDatePickerViewController datePicker];
+    self.datePicker.date = [NSDate new];
+    self.datePicker.delegate = self;
+    [self.datePicker setAllowClearDate:NO];
+    [self.datePicker setClearAsToday:YES];
+    [self.datePicker setAutoCloseOnSelectDate:YES];
+    [self.datePicker setAllowSelectionOfSelectedDate:YES];
+    [self.datePicker setDisableHistorySelection:YES];
+    [self.datePicker setDisableFutureSelection:NO];
+    [self.datePicker setSelectedBackgroundColor:[UIColor colorWithRed:125/255.0 green:208/255.0 blue:0/255.0 alpha:1.0]];
+    [self.datePicker setCurrentDateColor:[UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1.0]];
     
-    [self.view addSubview:self.picker];
+    [self.datePicker setDateHasItemsCallback:^BOOL(NSDate *date) {
+        int tmp = (arc4random() % 30)+1;
+        if(tmp % 5 == 0)
+            return YES;
+        return NO;
+    }];
+    //[self.datePicker slideUpInView:self.view withModalColor:[UIColor lightGrayColor]];
+    [self presentSemiViewController:self.datePicker withOptions:@{
+                                                                  KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                                                                  KNSemiModalOptionKeys.animationDuration : @(1.0),
+                                                                  KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                                                                  }];
+//    [self.view addSubview:self.picker];
 }
 -(UIDatePicker *)picker{
     
@@ -93,6 +162,35 @@
     return _picker;
     
 }
+-(MQDatePickView *)mqPicker{
+    
+    if(_mqPicker == nil){
+        
+        _mqPicker = [[MQDatePickView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 200)];
+
+        
+        _mqPicker.delegate = self;
+        
+        [self.view addSubview:_mqPicker];
+  
+        [self.view bringSubviewToFront:_mqPicker];
+    }
+    
+    return _mqPicker;
+    
+}
+
+-(void)didClickConfirmButton{
+    
+    [_mqPicker hide];
+    
+}
+-(void)didClickCancelButton{
+    
+    
+    [_mqPicker  hide];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -106,6 +204,7 @@
 
 -(void)EScrollerViewDidClicked:(NSUInteger)index{
     
+//    [self.mqPicker show];
     
 }
 - (IBAction)presentPathInfo:(id)sender {
@@ -175,14 +274,35 @@
 }
 - (IBAction)connectPhoneNumber:(id)sender {
     
-    [LRBUtil makePhoneCall:@"13656678405"];
+    UIAlertView *alert =[ [UIAlertView alloc] initWithTitle:@"是否拨打此电话" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    
+    
+    [alert show];
+    
+   
 }
 
 - (IBAction)enrollForJourney:(id)sender {
     //Tuotuo
     LRBFillFormViewController *fillFormVC=[[LRBFillFormViewController alloc]init];
     fillFormVC.routeInfo=_infoDic;
+    
+    if(_pickDate){
+    
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+        
+        [formatter setTimeZone:timeZone];
+        [formatter setDateFormat : @"yyyy-MM-dd"];
+        
+        fillFormVC.dateString   =[formatter stringFromDate:_pickDate];
+    
+        
+    }
     [self.navigationController pushViewController:fillFormVC animated:YES];
+    
+    
+    
 }
 
 - (IBAction)presentLeaderInfo:(id)sender {
@@ -289,7 +409,7 @@
     _infoDic = dic[@"paths"];
     
     _locationLabel.text = dic[@"paths"][@"address"];
-    _datanumLabel.text = dic[@"paths"][@"day"];
+    _datanumLabel.text =[ dic[@"paths"][@"day"] stringByAppendingString:@"天"];
     NSMutableString *dataString = [NSMutableString stringWithString: @"出发日期："];
     _routeDespretionLabel.text = dic[@"paths"][@"title"];
    _titileLabel.text = [dataString stringByAppendingString: [dic[@"paths"][@"start_time"] substringToIndex:10]];
@@ -353,6 +473,40 @@
     
     [self.view addSubview:scroller];
     [self.view sendSubviewToBack:scroller];
+}
+
+
+-(void)datePickerDonePressed:(THDatePickerViewController *)datePicker{
+    
+    [_datePicker dismissSemiModalView];
+}
+-(void)datePickerCancelPressed:(THDatePickerViewController *)datePicker{
+    
+    [_datePicker dismissSemiModalView];
+}
+
+
+-(void)datePicker:(THDatePickerViewController *)datePicker selectedDate:(NSDate *)selectedDate{
+    
+    _pickDate = selectedDate;
+    
+//    [_datePicker dismissSemiModalView];
+    
+}
+-(void)datePickerDidHide:(THDatePickerViewController *)datePicker{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+    
+    [formatter setTimeZone:timeZone];
+    [formatter setDateFormat : @"yyyy-MM-dd"];
+    
+
+    _titileLabel.text= [@"出发时间：" stringByAppendingString:[formatter stringFromDate:_pickDate] ];
+    
+
+    
+//   [_datePicker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

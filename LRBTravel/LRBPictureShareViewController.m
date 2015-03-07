@@ -14,7 +14,7 @@
 #import "LRBSharePictureCollectionViewCell.h"
 #import "LRBPhotoBrowserViewController.h"
 
-#define CELL_COUNT 30
+#define CELL_COUNT 1000
 #define CELL_IDENTIFIER @"WaterfallCell"
 #define HEADER_IDENTIFIER @"WaterfallHeader"
 #define FOOTER_IDENTIFIER @"WaterfallFooter"
@@ -41,12 +41,12 @@
         layout.footerHeight = 0;
         layout.minimumColumnSpacing = 20;
         layout.minimumInteritemSpacing = 30;
-        _collectionView.backgroundColor = [UIColor lightGrayColor];
+        _collectionView.backgroundColor = UIColorFromRGB(0XE3eaf1);
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = UIColorFromRGB(0XE3eaf1);
 //        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
 //            forCellWithReuseIdentifier:CELL_IDENTIFIER];
         
@@ -69,7 +69,7 @@
     if (!_cellSizes) {
         _cellSizes = [NSMutableArray array];
         for (NSInteger i = 0; i < CELL_COUNT; i++) {
-            CGSize size = CGSizeMake(arc4random() % 20 + 140, arc4random() % 20 + 246);
+            CGSize size = CGSizeMake(140, arc4random() % 20 + 250);
             _cellSizes[i] = [NSValue valueWithCGSize:size];
         }
     }

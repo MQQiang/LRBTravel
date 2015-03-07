@@ -27,7 +27,9 @@
 //    self.bgImageView.alpha = 0;
     
     
-    [_infoTableView registerNib:[UINib nibWithNibName:@"PathDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"InfoTabelViewId"];
+    [_infoTableView registerNib:[UINib nibWithNibName:@"PathDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"InfoTabelViewId0"];
+    
+     [_infoTableView registerNib:[UINib nibWithNibName:@"PathDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"InfoTabelViewId1"];
     
 }
 
@@ -52,13 +54,31 @@
     return [_dicArray count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PathDetailTableViewCell *cell;
     
-    PathDetailTableViewCell *cell = (PathDetailTableViewCell *)[_infoTableView dequeueReusableCellWithIdentifier:@"InfoTabelViewId"];
+    if (_type) {
+        cell = (PathDetailTableViewCell *)[_infoTableView dequeueReusableCellWithIdentifier:@"InfoTabelViewId1"];
+        cell.dayNum = indexPath.row+1;
+    }
+    else{
+         cell = (PathDetailTableViewCell *)[_infoTableView dequeueReusableCellWithIdentifier:@"InfoTabelViewId0"];
+    }
     
     [cell setupCellWithDic:[_dicArray objectAtIndex:indexPath.row] Type:_type];
     
     
     return  cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (_type) {
+        
+        return 250.0f;
+    }
+    
+    
+    return 400.0f;
 }
 
 -(void)setDicArrayString:(NSString *)dicArrayString{
@@ -73,6 +93,10 @@
     
     
     NSError *error = nil;
+    
+    if (!jsData)
+        return;
+    
     id jsonObject = [NSJSONSerialization JSONObjectWithData:jsData
                                                     options:NSJSONReadingAllowFragments
                                                       error:&error];

@@ -48,11 +48,14 @@ install_resource()
   esac
 }
           install_resource "MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle"
+                    install_resource "THCalendarDatePicker/THCalendarDatePicker/THDateDay.xib"
+                    install_resource "THCalendarDatePicker/THCalendarDatePicker/THDatePickerViewController.xib"
                     install_resource "XHImageViewer/Source/Resources/1_1280x800-1.jpeg"
                     install_resource "XHImageViewer/Source/Resources/1_1280x800.jpeg"
                     install_resource "XHImageViewer/Source/Resources/4_1366x768.jpeg"
                     install_resource "XHImageViewer/Source/Resources/5_1280x800.jpeg"
                     install_resource "XHImageViewer/Source/Resources/placeholder.jpeg"
+                    install_resource "${BUILT_PRODUCTS_DIR}/THCalendarDatePickerImages.bundle"
           
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

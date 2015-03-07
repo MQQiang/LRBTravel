@@ -48,6 +48,19 @@
 //        NSString *password = [NSUserDefaults standardUserDefaults] valueForKey:@"password"
 //        
 //    }
+    
+    NSString *userName =[[NSUserDefaults standardUserDefaults] valueForKey:@"UserName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserPassword"];
+    
+    if (userName&&![userName isEqualToString:@""]&&password&&![password isEqualToString:@""]) {
+        
+        
+        self.userName.text = userName;
+        self.password.text = password;
+        
+        [self login:nil];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,9 +100,14 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
                     [self userLoginSuccess];
+            
+
+            
             [[LRBUserInfo shareUserInfo] setupUserInfo:[dic objectForKey:@"user"]];
             
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
+          
             
             [LRBUtil requestImagePrefix];
         }
@@ -174,7 +192,10 @@
 
 -(void)userLoginSuccess
 {
+    [[NSUserDefaults standardUserDefaults] setValue:self.userName.text forKey:@"UserName"];
+    [[NSUserDefaults standardUserDefaults] setValue:self.password.text forKey:@"UserPassword"];
     
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     LRBIndexViewController *indexViewController = [[LRBIndexViewController alloc] init];
     
@@ -191,7 +212,7 @@
    
 //    self.view.window.rootViewController = frostedViewController;
     
-
+    [[NSUserDefaults standardUserDefaults] setValue:@0 forKey:@"login"];
     
     [self presentViewController:frostedViewController animated:YES completion:^(){}];
 //    [self.navigationController presentViewController:frostedViewController animated:YES completion:nil];

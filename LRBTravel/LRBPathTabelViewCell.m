@@ -29,7 +29,19 @@
     
     _selfDic = dic;
     _timeLabel.text = [dic[@"create_time"] substringToIndex:10];
+    
+    if([dic[@"image"] containsString:@"|"]){
+        
+        NSArray *array = [dic[@"image"] componentsSeparatedByString:@"|"];
+        
+        [_picImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:[array objectAtIndex:0]]]];
+        
+    }
+    else{
+    
     [_picImageView setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"image"]]]];
+        
+    }
     _titleLabel.text = dic[@"title"];
     
     

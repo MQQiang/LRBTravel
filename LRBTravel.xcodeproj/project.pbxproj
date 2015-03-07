@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0E007E091A66BD2900E365E4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E007E051A66BD2900E365E4 /* libWeChatSDK.a */; };
 		0E007E0A1A66BD2900E365E4 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E007E061A66BD2900E365E4 /* read_me.txt */; };
+		0E17BD751AAA81EC005EF304 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E17BD741AAA81EC005EF304 /* Launch Screen.xib */; };
+		0E17BD791AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E17BD771AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.m */; };
+		0E17BD7A1AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E17BD781AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.xib */; };
 		0E272A8D1A56FE380046D293 /* UIImageView+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */; };
 		0E36253B1A0D394500B53C0C /* LRBJourneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3625391A0D394500B53C0C /* LRBJourneyViewController.m */; };
 		0E36253C1A0D394500B53C0C /* LRBJourneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E36253A1A0D394500B53C0C /* LRBJourneyViewController.xib */; };
@@ -61,6 +64,8 @@
 		0E7AA2DF19FBD4DE00B59782 /* LRBFillFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7AA2DD19FBD4DE00B59782 /* LRBFillFormViewController.xib */; };
 		0E86CC981A55379400F8998B /* LRBThemeTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E86CC961A55379400F8998B /* LRBThemeTabelViewCell.m */; };
 		0E86CC991A55379400F8998B /* LRBThemeTabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E86CC971A55379400F8998B /* LRBThemeTabelViewCell.xib */; };
+		0E8BDDB51AA99F1300B9CBA0 /* MQDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BDDB41AA99F1300B9CBA0 /* MQDatePickView.m */; };
+		0E8BDDB71AA99F2D00B9CBA0 /* MQDatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8BDDB61AA99F2D00B9CBA0 /* MQDatePickView.xib */; };
 		0E9211091A0CB4B200D3BDFB /* LRBSliderMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9211071A0CB4B200D3BDFB /* LRBSliderMenuViewController.m */; };
 		0E92110A1A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9211081A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib */; };
 		0E92110E1A0CB4F900D3BDFB /* LRBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E92110C1A0CB4F900D3BDFB /* LRBLoginViewController.m */; };
@@ -162,6 +167,10 @@
 		0E007E061A66BD2900E365E4 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
 		0E007E071A66BD2900E365E4 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		0E007E081A66BD2900E365E4 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		0E17BD741AAA81EC005EF304 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		0E17BD761AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBShareToThirdPartyViewController.h; sourceTree = "<group>"; };
+		0E17BD771AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBShareToThirdPartyViewController.m; sourceTree = "<group>"; };
+		0E17BD781AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBShareToThirdPartyViewController.xib; sourceTree = "<group>"; };
 		0E272A8B1A56FE380046D293 /* UIImageView+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Circle.h"; sourceTree = "<group>"; };
 		0E272A8C1A56FE380046D293 /* UIImageView+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Circle.m"; sourceTree = "<group>"; };
 		0E3625381A0D394500B53C0C /* LRBJourneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBJourneyViewController.h; sourceTree = "<group>"; };
@@ -244,6 +253,9 @@
 		0E86CC951A55379400F8998B /* LRBThemeTabelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBThemeTabelViewCell.h; sourceTree = "<group>"; };
 		0E86CC961A55379400F8998B /* LRBThemeTabelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBThemeTabelViewCell.m; sourceTree = "<group>"; };
 		0E86CC971A55379400F8998B /* LRBThemeTabelViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBThemeTabelViewCell.xib; sourceTree = "<group>"; };
+		0E8BDDB31AA99F1300B9CBA0 /* MQDatePickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQDatePickView.h; sourceTree = "<group>"; };
+		0E8BDDB41AA99F1300B9CBA0 /* MQDatePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQDatePickView.m; sourceTree = "<group>"; };
+		0E8BDDB61AA99F2D00B9CBA0 /* MQDatePickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MQDatePickView.xib; sourceTree = "<group>"; };
 		0E9211061A0CB4B200D3BDFB /* LRBSliderMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRBSliderMenuViewController.h; sourceTree = "<group>"; };
 		0E9211071A0CB4B200D3BDFB /* LRBSliderMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRBSliderMenuViewController.m; sourceTree = "<group>"; };
 		0E9211081A0CB4B200D3BDFB /* LRBSliderMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRBSliderMenuViewController.xib; sourceTree = "<group>"; };
@@ -475,6 +487,9 @@
 				E29FB14E1A92921A00FC4A85 /* LRBPhotoBrowserViewController.h */,
 				E29FB14F1A92921A00FC4A85 /* LRBPhotoBrowserViewController.m */,
 				E29FB1501A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib */,
+				0E17BD761AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.h */,
+				0E17BD771AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.m */,
+				0E17BD781AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.xib */,
 				E2A0DF9C1A9CBD2B004E03F0 /* LRBEditCommentViewController.h */,
 				E2A0DF9D1A9CBD2B004E03F0 /* LRBEditCommentViewController.m */,
 				E2A0DF9E1A9CBD2B004E03F0 /* LRBEditCommentViewController.xib */,
@@ -802,6 +817,9 @@
 				F29A992B1A4E79E700288FC9 /* LRBCommonTableHeadView.h */,
 				F29A992C1A4E79E700288FC9 /* LRBCommonTableHeadView.m */,
 				F29A99301A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib */,
+				0E8BDDB31AA99F1300B9CBA0 /* MQDatePickView.h */,
+				0E8BDDB41AA99F1300B9CBA0 /* MQDatePickView.m */,
+				0E8BDDB61AA99F2D00B9CBA0 /* MQDatePickView.xib */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -841,6 +859,7 @@
 				0EE7C57D1A0E7B220064F315 /* LRBAboutUsViewController.h */,
 				0EE7C57E1A0E7B220064F315 /* LRBAboutUsViewController.m */,
 				0EE7C57F1A0E7B220064F315 /* LRBAboutUsViewController.xib */,
+				0E17BD741AAA81EC005EF304 /* Launch Screen.xib */,
 				0E6D696519E6BCE2007C63F4 /* LRBIndexViewController.h */,
 				0E6D696619E6BCE2007C63F4 /* LRBIndexViewController.m */,
 				0E6D696719E6BCE2007C63F4 /* LRBIndexViewController.xib */,
@@ -953,7 +972,7 @@
 				TargetAttributes = {
 					0E71CA5D19E4CC9C003C9F2D = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 93R557RJL3;
+						DevelopmentTeam = 33NETD757U;
 					};
 					0E71CA7619E4CC9C003C9F2D = {
 						CreatedOnToolsVersion = 6.0;
@@ -1002,6 +1021,7 @@
 				F29A99311A4E7A2A00288FC9 /* LRBCommonTableHeadView.xib in Resources */,
 				0E92110F1A0CB4F900D3BDFB /* LRBLoginViewController.xib in Resources */,
 				0E6D695519E6BB66007C63F4 /* LRBPersonInfoViewController.xib in Resources */,
+				0E17BD7A1AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.xib in Resources */,
 				0E6D696919E6BCE2007C63F4 /* LRBIndexViewController.xib in Resources */,
 				0E6D697119E6BD70007C63F4 /* LRBNotificationDetailViewController.xib in Resources */,
 				F2C3C8DA1A59BA740021236C /* LRBPortraitChangeViewController.xib in Resources */,
@@ -1034,8 +1054,10 @@
 				0E39ED9F1A22417D00A384C3 /* LRBCostExplainViewController.xib in Resources */,
 				0E39EDA41A22428A00A384C3 /* LRBCostViewController.xib in Resources */,
 				0EB465711A583BEF002B240E /* UMSocialSDKResourcesNew.bundle in Resources */,
+				0E17BD751AAA81EC005EF304 /* Launch Screen.xib in Resources */,
 				0E6D695F19E6BC34007C63F4 /* LRBRouteInfoViewController.xib in Resources */,
 				E29FB1521A92921A00FC4A85 /* LRBPhotoBrowserViewController.xib in Resources */,
+				0E8BDDB71AA99F2D00B9CBA0 /* MQDatePickView.xib in Resources */,
 				0E39EDA91A2243BB00A384C3 /* LRBJourneyNoticeViewController.xib in Resources */,
 				0E39EDB31A224BC600A384C3 /* LRBPictureDetailViewController.xib in Resources */,
 				0EB465691A583BEF002B240E /* UMSCommentDetailController.xib in Resources */,
@@ -1133,6 +1155,7 @@
 				0E97BBB41A0F94B200A35F45 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				0E600DFE1A2C083A003920D3 /* LRBRegisterViewController.m in Sources */,
 				0EC248D21A4C5A6F003E79E5 /* LRBBannerPathModel.m in Sources */,
+				0E8BDDB51AA99F1300B9CBA0 /* MQDatePickView.m in Sources */,
 				0EE363AF1A0FC54500C2E4F7 /* LRBFillFormTableViewCell.m in Sources */,
 				0E7AA2CA19FBC6BE00B59782 /* LRBSearchViewController.m in Sources */,
 				0E9211151A0D284600D3BDFB /* LRBNavigationController.m in Sources */,
@@ -1154,6 +1177,7 @@
 				0E39EDA81A2243BB00A384C3 /* LRBJourneyNoticeViewController.m in Sources */,
 				0E6D695419E6BB66007C63F4 /* LRBPersonInfoViewController.m in Sources */,
 				0E36253B1A0D394500B53C0C /* LRBJourneyViewController.m in Sources */,
+				0E17BD791AAAF5E5005EF304 /* LRBShareToThirdPartyViewController.m in Sources */,
 				0E6D696319E6BC9A007C63F4 /* LRBPictureShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

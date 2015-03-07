@@ -146,7 +146,13 @@
         cell.textField.userInteractionEnabled=NO;
         cell.titleLabel.text = [[_contentTitleArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         if (indexPath.row==0) {
-            cell.textField.text=[self.routeInfo objectForKey:@"start_time"];
+            
+            if (_dateString) {
+                cell.textField.text = _dateString;
+            }
+            else{
+                cell.textField.text=[[self.routeInfo objectForKey:@"start_time"] substringToIndex:10];
+            }
         }
         if (indexPath.row==1) {
             cell.textField.placeholder=@"请填写报名人数";

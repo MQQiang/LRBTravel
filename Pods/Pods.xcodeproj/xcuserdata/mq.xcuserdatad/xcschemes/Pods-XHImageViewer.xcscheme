@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7DF7191E04901C458E6FE2AE"
+               BlueprintIdentifier = "E607B405ED3F93255588AB1B"
                BuildableName = "libPods-XHImageViewer.a"
                BlueprintName = "Pods-XHImageViewer"
                ReferencedContainer = "container:Pods.xcodeproj">

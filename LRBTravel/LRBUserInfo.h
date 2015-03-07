@@ -27,6 +27,11 @@
 @property (nonatomic,strong)NSNumber *userId;
 -(void)setupUserInfo:(NSDictionary *)indoDic;
 -(void)setImagePrefix:(NSDictionary *)dic;
-#warning ?????????用户信息改变如何修改这保存都信息
+
 -(void)uploadPrefix:(NSString *)url;
+@property(nonatomic,strong)NSDictionary *userDic;
+-(void)saveUserInfo;
+
+-(void)readUserInfo;
+
 @end

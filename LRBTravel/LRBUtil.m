@@ -171,6 +171,13 @@ static NSString * imagePrefix;
     return imagePrefix;
 }
 
++(void)setImageProfix:(NSString *)profix{
+    
+    imagePrefix = profix;
+    
+     [[NSUserDefaults standardUserDefaults] setValue:[LRBUtil imageProfix] forKey:@"ImageProfix"];
+}
+
 + (NSString*)intervalSinceNow:(NSString*)theDate
 {
     NSDateFormatter *date = [[NSDateFormatter alloc] init];

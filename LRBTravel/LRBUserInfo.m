@@ -57,7 +57,7 @@ static LRBUserInfo * shareInfo;
     NSEnumerator *enumerator = [indoDic keyEnumerator];
     id key;
     
-    
+    _userDic = indoDic;
     _userName = [indoDic objectForKeyNotNSNULL:@"name"];
 #warning 貌似不支持中文。。
     _nickName = [indoDic objectForKeyNotNSNULL:@"nick"];
@@ -87,6 +87,24 @@ static LRBUserInfo * shareInfo;
 {
     _profile=url;
 }
+-(void)saveUserInfo{
+    
+    [[NSUserDefaults standardUserDefaults] setValue:_userDic forKey:@"UserInfo"];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[LRBUtil imageProfix] forKey:@"ImageProfix"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(void)readUserInfo{
+    
+    _userDic = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserInfo"];
+    
+    [LRBUtil setImageProfix:[[NSUserDefaults standardUserDefaults] valueForKey:@"ImageProfix"]];
+    
+    
+//    [[LRBUserInfo shareUserInfo] setupUserInfo:_userDic];
+}
+
 
 
 @end

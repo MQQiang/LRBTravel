@@ -25,6 +25,8 @@
     int _guideImageIndex;
     int _pathImageIndex;
     NSMutableArray *_dataArray;
+    
+    EScrollerView *scrollerView;
 }
 @property (nonatomic,strong)UIScrollView *m_sc;
 @property (nonatomic,strong)UIPageControl *m_pageC;
@@ -72,13 +74,13 @@
     if(image.count ==0)
         return;
     
-    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height/4)
+    scrollerView=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height/4)
                                                           ImageArray:image
                                                           TitleArray:nil];
     
-    scroller.delegate=self;
+    scrollerView.delegate=self;
     
-    [self.view addSubview:scroller];
+//    [self.view addSubview:scrollerView];
     _guideImageIndex = 0;
     _pathImageIndex = 0;
 }
@@ -120,17 +122,28 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Theme"]) {
+    if (indexPath.row == 0) {
+        
+        UITableViewCell  *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Spe"];
+        
+        [cell addSubview:scrollerView];
+//        cell addSubview:self.
+        return cell;
+    }
+    
+    
+    
+    if ([_dataArray[indexPath.row-1][@"type"] isEqualToString:@"Theme"]) {
         
         LRBThemeTabelViewCell *cell = [_indexTableView dequeueReusableCellWithIdentifier:kThemeTabelViewCellID];
-        [cell setupViewWithDic:_dataArray[indexPath.row]];
+        [cell setupViewWithDic:_dataArray[indexPath.row-1]];
         //             _guideImageIndex++;
                     return cell;
         
     }
         
         LRBIndexViewTableViewCell *cell = [ _indexTableView dequeueReusableCellWithIdentifier:kIndexTableViewCellID];
-                    [cell setupCellWith:_dataArray[indexPath.row]];
+                    [cell setupCellWith:_dataArray[indexPath.row-1]];
     
                     return  cell;
         
@@ -178,14 +191,22 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return [_guideImageArray count]+[_pathImageArray count];
+    return [_guideImageArray count]+[_pathImageArray count]+1;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row ==0) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
+    
+    
    LRBRouteInfoViewController  *routeInfoVC = [[LRBRouteInfoViewController alloc] init];
     
-    if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Theme"]) {
+    if ([_dataArray[indexPath.row-1][@"type"] isEqualToString:@"Theme"]) {
         
-        NSArray *array = _dataArray[indexPath.row][@"paths"];
+        NSArray *array = _dataArray[indexPath.row-1][@"paths"];
         if([array count] == 0){
             
             return;
@@ -196,8 +217,8 @@
         
     }else{
         
-        routeInfoVC.journeyId = [[_dataArray objectAtIndex:indexPath.row][@"id"] intValue];
-        routeInfoVC.routeInfo = [_dataArray objectAtIndex:indexPath.row];
+        routeInfoVC.journeyId = [[_dataArray objectAtIndex:indexPath.row-1][@"id"] intValue];
+        routeInfoVC.routeInfo = [_dataArray objectAtIndex:indexPath.row-1];
         
     }
 
@@ -210,11 +231,17 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
-    if ([_dataArray[indexPath.row][@"type"] isEqualToString:@"Path"]) {
+    if (indexPath.row == 0) {
         
-        return  200.0f;
+        return 150;
     }
-    return 180.0f;
+    
+    
+    if ([_dataArray[indexPath.row-1][@"type"] isEqualToString:@"Path"]) {
+        
+        return  250.0f;
+    }
+    return 220.0f;
     
 }
 /*

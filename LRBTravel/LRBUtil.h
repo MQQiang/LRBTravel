@@ -15,6 +15,7 @@
 +(UIImage*)fullScreenShots;
 +(void)requestImagePrefix;
 +(NSString *)imageProfix;
++(void)setImageProfix:(NSString *)profix;
 + (NSString*)intervalSinceNow:(NSString*)theDate;
 
 @end

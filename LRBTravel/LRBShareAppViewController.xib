@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LRBShareAppViewController">
             <connections>
+                <outlet property="sharePicImageView" destination="LyS-QY-qQF" id="5RN-F5-4xF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,12 +23,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <view alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPl-se-jSC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1_1280x800.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LyS-QY-qQF">
+                    <rect key="frame" x="-3" y="44" width="326" height="524"/>
+                </imageView>
+                <view alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPl-se-jSC">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-Db-rCA">
                             <rect key="frame" x="130" y="142" width="60" height="60"/>
-                            <state key="normal" image="friend">
+                            <state key="normal" image="friend_pre">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -35,7 +40,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-Of-Lb0">
                             <rect key="frame" x="34" y="295" width="60" height="60"/>
-                            <state key="normal" image="tencent">
+                            <state key="normal" image="tencent_pre">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -44,7 +49,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jl-vX-vih">
                             <rect key="frame" x="130" y="295" width="60" height="60"/>
-                            <state key="normal" image="QQzone">
+                            <state key="normal" image="QQzone_pre">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -53,7 +58,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-Ph-cba">
                             <rect key="frame" x="236" y="142" width="60" height="60"/>
-                            <state key="normal" image="weibo">
+                            <state key="normal" image="weibo_pre">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -62,7 +67,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwX-bo-bGK">
                             <rect key="frame" x="34" y="142" width="60" height="60"/>
-                            <state key="normal" image="weichat">
+                            <state key="normal" image="weichat_pre">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -100,7 +105,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -110,14 +115,15 @@
                     <exclude reference="Lz8-fu-qfF"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="290" y="240"/>
+            <point key="canvasLocation" x="282" y="129"/>
         </view>
     </objects>
     <resources>
-        <image name="QQzone" width="160" height="160"/>
-        <image name="friend" width="160" height="160"/>
-        <image name="tencent" width="160" height="160"/>
-        <image name="weibo" width="160" height="160"/>
-        <image name="weichat" width="160" height="160"/>
+        <image name="1_1280x800.jpeg" width="1280" height="800"/>
+        <image name="QQzone_pre" width="160" height="160"/>
+        <image name="friend_pre" width="160" height="160"/>
+        <image name="tencent_pre" width="160" height="160"/>
+        <image name="weibo_pre" width="160" height="160"/>
+        <image name="weichat_pre" width="160" height="160"/>
     </resources>
 </document>

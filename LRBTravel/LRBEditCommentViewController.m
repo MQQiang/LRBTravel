@@ -8,7 +8,7 @@
 
 #import "LRBEditCommentViewController.h"
 #import "LRBUserInfo.h"
-@interface LRBEditCommentViewController ()
+@interface LRBEditCommentViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView_comment;
 
 @end
@@ -18,9 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"请输入评论";
-    UIBarButtonItem *buttom_edit=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
+//    UIBarButtonItem *buttom_edit=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
+    
+    
+        UIBarButtonItem *buttom_edit=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Share"] style:UIBarButtonItemStylePlain target:self action:@selector(done)];
     
     [self.navigationItem setRightBarButtonItem:buttom_edit];
+    
+    self.textView_comment.delegate = self;
+    
+    self.textView_comment.layer.cornerRadius = 10.0f;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -30,11 +37,10 @@
     
     UINavigationBar* navigationBar=self.navigationController.navigationBar;
     //navigationBar.tintColor=[UIColor blackColor];
-    navigationBar.barTintColor =[UIColor blackColor] ;
+    navigationBar.barTintColor =UIColorFromRGB(0x009EE5);
     //[self.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];
     //self.navigationController.navigationBar.translucent = NO;
-    
-    
+
     //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nvb"] forBarMetrics:UIBarMetricsDefault];
     
     // self.navigationController.navigationBar.alpha=1;
@@ -43,6 +49,15 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:0.0/255.0 green:128.0/255.0 blue:1 alpha:1];
+}
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    _promptLabel.hidden = YES;
+}
+
+-(void)textViewDidChange:(UITextView *)textView{
+    
+    _numLabel.text = [NSString stringWithFormat:@"字数（%lu/120)",(unsigned long)[textView.text length] ];
 }
 
 
@@ -69,11 +84,13 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
     
     [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/ShareApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         // [self refreshView:responseObject];
         NSDictionary* returnInfo =responseObject;
         if([returnInfo objectForKey:@"status"]){
-           [self.navigationController popViewControllerAnimated:YES];
+//           [self.navigationController popViewControllerAnimated:YES];
+            
+            [[[UIAlertView alloc] initWithTitle:@"评论成功" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

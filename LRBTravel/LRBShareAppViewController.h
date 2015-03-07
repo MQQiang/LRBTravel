@@ -14,5 +14,6 @@
 - (IBAction)shareWeiFriend:(id)sender;
 - (IBAction)shareTecentWeibo:(id)sender;
 - (IBAction)shareQQZone:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *sharePicImageView;
 
 @end

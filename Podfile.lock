@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - DACircularProgress (2.2.0)
+  - KNSemiModalViewController (0.3)
   - MBProgressHUD (0.9)
   - MWPhotoBrowser (1.4.1):
     - DACircularProgress
@@ -32,6 +33,8 @@ PODS:
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
+  - THCalendarDatePicker (1.0.0):
+    - KNSemiModalViewController (~> 0.3)
   - XHImageViewer (0.1.2)
 
 DEPENDENCIES:
@@ -39,16 +42,19 @@ DEPENDENCIES:
   - MBProgressHUD
   - MWPhotoBrowser
   - REFrostedViewController (~> 2.4.7)
+  - THCalendarDatePicker (~> 1.0.0)
   - XHImageViewer
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   DACircularProgress: 3b41941891a56dc6aa17971f5322a9a38a6f446e
+  KNSemiModalViewController: 6fb1e2f6a4d84238b524cb705e91118b0fa6bbc9
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   MWPhotoBrowser: be05b3b7521e961382a4ba5579685bf5a00b93d8
   PSTCollectionView: d9f466e4554cc83260ca9bde7beb27f308e8fd76
   REFrostedViewController: 08870a24788191339608b80b2bd4fce549858f0d
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  THCalendarDatePicker: c482d4f630262bae6fe88113d0298f54bad1fd9d
   XHImageViewer: 84bcadb6d07a0040d2c7ac2e6ceb05df970da165
 
 COCOAPODS: 0.35.0

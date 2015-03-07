@@ -30,9 +30,15 @@
     
     _type = type;
     if (type) {
-        [_headImage setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y-20, self.frame.size.width-60, self.frame.size.height-100)];
+
+        _pathImage.layer.cornerRadius = 5.0f;
         
-          [_headImage setImageWithURL:[NSURL URLWithString: [[LRBUtil imageProfix] stringByAppendingString:[dic objectForKey:@"image"]]]];
+        _dayView.layer.cornerRadius = 5.0f;
+//        [_headImage setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y-20, self.frame.size.width-60, self.frame.size.height-100)];R
+        
+        _dayLabel.text = [NSString stringWithFormat:@"0%d",_dayNum];
+        
+          [_pathImage setImageWithURL:[NSURL URLWithString: [[LRBUtil imageProfix] stringByAppendingString:[dic objectForKey:@"image"]]]];
          _detailTextView.text = dic[@"intro"];
         
         _nameLabel.text = dic[@"name"];
@@ -40,7 +46,12 @@
         
         return;
     }
+    
+    
+    _dayView.hidden = YES;
+    _pathImage.hidden = YES;
     [LRBUtil drawCircleImage: _headImage];
+  
     
     [_headImage setImageWithURL:[NSURL URLWithString: [[LRBUtil imageProfix] stringByAppendingString:[dic objectForKey:@"image"]]]];
     _detailTextView.text = dic[@"intro"];

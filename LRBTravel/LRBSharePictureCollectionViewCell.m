@@ -16,8 +16,13 @@
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
     self.layer.cornerRadius = 5.0f;
+    
+//    self.layer.borderWidth = 0.3f;
+//    self.layer.borderColor = [UIColor grayColor].CGColor;
+    
    [ self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
     
+
 }
 
 - (IBAction)upThisPicture:(id)sender {
@@ -44,6 +49,11 @@
 }
 
 -(void)setupCellWithDic:(NSDictionary *)dic superVc:(UIViewController *)vc{
+    
+    
+//    [self bringSubviewToFront:_headImage];
+//    [self bringSubviewToFront:_upButton];
+//    [self bringSubviewToFront:_upNumLabel];
     _superVC = vc;
     _dataDic = dic;
     
@@ -53,10 +63,12 @@
     
     _nameLabel.text = dic[@"user_name"];
     
+    [self sendSubviewToBack:_sharedPictureView];
+    
     if ([dic objectForKeyNotNSNULL:@"user_image"]) {
         
-            [_headImage setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]]];
-        
+        [_headImage setImageWithURL:[NSURL URLWithString:[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]]];
+       
         //    NSLog(@"%@",[[LRBUtil imageProfix] stringByAppendingString:dic[@"user_image"]]);
         
     }
@@ -65,7 +77,7 @@
         _upNumLabel.text = dic[@"collect_num"] ;
     }
 
-
+     [self sendSubviewToBack:_sharedPictureView];
     
     NSLog(@"%f",self.bounds.size.height);
     [self setNeedsDisplay ];
@@ -75,7 +87,7 @@
     // Create array of MWPhoto objects
     self.photos = [NSMutableArray array];
     LRBPhotoBrowserViewController *pushView=[[LRBPhotoBrowserViewController alloc] init];
-    pushView.imageShared=self.headImage.image;
+    pushView.imageShared=self.sharedPictureView.image;
     pushView.shareId=_dataDic[@"share_id"] ;
     pushView.shareData=_dataDic;
     

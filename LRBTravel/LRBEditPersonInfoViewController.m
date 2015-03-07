@@ -12,6 +12,7 @@
 #import "LRBAlterPersonInfoViewController.h"
 #import "LRBPortraitChangeViewController.h"
 #import "LRBNavigationController.h"
+#import "LRBLoginViewController.h"
 
 @interface LRBEditPersonInfoViewController ()
 
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableTitle=@[@[@"修改头像",@"修改密码",@"修改邮箱",@"修改电话"],@[@"推送通知设置",@"检查更新"]];
+    self.tableTitle=@[@[@"修改头像",@"修改密码",@"修改邮箱",@"修改电话"],@[@"推送通知设置",@"检查更新",@"退出"]];
     self.sectionTitle=@[@"个人资料",@"系统设置"];
     [self.navigationController setNavigationBarHidden:NO];
     self.tableView.delegate=self;
@@ -169,6 +170,28 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (indexPath.row == 2&& indexPath.section ==1) {
+        
+        [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"UserName"];
+        
+        [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"UserPassword"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        LRBLoginViewController *vc = [board instantiateViewControllerWithIdentifier:@"LoginView"];
+        
+//        LRBLoginViewController *vc = [[LRBLoginViewController alloc] init];
+        
+        
+        [self presentViewController:vc animated:YES completion:nil];
+        
+        
+        
+    }
+    
     
     if(indexPath.section == 1)
         return ;

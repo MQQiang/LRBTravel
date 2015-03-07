@@ -10,7 +10,9 @@
 #import "LRBUserInfo.h"
 #import "LRBEditCommentViewController.h"
 #import "LRBCommentListViewController.h"
-
+#import "LRBShareAppViewController.h"
+#import "LRBShareToThirdPartyViewController.h"
+#import "UIViewController+Blur.h"
 
 
 @interface LRBPhotoBrowserViewController ()
@@ -23,6 +25,10 @@
 - (IBAction)like:(id)sender;
 - (IBAction)editComment:(id)sender;
 - (IBAction)viewComment:(id)sender;
+
+- (IBAction)shareThis:(id)sender;
+
+@property(nonatomic,strong)UIView *blurBgView;
 
 @end
 
@@ -75,14 +81,22 @@
     }];
     
     
-    
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit"]style:UIBarButtonItemStylePlain target:self action:@selector(editComment:)];
     
     
     
     [self.navigationController setNavigationBarHidden:NO];
 
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    
+    
+    _blurBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height)];
+    
+    _blurBgView.backgroundColor = [UIColor blackColor];
+    
+    _blurBgView.alpha = 0;
+    
+    [self.view addSubview:_blurBgView];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)changeData
@@ -103,7 +117,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 //
-    
+    _blurBgView.alpha = 0;
     UINavigationBar* navigationBar=self.navigationController.navigationBar;
     //navigationBar.tintColor=[UIColor blackColor];
     navigationBar.barTintColor =[UIColor blackColor] ;
@@ -125,6 +139,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)shareThis:(id)sender{
+    
+    LRBShareToThirdPartyViewController *vc = [[LRBShareToThirdPartyViewController alloc] init];
+    
+    vc.image = self.imageShared;
+    
+    _blurBgView.alpha = 0.3;
+    
+    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentViewControllerWithBlur:vc blurRedius:20 tintColor:[UIColor clearColor] saturationDeltaFactor:0.5];
+    
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -138,6 +168,12 @@
 - (IBAction)like:(id)sender {
     
     if (self.buttom_like.selected==YES) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您已经赞过" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        
+        
+        
         return;
     }
     [self.buttom_like setEnabled:false];
